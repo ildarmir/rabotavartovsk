@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Position:</b>
+  <%= @vacancy.position %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @vacancy.note %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @vacancy.experience %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%= @vacancy.salary %>
+</p>
+
+<p>
+  <b>Organisation:</b>
+  <%= @vacancy.organisation %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @vacancy.phone %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @vacancy.date %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @vacancy.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
+<%= link_to 'Back', vacancies_path %>

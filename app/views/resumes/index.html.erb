@@ -1,0 +1,61 @@
+<h1>Listing resumes</h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Sex</th>
+    <th>Mar status</th>
+    <th>Age</th>
+    <th>Experience</th>
+    <th>City</th>
+    <th>Min wage</th>
+    <th>Schedule</th>
+    <th>Skills</th>
+    <th>Education</th>
+    <th>About</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Date</th>
+    <th>View</th>
+    <th>Avatar</th>
+    <th>Group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resumes.each do |resume| %>
+  <tr>
+    <td><%= resume.login %></td>
+    <td><%= resume.password %></td>
+    <td><%= resume.position %></td>
+    <td><%= resume.name %></td>
+    <td><%= resume.sex %></td>
+    <td><%= resume.mar_status %></td>
+    <td><%= resume.age %></td>
+    <td><%= resume.experience %></td>
+    <td><%= resume.city %></td>
+    <td><%= resume.min_wage %></td>
+    <td><%= resume.schedule %></td>
+    <td><%= resume.skills %></td>
+    <td><%= resume.education %></td>
+    <td><%= resume.about %></td>
+    <td><%= resume.phone %></td>
+    <td><%= resume.email %></td>
+    <td><%= resume.date %></td>
+    <td><%= resume.view %></td>
+    <td><%= resume.avatar %></td>
+    <td><%= resume.group_id %></td>
+    <td><%= link_to 'Show', resume %></td>
+    <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
+    <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resume', new_resume_path %>

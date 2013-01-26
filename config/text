@@ -1,0 +1,3 @@
+rails generate scaffold Vacancy position:string note:text experience:string salary:string organisation:string phone:string date:integer email:string 
+rails generate scaffold Resume login:string password:string position:string name:string sex:string mar_status:string age:string experience:string city:string  min_wage:string schedule:string skills:text education:text about:text phone:string email:string date:string view:integer avatar:string group_id:integer
+rails generate scaffold Articles title:string des:text text:text view:integer author:string mini_img:string add_time:integer

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  des: MyText
+  text: MyText
+  view: 1
+  author: MyString
+  mini_img: MyString
+  add_time: 1
+
+two:
+  title: MyString
+  des: MyText
+  text: MyText
+  view: 1
+  author: MyString
+  mini_img: MyString
+  add_time: 1
