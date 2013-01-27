@@ -1,32 +1,82 @@
-<%= form_for :search1 do |v| %>        
+     
 <div id="left"> 
 	<div id="tabs">
-	            	<ul>
-	            		<li><a href="#vacancy">Vacancy</a></li>
-	            		<li><a href="#resume_index">Resume</a></li>
-	            	</ul>
-	                <div id="vacancy">
-	                    <table class="search_table">
-	                        <tr>
-	                        	<td><%= v.text_field :search,  :class => "tags", :placeholder =>"Введите название вакансии" %></td>
-	                        	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
-	
-	  </tr>
-	  <% end %>
-	                    </table> 
-	                </div>
-	                <%= form_for :search1 do |v| %>
-	           		<div id="resume_index">
-	                    <table  class="search_table">
-	                        <tr>
-	                         <td><%= v.text_field :search, :class => "tags", :placeholder =>"Введите ключевое слово в резюме" %></td>
-	                        	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
-	                        </tr>
-	                    </table>
-	                </div>	            
-	</div>
-	<% end %>  
+    	<ul>
+    		<li><a href="#vacancy">Vacancy</a></li>
+    		<li><a href="#resume_index">Resume</a></li>
+    	</ul>
+        <div id="vacancy">
+        	<%= form_for :search1 do |v| %>   
+            <table class="search_table">
+                <tr>
+                	<td><%= v.text_field :search,  :class => "tags", :placeholder =>"Введите название вакансии" %></td>
+                	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
 
+				</tr>	  				
+            </table> 
+        	<% end %>
+        </div>	                
+   		<div id="resume_index">
+   			<%= form_for :search1 do |v| %>
+            <table  class="search_table">
+                <tr>
+                 <td><%= v.text_field :search, :class => "tags", :placeholder =>"Введите ключевое слово в резюме" %></td>
+                	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
+                </tr>
+            </table>
+            <% end %>  
+        </div>	                         
+	</div>	
+	<div class='vacancies_module' >                   
+        <div class="popVac">               
+            <a href="vacancy.php" class="vacancy_module_header">Popular vacancies</a>
+        </div>
+        <div class="pop_vacancy">
+            <ul>                                
+                 <li><a  href=''>Engineer</a></li>
+                 <li><a  href=''>Mechanic</a></li>
+                 <li><a  href=''>Driver</a></li>
+                 <li><a  href=''>Manager</a></li>
+                 <li><a  href=''>Agent</a></li>                                
+            </ul>
+        </div>                    
+	</div>
+	 <div class='vacancies_module'>                    
+        <div class="popVac">               
+            <a href="?resume" class="vacancy_module_header">Last Resume</a>
+        </div>
+        <div class="pop_vacancy">
+            <ul>
+              <% @res.each do |r| %>
+              <li>
+              <%=  link_to r.name, :id => r.id, :controller => :resumes, :action => :show %>
+              <% if session[:group_id] == 2 %>
+              <%= link_to image_tag("edit_profile.jpg", :border => 0), :controller => :resumes, :action => :edit, :id => r.id %>
+              <%= link_to image_tag("deleteBut.gif", :border => 0), {:controller => :resumes, :action => :destroy, :id => r.id }, :method => :delete, :confirm => "Are you sure?"%>
+              </li>
+              <% end %>
+              <% end %>
+            </ul>
+        </div>
+	</div> 
+     <div class='vacancies_module'>                  
+        <div class="popVac">               
+            <a href="?vacancy" class="vacancy_module_header">New Vacancies</a>
+        </div>
+        <div class="pop_vacancy">
+            <ul id="newVacUL">
+               <% @vac.each do |f| %>
+               <li class='noWrap'>               
+	               <%= link_to f.position, { :controller => :vacancies,:action => :show, :id => f.id } %> 
+	               <% if session[:group_id] == 2 %>
+	               <%= link_to image_tag("edit_profile.jpg", :border => 0),{ :controller => :vacancies, :action => :edit, :id => f.id } %> 
+	               <%= link_to image_tag("deleteBut.gif", :border => 0), { :controller => :vacancies, :action => :destroy, :id => f.id }, :method => :delete, :confirm => "Are you sure?" %>
+	               <% end %>
+               </li>       
+               <% end %>                   
+            </ul>
+        </div>                   
+	</div>  
 </div>
          
 <%= session %>

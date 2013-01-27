@@ -65,10 +65,42 @@
             @include search_table;
         }
       
+    }    
+}
+
+.vacancies_module {
+    padding: 20px;    
+    margin-bottom:30px; 
+    border:0px solid black; 
+    font-family:Verdana; 
+    font-size:12px;
+    width: 200px;
+    float: left;
+    padding-left:40px;
+    .popVac {
+        padding-bottom: 10px;
+        .vacancy_module_header {
+            text-decoration:none; 
+            font-weight:bold; 
+            font-size:14px;
+            text-align: center;
+        }
+    }
+    .pop_vacancy ul li {
+        list-style: none;
+        padding: 4px;
     }
     
-    
+    .pop_vacancy p  {
+        list-style: none;
+        padding: 2px;
+        font-size:12px;
+    }
+  
 }
+
+
+
 
 
 
