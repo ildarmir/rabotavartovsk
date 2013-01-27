@@ -142,5 +142,17 @@ body {
     padding-top:10px
 }
 
+h3 {
+	text-align:center;
+    padding: 20px;
+    color: #0080FF;    
+}
+.hr {
+     margin-top:20px;
+     color:#CCCCCC;
+     width: 95%;
+     margin: 0 auto;
+}
+
 
 

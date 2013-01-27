@@ -1,49 +1,44 @@
 <%= form_for(@vacancy) do |f| %>
-  <% if @vacancy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
 
-      <ul>
-      <% @vacancy.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div id="newVacForm"><table id="newVac_table">
+	
+<tr><td id="profession-label"><%= f.label :position, :class => "resVac_data required" %></td>
+<td class="element"><%= f.text_field :position, :size => "60", :maxlength => "100" %></td>
+</tr>
 
-  <div class="field">
-    <%= f.label :position %><br />
-    <%= f.text_field :position %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br />
-    <%= f.text_area :note %>
-  </div>
-  <div class="field">
-    <%= f.label :experience %><br />
-    <%= f.text_field :experience %>
-  </div>
-  <div class="field">
-    <%= f.label :salary %><br />
-    <%= f.text_field :salary %>
-  </div>
-  <div class="field">
-    <%= f.label :organisation %><br />
-    <%= f.text_field :organisation %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.number_field :date %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<tr><td id="org-label"><%= f.label :organisation, :class => "resVac_data optional"   %></td>
+<td class="element">
+<%= f.text_field :organisation, :size => "60", :maxlength => "100"  %></td></tr>
+
+
+
+<tr><td id="experience-label"><%= f.label :experience, :class => "resVac_data optional" %></td>
+<td class="element">
+<%= f.text_field :experience, :size => "60", :maxlength => "100" %></td></tr>
+
+
+
+<tr><td id="wage-label"><%= f.label :wage,  :class => "resVac_data optional" %></td>
+<td class="element">
+<%= f.text_field :salary, :size => "60", :maxlength => "100" %></td></tr>
+
+
+
+
+<tr><td id="phone-label"><%= f.label :phone, :class => "resVac_data required" %></td>
+<td class="element">
+<%= f.text_field :phone, :size => "60", :maxlength => "100" %></td></tr>
+
+
+
+<tr><td id="comment-label"><%= f.label :comment, :class => "resVac_data optional" %></td>
+<td class="element">
+<%= f.text_field :note, :size => "60", :maxlength => "255" %></td></tr>
+
+</table>
+
+</div>
+<hr class="hr">
+<%= f.submit :submit,  :value => "Add Vacancy", :class => "NewVacButton" %> <%= link_to 'Back', vacancies_path, :class => "NewVacButton" %>
 <% end %>

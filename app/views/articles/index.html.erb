@@ -6,7 +6,7 @@
 	 	<%= link_to a.title, :action => :show, :id => a.id  %>
 	 </h3>
 	<div>
-		<%= link_to a.des, :action => :show, :id => a.id %><br /><br />
+		<%= link_to a.des, { :action => :show, :id => a.id }, :class => :articleIndexDescription %><br /><br />
 		<span class='articles_addit_info'>Date: <%= a.add_time %></span>
 		<span class='articles_addit_info'>Views count: <%= a.view %></span>
 	</div>        

@@ -13,18 +13,32 @@
     }
 }
 #articles {
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   .article_header {
     font-size:16px;
+    a {
+      
+      display: block;
+      font-size: 1em;
+      padding: .5em .5em .5em .7em;
+      color: #004276;
+      font-weight: bolder;
+      
+    }    
+  }
+  .articleIndexDescription {
+      color: #222222;
+      font-size: 14px;
   }
   .articles_addit_info {
+    color: red;
     font-size:10px;
     padding-left:20px;
-  }
+  } 
+
+ 
+  
 }
 
-#articles_h3 {
-    text-align:center;
-    padding: 20px;
-    color: #0080FF;
-}
+
 
