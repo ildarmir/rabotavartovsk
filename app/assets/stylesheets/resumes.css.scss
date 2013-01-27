@@ -1,3 +1,64 @@
 // Place all the styles related to the Resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#resume_search {
+   
+    margin: 0 auto;
+    padding: 10px;
+    
+    #resume_table_result {
+      
+        font-size: 12px;
+        font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+        text-align: center;
+        
+        .resume_table_header {
+          color: #006699; 
+          text-align: center;
+          font-weight:bolder;          
+          border-bottom: 1px dotted;         
+          padding-top:10px;
+          padding-bottom:10px;
+        } 
+        
+        #resume_profession {
+            width:20%;
+        }
+        
+        #resume_notation {
+            width:15%;
+        }
+        
+        #resume_lengthOfService {
+            width:5%;
+        }
+        
+        #resume_earns {
+            width:10%;
+        }
+        
+        #resume_organisation {
+             width:20%;
+        }
+        
+        #resume_phone {
+             width:10%;
+        }
+        
+        #resume_dateOf {
+            width:10%;
+        }
+        
+        td {
+          border-bottom:1px solid #D7E1EC;
+          padding-top:3px;
+          padding-bottom:3px;          
+        }
+        
+        .resume_table_result_left {                     
+            text-align: left;
+            border-bottom:1px solid #D7E1EC;
+        }   
+    }   
+    
+}
