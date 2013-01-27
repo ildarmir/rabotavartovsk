@@ -1,37 +1,25 @@
-<h1>Listing vacancies</h1>
 
-<table>
-  <tr>
-    <th>Position</th>
-    <th>Note</th>
-    <th>Experience</th>
-    <th>Salary</th>
-    <th>Organisation</th>
-    <th>Phone</th>
-    <th>Date</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @vacancies.each do |vacancy| %>
-  <tr>
-    <td><%= vacancy.position %></td>
-    <td><%= vacancy.note %></td>
-    <td><%= vacancy.experience %></td>
-    <td><%= vacancy.salary %></td>
-    <td><%= vacancy.organisation %></td>
-    <td><%= vacancy.phone %></td>
-    <td><%= vacancy.date %></td>
-    <td><%= vacancy.email %></td>
-    <td><%= link_to 'Show', vacancy %></td>
-    <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
-    <td><%= link_to 'Destroy', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div id="vacancy_search">    
+        <table id='vacancy_table_result'>
+            <tr>
+                <td class='vacancy_table_header' id='vacancy_profession'>Profession</td>
+                <td class='vacancy_table_header' id='vacancy_notation'>Note</td>
+                <td class='vacancy_table_header' id='vacancy_lengthOfService'>Experience</td>
+                <td class='vacancy_table_header' id='vacancy_earns'>Salary</td>        
+                <td class='vacancy_table_header' id='vacancy_organisation'>Organisation</td>
+                <td class='vacancy_table_header' id='vacancy_phone'>Phone</td>
+                <td class='vacancy_table_header' id='vacancy_dateOf'>Adding date</td>
+            </tr>
+<% @vacancies.each do |t| %>
+           <tr>
+                <td class='vacancy_table_result_left'> <%= t.position %></td>
+                <td> <%= t.note %> </td>
+                <td> <%= t.experience %></td>
+                <td> <%= t.salary %></td>
+                <td> <%= t.organisation %></td>
+                <td> <%= t.phone %></td>
+                <td> <%= t.date %></td>
+            </tr>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Vacancy', new_vacancy_path %>
+        </table>
+</div>

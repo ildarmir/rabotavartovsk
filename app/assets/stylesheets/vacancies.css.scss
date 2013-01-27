@@ -1,3 +1,64 @@
 // Place all the styles related to the Vacancies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#vacancy_search {
+   
+    margin: 0 auto;
+    padding: 10px;
+    
+    #vacancy_table_result {
+        font-size: 12px;
+        font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+        text-align: center;
+        
+        .vacancy_table_header {
+          color: #006699; 
+          text-align: center;
+          font-weight:bolder;
+          font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+          border-bottom: 1px dotted;         
+          padding-top:10px;
+          padding-bottom:10px;
+        } 
+        
+        #vacancy_profession {
+            width:20%;
+        }
+        
+        #vacancy_notation {
+            width:15%;
+        }
+        
+        #vacancy_lengthOfService {
+            width:5%;
+        }
+        
+        #vacancy_earns {
+            width:10%;
+        }
+        
+        #vacancy_organisation {
+             width:20%;
+        }
+        
+        #vacancy_phone {
+             width:10%;
+        }
+        
+        #vacancy_dateOf {
+            width:10%;
+        }
+        
+        td {
+          border-bottom:1px solid #D7E1EC;
+          padding-top:3px;
+          padding-bottom:3px;          
+        }
+        
+        .vacancy_table_result_left {                     
+            text-align: left;
+            border-bottom:1px solid #D7E1EC;
+        }   
+    }   
+    
+}
