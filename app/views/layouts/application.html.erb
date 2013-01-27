@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rabotavartovsk</title>
+  <title>Работа в Нижневартовске: вакансии в Нижневартовске и резюме в Нижневартовске</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="feedback"><%= image_tag("feedback.png") %></div>
+<div id="main">    
+       
+	<div id="header">
+	    <div id="header_left">
+	        <a href='/'> <%= image_tag("logo_new1.jpg") %></a>
+	    </div>
+	    <div id="header_right"> <a href="/"><h1 class='header_text'>Работа в Нижневартовске, Работа, Вакансии</h1></a> 
+	    </div>
+	</div>   
+       
+	<div id="coolmenu">
+	<ul>
+	   <li><%= link_to "Главная", :controller => :index, :action => :index %></li>
+	   <li><%= link_to "Вакансии", vacancies_url %></li>
+	   <li><%= link_to "Search resume", resumes_url %></li>
+	   <li><%= link_to "Articles", articles_url %></li>
+	</ul>     
+	</div>
+     
+	<div id="content">
+		
+		<%= yield %>	
+	
+  		<div id="footer">        
+	        <div id="contact_menu">            
+	            <a href="http://www.city-nv.ru/">Powered By Web Service</a><br />
+	        </div>    
+	        <div id="footmenu">
+	              <div id="footmenu_main"> 
+	                  <span class="footer">
+	                        <a href='http://rabota-vartovsk.ru/index.php'>Главная</a> |
+	                        <a href='http://rabota-vartovsk.ru/index.php?vacancy'>Поиск вакансий</a> |
+	                        <a href='http://rabota-vartovsk.ru/index.php?resume'>Поиск сотрудников</a> |
+	                        <a href='http://rabota-vartovsk.ru/index.php?kurs'>Обучение</a> |
+	                        <a href='http://rabota-vartovsk.ru/index.php?articles'>Полезная информация</a>                      
+	                  </span>
+	              </div>
+	              <div id="add_text">
+	              <span class="footer_text_add">	        
+	                Copyright © <a href="http://www.rabota-vartovsk.ru" style="text-decoration:none; color:#000">"Работа в Нижневартовске"</a>.
+	                Перепечатка материалов без<br />
+	                разрешения <a href="http://www.rabota-vartovsk.ru" style="text-decoration:none; color:#000">"Работа в Нижневартовске"</a> запрещена 
+	              </span>
+	              </div>
+	                
+	        </div>
+	        <noindex>
+		        <div id="counters">
+		           <div id="feedbackwindow"></div>           
+		        </div>
+	        </noindex>
+    	</div>    
+	</div>
+</div>
 </body>
 </html>
