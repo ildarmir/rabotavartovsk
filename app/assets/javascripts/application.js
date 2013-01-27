@@ -17,4 +17,7 @@ $(document).ready(function(){
 	$( "#articles" ).accordion({
 		event: "mouseover"
 	});
+	
+	$( "#tabs" ).tabs();
+	
 });

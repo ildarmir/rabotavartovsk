@@ -1,3 +1,74 @@
 // Place all the styles related to the Index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin search_table {
+            border:0px;
+            width: 625px;
+            padding: 0px;
+            border-spacing: 0;
+            font-size:13px;
+            .tags {
+                width:500px;
+                background: white;    
+            }
+            
+            .search_table_button {
+              border: 1px solid #d3d3d3;
+              background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+              font-weight: normal;
+              color: #555555;
+              padding: .4em 1em;
+              display: inline-block;
+              position: relative;  
+              margin-right: .1em;
+              text-decoration: none !important;
+              cursor: pointer;
+              text-align: center;
+              zoom: 1;
+              overflow: hidden;
+              border-collapse: separate;
+              border-spacing: 2px;
+              border-color: gray;
+              border-radius: 5px; 
+              -moz-border-radius-bottomleft: 4px;
+              -webkit-border-radius: 4px;
+              -khtml-border-radius: 4px; 
+              &:hover {
+                  color:black;
+                  background: #d0d0d0 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+              }
+            } 
+        }
+
+#tabs {
+    padding-left: 40px;
+    width:700px;
+    border:0px; 
+    font-family: Verdana, Tahoma;  
+    
+    #vacancy {
+        background-color:#0085ea;
+        margin-left: 20px;
+        width:625px; 
+        border-radius: 0px 5px 5px 5px;
+        .search_table {
+            @include search_table;
+        }
+    }
+    #resume_index {
+        background-color:#0085ea;
+        margin-left: 20px;
+        width:625px; 
+        border-radius:  5px 5px 5px 5px;
+         .search_table {
+            @include search_table;
+        }
+      
+    }
+    
+    
+}
+
+
+

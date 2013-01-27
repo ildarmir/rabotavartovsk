@@ -1,1 +1,33 @@
-asd
+<%= form_for :search1 do |v| %>        
+<div id="left"> 
+	<div id="tabs">
+	            	<ul>
+	            		<li><a href="#vacancy">Vacancy</a></li>
+	            		<li><a href="#resume_index">Resume</a></li>
+	            	</ul>
+	                <div id="vacancy">
+	                    <table class="search_table">
+	                        <tr>
+	                        	<td><%= v.text_field :search,  :class => "tags", :placeholder =>"Введите название вакансии" %></td>
+	                        	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
+	
+	  </tr>
+	  <% end %>
+	                    </table> 
+	                </div>
+	                <%= form_for :search1 do |v| %>
+	           		<div id="resume_index">
+	                    <table  class="search_table">
+	                        <tr>
+	                         <td><%= v.text_field :search, :class => "tags", :placeholder =>"Введите ключевое слово в резюме" %></td>
+	                        	<td><%= v.submit "Поиск", :class => :search_table_button %></td>
+	                        </tr>
+	                    </table>
+	                </div>	            
+	</div>
+	<% end %>  
+
+</div>
+         
+<%= session %>
+           
