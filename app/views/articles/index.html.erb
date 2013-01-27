@@ -1,35 +1,17 @@
-<h1>Listing articles</h1>
+<h3 id='articles_h3'>Articles</h3>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Des</th>
-    <th>Text</th>
-    <th>View</th>
-    <th>Author</th>
-    <th>Mini img</th>
-    <th>Add time</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id='articles'> 
+<% @articles.each do |a| %>
+	 <h3 class='article_header'>
+	 	<%= link_to a.title, :action => :show, :id => a.id  %>
+	 </h3>
+	<div>
+		<%= link_to a.des, :action => :show, :id => a.id %><br /><br />
+		<span class='articles_addit_info'>Date: <%= a.add_time %></span>
+		<span class='articles_addit_info'>Views count: <%= a.view %></span>
+	</div>        
+	<% end %>
+</div>
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.des %></td>
-    <td><%= article.text %></td>
-    <td><%= article.view %></td>
-    <td><%= article.author %></td>
-    <td><%= article.mini_img %></td>
-    <td><%= article.add_time %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Article', new_article_path %>
