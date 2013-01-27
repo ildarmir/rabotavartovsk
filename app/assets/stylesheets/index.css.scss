@@ -2,18 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@mixin search_table {
-            border:0px;
-            width: 625px;
-            padding: 0px;
-            border-spacing: 0;
-            font-size:13px;
-            .tags {
-                width:500px;
-                background: white;    
-            }
-            
-            .search_table_button {
+@mixin button {
               border: 1px solid #d3d3d3;
               background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
               font-weight: normal;
@@ -38,6 +27,20 @@
                   color:black;
                   background: #d0d0d0 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
               }
+}
+
+@mixin search_table {
+            border:0px;
+            width: 625px;
+            padding: 0px;
+            border-spacing: 0;
+            font-size:13px;
+            .tags {
+                width:500px;
+                background: white;    
+            }            
+            .search_table_button {
+                @include button;
             } 
         }
 
@@ -120,6 +123,59 @@
 }
 
 
+#rightmenu {
+    width:200px; 
+    float:right;
+    position: absolute;
+    right:0px;
+    
+
+    #login {
+        margin: 10px auto;   
+        cursor:pointer;    
+        font-size:12px; 
+        width:130px;
+        
+        .loginSystem {
+            color: #0080FF;
+            &:hover {
+              text-decoration: underline;
+            }      
+        }
+    }  
+    #comein{
+        
+        font-size: 12px;
+        line-height: 180%;
+        margin: 0 auto;
+        padding:10px;
+        
+        #my_profile{
+            padding:10px; 
+            border:0px;
+            margin:0 auto; 
+            width:145px
+        }
+        
+        .login_button {
+          @include button;
+          margin-top: 3px;
+        }
+        
+        input {
+          margin:3px;
+        }
+        
+    }
+    
+    #advertise {
+        width:180px;
+        margin:0 auto;
+        height:400px; 
+        margin-top: 20px;
+    
+    }
+}
 
 
 
