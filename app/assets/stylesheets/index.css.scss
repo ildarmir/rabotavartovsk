@@ -43,6 +43,13 @@
                 @include button;
             } 
         }
+        
+@mixin vacancy_module_header {
+            text-decoration:none; 
+            font-weight:bold; 
+            font-size:14px;
+            text-align: center;
+}
 
 #tabs {
     padding-left: 40px;
@@ -83,10 +90,7 @@
     .popVac {
         padding-bottom: 10px;
         .vacancy_module_header {
-            text-decoration:none; 
-            font-weight:bold; 
-            font-size:14px;
-            text-align: center;
+            @include vacancy_module_header;
         }
     }
     .pop_vacancy ul li {
@@ -164,6 +168,7 @@
         
         input {
           margin:3px;
+          max-width: 130px;
         }
         
     }
@@ -176,6 +181,31 @@
     
     }
 }
+
+.city_company {
+    div {
+      margin: 0 auto;   
+      width: 600px;
+      padding: 10px;
+      .vacancy_module_header {
+        @include vacancy_module_header;
+      }
+      img{
+          padding: 10px;
+      }
+    }
+    #news_header {
+        font-weight: bold; 
+        padding:5px 
+    }
+    #news {
+      padding-left: 20px;
+    }
+}
+
+
+
+
 
 
 
