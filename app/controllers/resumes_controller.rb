@@ -14,7 +14,8 @@ class ResumesController < ApplicationController
   # GET /resumes/1.json
   def show
     @resume = Resume.find(params[:id])
-
+    @resume[:view] = @resume[:view] + 1
+    @resume.update_attributes(params[:view])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @resume }
@@ -41,7 +42,9 @@ class ResumesController < ApplicationController
   # POST /resumes.json
   def create
     @resume = Resume.new(params[:resume])
-
+    @resume[:date] = Time.now
+    @resume[:view] = 0
+    @resume[:avatar] = "avatars/noava.jpg";
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Resume was successfully created.' }

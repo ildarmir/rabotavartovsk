@@ -1,6 +1,36 @@
 // Place all the styles related to the Resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin button {
+              border: 1px solid #d3d3d3;
+              background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+              font-weight: normal;
+              color: #555555;
+              font-size:14px;
+              padding: .4em 1em;
+              display: inline-block;
+              position: relative;  
+              margin-right: .1em;
+              text-decoration: none !important;
+              cursor: pointer;
+              text-align: center;
+              zoom: 1;
+              overflow: hidden;
+              border-collapse: separate;
+              border-spacing: 2px;
+              border-color: gray;
+              border-radius: 5px; 
+              -moz-border-radius-bottomleft: 4px;
+              -webkit-border-radius: 4px;
+              -khtml-border-radius: 4px; 
+              &:hover {
+                  color:black;
+                  background: #d0d0d0 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+              }
+}
+
+
 #resume_search {
    
     margin: 0 auto;
@@ -59,6 +89,214 @@
             text-align: left;
             border-bottom:1px solid #D7E1EC;
         }   
-    }   
-    
+    }       
 }
+
+
+
+#regsWindow {
+    font-size: 11px; overflow:hidden;
+    width:80%;
+    margin:0px auto;
+    #left_reg {
+        width: 250px; 
+        float:left; 
+        border:0px; 
+        table {
+          border-spacing:12px;
+        }
+    }
+    
+    #reg_right {
+        width: 450px; 
+        float:right;
+        margin-right:40px; 
+        right:40px;
+    }
+    .symbols_left {
+        font-size:9px; color:#999;
+    }
+    .reg_textarea {
+        width: 450px;
+    }
+    .reg_pad {
+        padding-top: 15px;
+    }
+    #footerOfreg {
+        position: relative; 
+        padding-top:10px; 
+        height:100px;
+    }
+    #telefonNumber {
+        position:absolute;    
+        input { 
+          width:180px; 
+        }
+    }
+    #gorodName {
+        left:220px; 
+        position: absolute;
+        input { 
+          width:180px; 
+        }
+        
+    }
+    #redField {
+        display: none;
+    }
+    .border_updown_div {
+      clear:both;
+      border-top:1px solid gray;
+      padding:10px;
+    }
+    
+    .resumeSubmitButton {  
+      margin-bottom: 20px;
+      @include button;
+    }
+}
+
+
+
+
+
+
+#resumeTable {
+    border:0px;
+    width:900px;
+    vertical-align:top;
+}
+#showNewVac {
+    padding-left:15px;
+}
+#showResume {
+    padding-left:20px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    #doljnost {
+      font-size: 24px;
+      font-weight:bolder;
+    }
+    div.resume_data_contact  {
+      padding: 7px 0px;
+      font-size:12px;
+    }
+    .resume_podheaders { 
+      font-size:9px; 
+      color:#999;
+      margin-top:20px;
+    }
+    .resume_headers { 
+        font-size:16px; 
+        font-weight:bold;
+        color: #000375;
+        padding:20px 0px; 
+    }
+    .resumeTable {
+      border: 0px solid black;
+      
+      .resVac_add { 
+          font-size:12px; 
+          color:#666; 
+          width:30%; 
+          text-align:left;
+          line-height:150%;
+      }
+      .resVac_data {
+          font-weight: bolder;
+          font-size:12px;
+          color: #2E6D83;
+      }
+      #rightBlockResumeTable {
+          width:300px;
+      }
+
+    }
+    .resume_dannie { 
+      font-size:12px; 
+      line-height:100%; 
+      width:80% 
+    }
+
+}
+
+#leftBlockResumeTable {
+    width:150px;
+}
+#centralBlockResumeTable {
+    width:450px;
+}
+
+#goToMyProfile {
+    width:133px;
+    height:51px; 
+    background-image:url(../images/view_profile.png); 
+    float:right;margin-right:20px;
+    margin-bottom:20px;
+}
+#osebe {
+    font-size:12px;
+}
+#naviki {
+    font-size:12px;
+}
+.change_foto {
+    background-image: url('../images/change_foto.png');
+    width: 102px;
+    height:28px;
+    border:0px;
+    cursor: pointer;
+    float:inherit;
+}
+
+
+.buttonText {
+  font: 18px/1.5 Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+ 
+a.buttonText {
+  color: #fff;
+  text-decoration: none;
+}
+#button2 {
+  background: #d11717;
+  border: 2px solid #eee;
+  height: 38px;
+  width: 125px;
+  margin: 0 0 0 0;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  line-height: 38px;
+  float:left;
+  margin-left: 10px;
+  
+/*закругленные углы*/
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+ 
+  /*градиент*/
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+ 
+  /*тень*/
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+}
+#button2:hover {
+  background-color: #ff3434;
+}
+
+

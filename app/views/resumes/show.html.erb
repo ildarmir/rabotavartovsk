@@ -1,105 +1,125 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+	<h3 id="notice"><%= notice %></h3>
+<% end %>
 
-<p>
-  <b>Login:</b>
-  <%= @resume.login %>
-</p>
+<div id='showResume'>
+    <div id='doljnost' ><%= @resume.position %>
+      <% if (session[:group_id] == 2 || session[:user_id] == @resume.id) %>
+      <div style="float:right; padding-right: 20px;">
+           <%= link_to "Edit", {:controller => :resumes, :action => :edit, :id => @resume.id} ,:id => "button2" , :class => "buttonText" %>
+           <%= link_to "Delete", {:controller => :resumes, :action => :destroy, :id => @resume.id}, :method=> :delete, :id => "button2", :class => "buttonText" %>
+       
+      </div>
+      <% end %>
+    </div>           
+         
+    <div class='resume_podheaders'>Дата заполнения <%= @resume.date.strftime("%d.%m.%Y") %>,  Количество просмотров: <%= @resume.view %></div>
+    <p class='resume_headers'>Информация о соискателе</p>
+    <table id='resumeTable'>    
+        <tr>
+            <td class='resVac_add' id='leftBlockResumeTable'>
+            	Имя 
+            </td>
+            <td class='resVac_data' id='centralBlockResumeTable'>
+            	<div id='imya'> <%= @resume.name %></div>            
+            </td>
+            <td rowspan='8' id='rightBlockResumeTable'>
+            	<%= link_to image_tag(@resume.avatar, :border => 0) %>                 
+       		</td>
+       </tr>
+        <tr>
+            <td class='resVac_add'>Пол</td>
+            <td class='resVac_data'>
+            
+            <div id='pol'><%= @resume.sex %></div>
+            
+           </td>
+        </tr> 
+        <tr>
+            <td class='resVac_add'>Возраст</td>
+            <td class='resVac_data'>
+            
+            <div id='vozrast'> <%= @resume.age %></div>
+            
+            </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'>Стаж</td>
+            <td class='resVac_data'>
+            <div id='staj'> <%= @resume.experience %></div>
+            
+          </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'>Город</td>
+            <td class='resVac_data'>
+            <div id='gorod'> <%= @resume.city %></div>
+            
+            </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'>Минимальная зарплата</td>
+            <td class="resVac_data">
+            
+            <div id='min_zarplata'>  <%= @resume.min_wage %></div>
+            
+           </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'>График</td>
+            <td class='resVac_data'>
+            <div id='grafik'> <%= @resume.schedule %></div>
+            
+          </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'></td>
+            <td class='resVac_data'>
+            </td>
+            <td>
+           
+           
+         
+            </td>
+        </tr>
+        <tr>
+            <td class='resVac_add'></td>
+            <td class='resVac_data'>
+            </td>
+            <td>      
+            </td>
+        </tr>
+        
+    </table>       
 
-<p>
-  <b>Password:</b>
-  <%= @resume.password %>
-</p>
+    <p class='resume_headers'>
+    	Образование
+    </p>
+    <p class='resume_dannie'>
+    	<div id='obrazovanie'><%= @resume.education %></div>            
+    </p>
+    <p class='resume_headers'>
+    	Профессиональные навыки и опыт работы
+    </p>
+    <p class='resume_dannie'>
+    	<div id='naviki'><%= @resume.skills %></div>           
+    </p>
+    <p class='resume_headers'>
+    	О себе
+    </p>
+    <p class='resume_dannie'>
+    	<div id='osebe'><%= @resume.about %></div>            
+    </p>
+    <p class='resume_headers'>
+    	Контактная информация
+    </p>
+    <div class='resume_data_contact'>
+    	Телефон: <span id='telefon'><%= @resume.phone %></span>            
+    </div>
+    <div class='resume_data_contact'>
+    	E-mail: <span id='email'><%= @resume.email %></span>            
+    </div>
+</div>
 
-<p>
-  <b>Position:</b>
-  <%= @resume.position %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @resume.name %>
-</p>
-
-<p>
-  <b>Sex:</b>
-  <%= @resume.sex %>
-</p>
-
-<p>
-  <b>Mar status:</b>
-  <%= @resume.mar_status %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%= @resume.age %>
-</p>
-
-<p>
-  <b>Experience:</b>
-  <%= @resume.experience %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @resume.city %>
-</p>
-
-<p>
-  <b>Min wage:</b>
-  <%= @resume.min_wage %>
-</p>
-
-<p>
-  <b>Schedule:</b>
-  <%= @resume.schedule %>
-</p>
-
-<p>
-  <b>Skills:</b>
-  <%= @resume.skills %>
-</p>
-
-<p>
-  <b>Education:</b>
-  <%= @resume.education %>
-</p>
-
-<p>
-  <b>About:</b>
-  <%= @resume.about %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @resume.phone %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @resume.email %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @resume.date %>
-</p>
-
-<p>
-  <b>View:</b>
-  <%= @resume.view %>
-</p>
-
-<p>
-  <b>Avatar:</b>
-  <%= @resume.avatar %>
-</p>
-
-<p>
-  <b>Group:</b>
-  <%= @resume.group_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_resume_path(@resume) %> |
-<%= link_to 'Back', resumes_path %>
+<!--<%= @resume %><%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>-->
