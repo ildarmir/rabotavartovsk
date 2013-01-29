@@ -7,7 +7,9 @@ Rabotavartovsk::Application.routes.draw do
 
   resources :vacancies
 
-
+  post "session/create" => "session#create"
+  
+  get "session/destroy" => "session#destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

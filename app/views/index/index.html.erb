@@ -4,10 +4,10 @@
 		<span class="loginSystem" id="log_in">Вход</span> | <span class="loginSystem" id="registration" reg='true'><%= link_to "Регистрация", :controller => :resumes, :action => :new %></span>
 	</div>	 
 	<div id="comein">	
-		<%= form_tag :url => { :controller => :session, :action => :create} do %> 
+		<%= form_tag ("/session/create") do %> 
 		<br />
 		<p>
-			<%= text_field_tag :username, params[:username], :placeholder =>"Enter login" %>
+			<%= text_field_tag :login, params[:login], :placeholder =>"Enter login" %>
 		</p>	    
 		<p>
 			<%= password_field_tag :password, params[:password], :placeholder =>"Enter password" %>
