@@ -3,7 +3,7 @@
 <div id="newVacForm"><table id="newVac_table">
 	
 <tr><td id="profession-label"><%= f.label :position, :class => "resVac_data required" %></td>
-<td class="element"><%= f.text_field :position, :size => "60", :maxlength => "100" %></td>
+<td class="element"><%= f.text_field :position, :size => "60", :maxlength => "100", :required => true %></td>
 </tr>
 
 
@@ -28,7 +28,7 @@
 
 <tr><td id="phone-label"><%= f.label :phone, :class => "resVac_data required" %></td>
 <td class="element">
-<%= f.text_field :phone, :size => "60", :maxlength => "100" %></td></tr>
+<%= f.text_field :phone, :size => "60", :maxlength => "100", :required => true %></td></tr>
 
 
 

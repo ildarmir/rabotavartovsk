@@ -103,4 +103,41 @@
     margin:10px;
     margin-left:20px;
     @include button;
- }
+}
+ 
+#showNewVac {
+    padding-left:15px;    
+    #newVac {
+      padding:20px;  
+      font-size:25px; 
+      font-weight: bold; 
+      color:#333; 
+      text-align:left;
+    }
+    #demands {
+      padding:10px 20px; 
+      text-align:left
+    }
+    #newVac_table {
+      width:800px;
+      padding-left:40px;
+      text-align:left;
+      margin-bottom:30px;
+    }
+
+}
+
+
+
+.resVac_add { 
+    font-size:12px; 
+    color:#666; 
+    width:30%; 
+    text-align:left;
+    line-height:150%;
+}
+.resVac_data {
+    font-weight: bolder;
+    font-size:12px;
+    color: #2E6D83;
+}

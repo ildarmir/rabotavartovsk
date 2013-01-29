@@ -40,8 +40,9 @@ class VacanciesController < ApplicationController
   # POST /vacancies
   # POST /vacancies.json
   def create
+    
     @vacancy = Vacancy.new(params[:vacancy])
-
+    @vacancy[:date] = Time.now
     respond_to do |format|
       if @vacancy.save
         format.html { redirect_to @vacancy, notice: 'Vacancy was successfully created.' }

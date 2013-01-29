@@ -1,45 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Position:</b>
-  <%= @vacancy.position %>
-</p>
-
-<p>
-  <b>Note:</b>
-  <%= @vacancy.note %>
-</p>
-
-<p>
-  <b>Experience:</b>
-  <%= @vacancy.experience %>
-</p>
-
-<p>
-  <b>Salary:</b>
-  <%= @vacancy.salary %>
-</p>
-
-<p>
-  <b>Organisation:</b>
-  <%= @vacancy.organisation %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @vacancy.phone %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @vacancy.date %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @vacancy.email %>
-</p>
 
 
-<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
-<%= link_to 'Back', vacancies_path %>
+
+<div id='showNewVac'>
+	<h3 id="notice"><%= notice %></h3>
+	<div id='newVac'>
+		<%= @vacancy.position %>
+	</div>
+	
+	<h5 id='demands'>Условия и требования: </h5>
+	
+	
+	<table id='newVac_table'>
+	  <tr>
+	    <td class='resVac_add' >Минимальная зарплата</td>
+	    <td class='resVac_data'><%= @vacancy.salary %></td>
+	  </tr>
+	  <tr>
+	    <td class='resVac_add'>Стаж</td>
+	    <td class='resVac_data'> <%= @vacancy.salary %> </td>
+	  </tr>
+	  <tr>
+	    <td class='resVac_add'>Организация</td>
+	    <td class='resVac_data'> <%= @vacancy.organisation %> </td>
+	  </tr>
+	  <tr>
+	    <td class='resVac_add'>Телефон</td>
+	    <td class='resVac_data'> <%= @vacancy.phone %></td>
+	  </tr>
+	  <tr>
+	    <td class='resVac_add'>Примечание</td>
+	    <td class='resVac_data'> <%= @vacancy.note %></td>
+	  </tr>
+	    <tr>
+	    <td class='resVac_add'>Дата внесения</td>
+	    <td class='resVac_data'><%= @vacancy.date.strftime("%d.%m.%Y") %></td>
+	  </tr>
+	</table>
+
+
+</div>
+<% if session[:group_id] == 2 %>
+<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> 
+<% end %>
+<!--	|
+<%= link_to 'Back', vacancies_path %>-->
