@@ -1,11 +1,14 @@
 <div id="rightmenu">
-	<div id="login">
+
+	<div id="login">		
 		<% if session[:user_id].nil? %>
 		<span class="loginSystem" id="log_in">Вход</span> | <span class="loginSystem" id="registration" reg='true'><%= link_to "Регистрация", :controller => :resumes, :action => :new %></span>
 	</div>	 
 	<div id="comein">	
 		<%= form_tag ("/session/create") do %> 
-		<br />
+			<% if flash[:error] %>
+				<h4 class="login_error"><%=  flash[:error] %></h4>
+			<% end %>
 		<p>
 			<%= text_field_tag :login, params[:login], :placeholder =>"Enter login" %>
 		</p>	    

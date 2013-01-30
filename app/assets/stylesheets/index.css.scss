@@ -132,13 +132,20 @@
     float:right;
     position: absolute;
     right:0px;
+    //border:1px solid black;
     
+    .login_error {
+          color: red;
+          padding: 5px;
+          font-size: 13px;
+     }
 
     #login {
         margin: 10px auto;   
         cursor:pointer;    
         font-size:12px; 
         width:130px;
+        //border:1px solid black;
         
         .loginSystem {
             color: #0080FF;

@@ -2,7 +2,7 @@ class SessionController < ApplicationController
   def new
   end
 
-  def create
+  def create    
     user = Resume.find_by_login(params[:login])    
     if user and user[:password] == params[:password]
       session[:user_id] = user[:id]
@@ -11,7 +11,9 @@ class SessionController < ApplicationController
       session[:group_id] = user.group_id
       redirect_to :controller => :index, :action => :index
     else
-      redirect_to :controller => :resume, :action => :new, alert: "Invalid user/password combination"    
+      redirect_to :back, :flash => { :error => "Login or password are incorrect" }
+      #redirect_to :controller => "index", :action => "index", notice: 'Resume was successfully created.'
+      #redirect_to :controller => :index, :action => :index, alert: "Invalid user/password combination"    
     end
   end
 
