@@ -4,4 +4,13 @@ class Vacancy < ActiveRecord::Base
   validates :position, :presence => true
   
   validates :phone, :presence => true
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['position LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end

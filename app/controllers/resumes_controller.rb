@@ -21,6 +21,14 @@ class ResumesController < ApplicationController
       format.json { render json: @resume }
     end
   end
+  
+  def search     
+    @resumes = Resume.search(params[:search])    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @vacancies }
+    end    
+  end
 
   # GET /resumes/new
   # GET /resumes/new.json

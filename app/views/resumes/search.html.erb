@@ -1,0 +1,25 @@
+
+<div id="resume_search">    
+        <table id='resume_table_result'>
+            <tr>
+                <td class='resume_table_header' id='resume_profession'>Position</td>
+                <td class='resume_table_header' id='resume_notation'>Salary</td>
+                <td class='resume_table_header' id='resume_lengthOfService'>Experience</td>
+                <td class='resume_table_header' id='resume_earns'>Name</td>        
+                <td class='resume_table_header' id='resume_organisation'>City</td>
+                <td class='resume_table_header' id='resume_phone'>Date</td>
+                <td class='resume_table_header' id='resume_dateOf'>Age</td>
+            </tr>
+<% @resumes.each do |t| %>
+           <tr>
+                <td class='resume_table_result_left'> <%= t.position %></td>
+                <td> <%= t.min_wage %> </td>
+                <td> <%= t.experience %></td>
+                <td> <%= t.name %></td>
+                <td> <%= t.city %></td>
+                <td> <%= t.date %></td>
+                <td> <%= t.age %></td>
+            </tr>
+<% end %>
+        </table>
+</div>

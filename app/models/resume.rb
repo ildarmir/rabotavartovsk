@@ -19,5 +19,14 @@ validates :password, :confirmation => true,
                        :length => {:within => 1..40},
                        :allow_blank => true,
                        :on => :update
-                                              
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['position LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
+                               
 end

@@ -20,12 +20,22 @@ class VacanciesController < ApplicationController
       format.json { render json: @vacancy }
     end
   end
+  
+  def search 
+    
+    @vacancies = Vacancy.search(params[:search])
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @vacancies }
+    end
+    
+  end
 
   # GET /vacancies/new
   # GET /vacancies/new.json
   def new
     @vacancy = Vacancy.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @vacancy }
