@@ -31,7 +31,14 @@
             <td class='resVac_add'>Пол</td>
             <td class='resVac_data'>
             
-            <div id='pol'><%= @resume.sex %></div>
+            <div id='pol'>
+            	<% if (@resume.sex == '1') %>
+            		мужской
+            	<% end %>
+            	<% if (@resume.sex == '2') %>            	
+            		женский            	
+            	<% end %>
+            </div>
             
            </td>
         </tr> 
@@ -68,7 +75,16 @@
         <tr>
             <td class='resVac_add'>График</td>
             <td class='resVac_data'>
-            <div id='grafik'> <%= @resume.schedule %></div>
+            <div id='grafik'> 
+            	<% if (@resume.schedule == '1') %>
+            		полный
+            	<% end %>
+            	<% if (@resume.schedule == '2') %>            	
+            		сменный            	
+            	<% end %>
+            	
+            
+            </div>
             
           </td>
         </tr>

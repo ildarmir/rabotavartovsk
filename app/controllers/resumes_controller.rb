@@ -26,7 +26,6 @@ class ResumesController < ApplicationController
   # GET /resumes/new.json
   def new
     @resume = Resume.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @resume }
@@ -45,6 +44,9 @@ class ResumesController < ApplicationController
     @resume[:date] = Time.now
     @resume[:view] = 0
     @resume[:avatar] = "avatars/noava.jpg";
+    if @resume[:password].nil?
+      @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
+    end
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
@@ -60,7 +62,6 @@ class ResumesController < ApplicationController
   # PUT /resumes/1.json
   def update
     @resume = Resume.find(params[:id])
-
     respond_to do |format|
       if @resume.update_attributes(params[:resume])
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }

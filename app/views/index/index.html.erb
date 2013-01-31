@@ -22,10 +22,11 @@
 		<% else %>		
 		<div id='my_profile'>
 			<%= link_to "My profile", :controller => :resumes, :action => :show, :id => session[:user_id] %> | <%= link_to "Exit", :controller => :session, :action => :destroy %><br /><br />		
-			You logged in as <strong><%= session[:username] %></strong><br />
+			You logged in as <strong><%= session[:login] %></strong><br />
 			Your foto:<br><br>
 			<div style='position:relative; left:22px;right:22px'>
-				<img alt='' src='' class='img_reg_form' style='max-width:100px; max-height:100px;'>			
+				<%= link_to image_tag(session[:avatar], :border => 0),{ :controller => :resumes, :action => :show, :id => session[:user_id] }, :class => 'img_reg_form' %> 
+				  		
 			</div>		
 		</div>
 		<% end %>

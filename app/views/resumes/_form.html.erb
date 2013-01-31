@@ -20,11 +20,11 @@
 	            <table>
 	                <tr>
 	                	<td>Ваш логин:</td>
-	                	<td><%= f.text_field :login, :size => "15", :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField", :required => true %></td>
+	                	<td><%= f.text_field :login, :size => "15", :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
 	                </tr>
 	                <tr>
 	                	<td>Ваш пароль:</td>
-	                	<td> <%= f.password_field :password, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField", :required => true %></td>
+	                	<td> <%= f.password_field :password, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
 	                </tr>
 	                <tr>
 	                	<td>Ваш E-mail:</td>
@@ -32,7 +32,7 @@
 	                </tr>
 	                <tr>
 	                	<td>Должность:</td>
-	                	<td><%= f.text_field :position, :size => "15", :maxlength => "25", :placeholder => "Желаемая должность", :id => "doljnostField", :required => true %></td>
+	                	<td><%= f.text_field :position, :size => "15", :maxlength => "25", :placeholder => "Желаемая должность", :id => "doljnostField" %></td>
 	                </tr>
 	                <tr>
 	                	<td>Ваше имя:</td>
@@ -83,7 +83,7 @@
 	        
 	        <div id="footerOfreg">
 	            <div id="telefonNumber">Введите телефон:<br />
-	               <%= f.text_field :phone, :required => true %>
+	               <%= f.text_field :phone %>
 	            </div>
 	            <div  id="gorodName">Город:<br />
 	                <%= f.text_field :city %>

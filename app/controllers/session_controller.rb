@@ -3,8 +3,10 @@ class SessionController < ApplicationController
   end
 
   def create    
-    user = Resume.find_by_login(params[:login])    
-    if user and user[:password] == params[:password]
+    user = Resume.find_by_login(params[:login])
+    #user_pass = Digest::MD5.hexdigest(user[:password])    
+    params_pass = Digest::MD5.hexdigest(params[:password])    
+    if user and user[:password] == params_pass
       session[:user_id] = user[:id]
       session[:login] = user.login
       session[:avatar] = user.avatar
