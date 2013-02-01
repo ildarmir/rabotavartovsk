@@ -7,7 +7,7 @@ class CreateVacancies < ActiveRecord::Migration
       t.string :salary
       t.string :organisation
       t.string :phone
-      t.integer :date
+      t.timestamp :date
       t.string :email
 
       t.timestamps

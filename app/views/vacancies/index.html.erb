@@ -18,7 +18,7 @@
                 <td> <%= t.salary %></td>
                 <td> <%= t.organisation %></td>
                 <td> <%= t.phone %></td>
-                <td> <%= t.date %></td>
+                <td> <%= t.date.strftime("%d.%m.%Y") %></td>
             </tr>
 <% end %>
         </table>

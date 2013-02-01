@@ -17,7 +17,7 @@ class CreateResumes < ActiveRecord::Migration
       t.text :about
       t.string :phone
       t.string :email
-      t.string :date
+      t.timestamp :date
       t.integer :view
       t.string :avatar
       t.integer :group_id, :default => 1

@@ -2,7 +2,7 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.all
+    @resumes = Resume.order("id")
 
     respond_to do |format|
       format.html # index.html.erb
