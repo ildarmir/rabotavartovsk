@@ -26,7 +26,7 @@ class ResumesController < ApplicationController
     @resumes = Resume.search(params[:search])    
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @vacancies }
+      format.json { render json: @resume }
     end    
   end
 

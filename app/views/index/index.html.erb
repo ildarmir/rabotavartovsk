@@ -48,7 +48,7 @@
     		<li><a href="#resume_index">Resume</a></li>
     	</ul>
         <div id="vacancy">
-        	<%= form_tag  :controller => "vacancies", :action => "search" ,:method => "get" do %>   
+        	<%= form_tag ("/vacancies/search" ),:method => "get" do %>   
             <table class="search_table">
                 <tr>
                 	<td><%= text_field_tag :search, params[:search], :class => "tags", :placeholder =>"Введите ключевое слово в резюме" %></td>
@@ -59,7 +59,7 @@
         	<% end %>
         </div>	                
    		<div id="resume_index">
-   			<%= form_tag  :controller => "resumes", :action => "search" ,:method => "get"  do %>
+   			<%= form_tag  ("/resumes/search" ),:method => "get"  do %>
             <table  class="search_table">
                 <tr>
                  <td><%= text_field_tag :search, params[:search], :class => "tags", :placeholder =>"Введите ключевое слово в резюме" %></td>

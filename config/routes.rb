@@ -1,6 +1,7 @@
 Rabotavartovsk::Application.routes.draw do
   resources :articles
-
+  get "resumes/search" => "resumes#search"
+  get "vacancies/search" => "vacancies#search"
 
   resources :resumes
 
@@ -11,9 +12,8 @@ Rabotavartovsk::Application.routes.draw do
   
   get "session/destroy" => "session#destroy"
   
-  post "vacancies/search" => "vacancies#search"
   
-  post "resumes/search" => "resumes#search"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

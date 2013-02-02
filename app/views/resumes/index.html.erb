@@ -6,9 +6,9 @@
                 <td class='resume_table_header' id='resume_notation'>Salary</td>
                 <td class='resume_table_header' id='resume_lengthOfService'>Experience</td>
                 <td class='resume_table_header' id='resume_earns'>Name</td>        
-                <td class='resume_table_header' id='resume_organisation'>City</td>
-                <td class='resume_table_header' id='resume_phone'>Date</td>
+                <td class='resume_table_header' id='resume_organisation'>City</td>               
                 <td class='resume_table_header' id='resume_dateOf'>Age</td>
+                <td class='resume_table_header' id='resume_phone'>Date</td>
             </tr>
 <% @resumes.each do |t| %>
            <tr>
@@ -16,9 +16,9 @@
                 <td> <%= t.min_wage %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.name %></td>
-                <td> <%= t.city %></td>
-                <td> <%= t.date.strftime("%d.%m.%Y") %></td>
+                <td> <%= t.city %></td>               
                 <td> <%= t.age %></td>
+                <td> <%= t.date.strftime("%d.%m.%Y") %></td>
             </tr>
 <% end %>
         </table>
