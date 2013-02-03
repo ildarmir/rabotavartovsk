@@ -15,17 +15,18 @@
 	
 	    </div>
 	  <% end %>
-	    <div id="left_reg">        
-	        <form action="save_user.php" method="post" enctype="multipart/form-data" >        
+	    <div id="left_reg">
 	            <table>
 	                <tr>
 	                	<td>Ваш логин:</td>
 	                	<td><%= f.text_field :login, :size => "15", :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
 	                </tr>
+	                <% if (f.object.new_record?) %>
 	                <tr>
 	                	<td>Ваш пароль:</td>
 	                	<td> <%= f.password_field :password, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
 	                </tr>
+	                <% end %>
 	                <tr>
 	                	<td>Ваш E-mail:</td>
 	                	<td><%= f.text_field :email, :maxlength => "15", :placeholder => "Ваш E-mail", :id => "emailField" %></td>
