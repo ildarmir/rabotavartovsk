@@ -1,1 +1,3 @@
 Rabotavartovsk project
+
+firstly need to install rmagick in he system. then http://railscasts.com/episodes/253-carrierwave-file-uploads
