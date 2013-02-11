@@ -18,6 +18,32 @@ $(document).ready(function(){
 		event: "mouseover"
 	});
 	
-	$( "#tabs" ).tabs();
-	
+	$( "#tabs" ).tabs();	
 });
+
+function Expand (options) {
+	this._elem = options.elem;		
+}
+
+Expand.prototype = {
+	open : function () {
+		this._elem.className = "open";	
+	},
+	close : function () {
+		this._elem.className = "close";
+	},
+	check : function () {
+
+	    var comInClassName = this._elem.className;
+	   
+	    if (comInClassName == "open"){
+	      this.close();
+	    }
+	    if (comInClassName == "close"){
+	      this.open();
+	    }
+    }
+}
+
+
+

@@ -155,4 +155,10 @@ h3 {
 }
 
 
+.open {
+    display: block;
+}
 
+.close {
+    display: none;
+}

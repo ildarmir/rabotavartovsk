@@ -4,7 +4,7 @@
 		<% if session[:user_id].nil? %>
 		<span class="loginSystem" id="log_in">Вход</span> | <span class="loginSystem" id="registration" reg='true'><%= link_to "Регистрация", :controller => :resumes, :action => :new %></span>
 	</div>	 
-	<div id="comein">	
+	<div id="comein" class="close">	
 		<%= form_tag ("/session/create") do %> 
 			<% if flash[:error] %>
 				<h4 class="login_error"><%=  flash[:error] %></h4>
@@ -152,6 +152,19 @@
 		</div>
 	</div>
 </div>
+          <script>
+          var log_in = document.getElementById("log_in");
+          var comein = document.getElementById("comein");
+
+          var enter = new Expand({ elem : comein });
+
+          log_in.addEventListener('click', enter.check.bind(enter), false);
+
+          // log_in.onclick = enter.check;
+
+          
+          
          
+         </script>
 <%= session %>
            

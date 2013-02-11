@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(:version => 20130126185457) do
     t.text     "about"
     t.string   "phone"
     t.string   "email"
-    t.string   "date"
+    t.datetime "date"
     t.integer  "view"
     t.string   "avatar"
-    t.integer  "group_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "group_id",   :default => 1
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "vacancies", :force => true do |t|
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20130126185457) do
     t.string   "salary"
     t.string   "organisation"
     t.string   "phone"
-    t.integer  "date"
+    t.datetime "date"
     t.string   "email"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
