@@ -9,6 +9,7 @@
                 <td class='resume_table_header' id='resume_organisation'>City</td>               
                 <td class='resume_table_header' id='resume_dateOf'>Age</td>
                 <td class='resume_table_header' id='resume_phone'>Date</td>
+                <td></td>
             </tr>
 <% @resumes.each do |t| %>
            <tr>
@@ -19,7 +20,41 @@
                 <td> <%= t.city %></td>               
                 <td> <%= t.age %></td>
                 <td> <%= t.date.strftime("%d.%m.%Y") %></td>
+                <td class="show" id='<%= t.id %>' style="cursor:pointer">
+                <% if !t.skills.empty? %>
+                   Быстрый<br />
+                   просмотр
+                <% end %>
+                </td>
             </tr>
+            <% if !t.skills.empty? %>
+            <tr   style="border: 1px solid black; background: #aff8ff " id="show_<%= t.id %>" class="close">
+                <td colspan="8"   style="border: 0px solid black;display:table-cell">
+                    <%= t.skills %>
+                </td>
+             
+                
+            </tr>
+            <% end %>
 <% end %>
         </table>
 </div>
+
+<script>
+    //Collect our show buttons
+    var showClass = document.getElementsByClassName("show");    
+    //Stick handlers for every button
+    for (var i = 0; i < showClass.length; i++) {                
+        showClass[i].addEventListener('click',   showA , true);
+    };   
+    //show function for every button
+    function showA () {     
+        var a = this.id;        
+        
+        var show = document.getElementById("show_" + a);
+        var showSoughtForTr = new Expand({ elem : show, openClassName : "open_table_row" });
+        showSoughtForTr.check();
+        
+    }
+   
+</script>

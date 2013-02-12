@@ -159,6 +159,10 @@ h3 {
     display: block;
 }
 
+.open_table_row {
+    display: table-row;
+}
+
 .close {
     display: none;
 }

@@ -20,30 +20,63 @@ $(document).ready(function(){
 	
 	$( "#tabs" ).tabs();	
 });
-
+//Open close element
 function Expand (options) {
-	this._elem = options.elem;		
+	this._elem = options.elem;	
+	this._openClassName = options.openClassName || "open";
 }
 
 Expand.prototype = {
 	open : function () {
-		this._elem.className = "open";	
+		
+		removeClass(this._elem, "close")
+		addClass(this._elem, this._openClassName);	
 	},
 	close : function () {
-		this._elem.className = "close";
+
+		addClass(this._elem, "close");	
+		removeClass(this._elem, this._openClassName)
+		
 	},
 	check : function () {
+		if (this._elem) {
 
-	    var comInClassName = this._elem.className;
-	   
-	    if (comInClassName == "open"){
-	      this.close();
-	    }
-	    if (comInClassName == "close"){
-	      this.open();
-	    }
+		    if (hasClass(this._elem, this._openClassName)){
+		    	// alert("da");
+		      this.close();
+		    }
+		    else {
+		    	// alert("uu");
+		      this.open();
+		    }
+		}
     }
 }
 
 
 
+
+function addClass(el, cls) { 
+  var c = el.className.split(' ');
+  for (var i=0; i<c.length; i++) {
+    if (c[i] == cls) return;
+  }
+  c.push(cls);
+  el.className = c.join(' ');
+}
+
+function removeClass(el, cls) {
+  var c = el.className.split(' ');
+  for (var i=0; i<c.length; i++) {
+    if (c[i] == cls) c.splice(i--, 1);
+  }
+
+  el.className = c.join(' ');
+}
+
+function hasClass(el, cls) {
+  for (var c = el.className.split(' '),i=c.length-1; i>=0; i--) {
+    if (c[i] == cls) return true;
+  }
+  return false;
+}
