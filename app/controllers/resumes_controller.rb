@@ -51,7 +51,9 @@ class ResumesController < ApplicationController
     @resume = Resume.new(params[:resume])
     @resume[:date] = Time.now
     @resume[:view] = 0
-    @resume[:avatar] = "avatars/noava.jpg";
+    #if !@resume[:avatar].nil?
+      #@resume[:avatar] = "avatars/noava.jpg";
+    # end
     if !@resume[:password].nil?
       @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
     end

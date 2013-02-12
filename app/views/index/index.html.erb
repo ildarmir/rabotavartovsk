@@ -25,7 +25,7 @@
 			You logged in as <strong><%= session[:login] %></strong><br />
 			Your foto:<br><br>
 			<div style='position:relative; left:22px;right:22px'>
-				<%= link_to image_tag(session[:avatar], :border => 0),{ :controller => :resumes, :action => :show, :id => session[:user_id] }, :class => 'img_reg_form' %> 
+				<%= link_to image_tag(session[:avatar].to_s, :border => 0, :width => 100),{ :controller => :resumes, :action => :show, :id => session[:user_id] }, :class => 'img_reg_form' %> 
 				  		
 			</div>		
 		</div>

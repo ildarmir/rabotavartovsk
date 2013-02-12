@@ -24,7 +24,7 @@
             	<div id='imya'> <%= @resume.name %></div>            
             </td>
             <td rowspan='8' id='rightBlockResumeTable'>
-            	<%= link_to image_tag(@resume.avatar, :border => 0) %>                 
+            	<%= image_tag(@resume.avatar_url(:big).to_s, :border => 0) %>                 
        		</td>
        </tr>
         <tr>
