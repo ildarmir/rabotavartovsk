@@ -1,12 +1,24 @@
 Rabotavartovsk::Application.routes.draw do
-  resources :articles
+  
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
 
-  resources :resumes
+  scope "(:locale)", :locale => /en|ru/ do
+    resources :vacancies
+  end
+
+  scope "(:locale)", :locale => /en|ru/ do
+     resources :resumes
+  end
+
+   scope "(:locale)", :locale => /en|ru/ do
+     resources :articles
+  end
 
 
-  resources :vacancies
+  match '/:locale' => 'index#index'
+ 
+
 
   post "session/create" => "session#create"
   
