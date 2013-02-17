@@ -1,0 +1,39 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  login: Ваш логин
+  password: Ваш пароль
+  email: Ваш E-mail
+  position: Должность
+  name: Имя
+  sex: Ваш пол
+  age: Возраст
+  experience: Стаж
+  salary: Минимальная зарплата 
+  schedule: График работы
+  avatar: Аватар
+  education: Введите Ваше образование
+  skills: Введите Ваши профессиональные навыки и опыт работы
+  about: Добавьте информацию о себе
+  phone: Введите телефон
+  city: Город
+  create_resume_button: Сохранить резюме
+  registration: Регистрация
+  date_add: Дата
+  date_add_show: Дата заполнения
+  views_count: Количество просмотров
+  info: Информация о соискателе  
+  sex_show: Пол
+  male: мужской
+  female: женский    
+  min_salary: Минимальная зарплата
+  schedule_show: График
+  full_time: полный
+  flexible: сменный
+  education_show: Образование
+  skills_show: Профессиональные навыки и опыт работы
+  about_show: О себе
+  contact_info: Контактная информация
+  phone_show: Телефон
+  email_show: E-mail

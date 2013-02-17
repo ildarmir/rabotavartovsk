@@ -2,13 +2,13 @@
 <div id="vacancy_search">    
         <table id='vacancy_table_result'>
             <tr>
-                <td class='vacancy_table_header' id='vacancy_profession'>Profession</td>
-                <td class='vacancy_table_header' id='vacancy_notation'>Note</td>
-                <td class='vacancy_table_header' id='vacancy_lengthOfService'>Experience</td>
-                <td class='vacancy_table_header' id='vacancy_earns'>Salary</td>        
-                <td class='vacancy_table_header' id='vacancy_organisation'>Organisation</td>
-                <td class='vacancy_table_header' id='vacancy_phone'>Phone</td>
-                <td class='vacancy_table_header' id='vacancy_dateOf'>Adding date</td>
+                <td class='vacancy_table_header' id='vacancy_profession'><%= t(:profession) %></td>
+                <td class='vacancy_table_header' id='vacancy_notation'><%= t(:comment) %></td>
+                <td class='vacancy_table_header' id='vacancy_lengthOfService'><%= t(:experience) %></td>
+                <td class='vacancy_table_header' id='vacancy_earns'><%= t(:salary) %></td>        
+                <td class='vacancy_table_header' id='vacancy_organisation'><%= t(:organisation) %></td>
+                <td class='vacancy_table_header' id='vacancy_phone'><%= t(:phone) %></td>
+                <td class='vacancy_table_header' id='vacancy_dateOf'><%= t(:add_date) %></td>
             </tr>
 <% @vacancies.each do |t| %>
            <tr>

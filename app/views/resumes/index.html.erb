@@ -2,13 +2,13 @@
 <div id="resume_search">    
         <table id='resume_table_result'>
             <tr>
-                <td class='resume_table_header' id='resume_profession'>Position</td>
-                <td class='resume_table_header' id='resume_notation'>Salary</td>
-                <td class='resume_table_header' id='resume_lengthOfService'>Experience</td>
-                <td class='resume_table_header' id='resume_earns'>Name</td>        
-                <td class='resume_table_header' id='resume_organisation'>City</td>               
-                <td class='resume_table_header' id='resume_dateOf'>Age</td>
-                <td class='resume_table_header' id='resume_phone'>Date</td>
+                <td class='resume_table_header' id='resume_profession'><%= t(:position) %></td>
+                <td class='resume_table_header' id='resume_notation'><%= t(:salary) %></td>
+                <td class='resume_table_header' id='resume_lengthOfService'><%= t(:experience) %></td>
+                <td class='resume_table_header' id='resume_earns'><%= t(:name) %></td>        
+                <td class='resume_table_header' id='resume_organisation'><%= t(:city) %></td>               
+                <td class='resume_table_header' id='resume_dateOf'><%= t(:age) %></td>
+                <td class='resume_table_header' id='resume_phone'><%= t(:date_add) %></td>
                 <td></td>
             </tr>
 <% @resumes.each do |t| %>

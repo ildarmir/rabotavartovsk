@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Работа в Нижневартовске: вакансии в Нижневартовске и резюме в Нижневартовске</title>
+  <title><%= t('title') %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
 	    <div id="header_left">
 	        <a href='/'> <%= image_tag("logo_new1.jpg") %></a>
 	    </div>
-	    <div id="header_right"> <a href="/"><h1 class='header_text'>Работа в Нижневартовске, Работа, Вакансии</h1></a> 
+	    <div id="header_right"> <a href="/"><h1 class='header_text'><%= t('header.h1_text') %></h1></a> 
 	    </div>
 	</div>   
        
@@ -38,18 +38,17 @@
 	        <div id="footmenu">
 	              <div id="footmenu_main"> 
 	                  <span class="footer">
-	                        <a href='http://rabota-vartovsk.ru/index.php'>Главная</a> |
-	                        <a href='http://rabota-vartovsk.ru/index.php?vacancy'>Поиск вакансий</a> |
-	                        <a href='http://rabota-vartovsk.ru/index.php?resume'>Поиск сотрудников</a> |
-	                        <a href='http://rabota-vartovsk.ru/index.php?kurs'>Обучение</a> |
-	                        <a href='http://rabota-vartovsk.ru/index.php?articles'>Полезная информация</a>                      
+	                        <%= link_to t('main_menu.index_page'), :controller => :index, :action => :index %> |
+	                        <%= link_to t('main_menu.vacan_page'), vacancies_url %> |
+	                        <%= link_to t('main_menu.resum_page'), resumes_url %> |
+	                        <%= link_to t('main_menu.artic_page'), articles_url %>
 	                  </span>
 	              </div>
 	              <div id="add_text">
 	              <span class="footer_text_add">	        
-	                Copyright © <a href="http://www.rabota-vartovsk.ru" style="text-decoration:none; color:#000">"Работа в Нижневартовске"</a>.
+	                Copyright © <%= link_to t('footer.index_page_link_text'), :controller => :index, :action => :index %>.
 	                Перепечатка материалов без<br />
-	                разрешения <a href="http://www.rabota-vartovsk.ru" style="text-decoration:none; color:#000">"Работа в Нижневартовске"</a> запрещена 
+	                разрешения <%= link_to t('footer.index_page_link_text'), :controller => :index, :action => :index %> запрещена 
 	              </span>
 	              </div>
 	                

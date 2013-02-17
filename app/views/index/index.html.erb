@@ -1,8 +1,7 @@
 <div id="rightmenu">
-
 	<div id="login">		
 		<% if session[:user_id].nil? %>
-		<span class="loginSystem" id="log_in">Вход</span> | <span class="loginSystem" id="registration" reg='true'><%= link_to "Регистрация", :controller => :resumes, :action => :new %></span>
+		<span class="loginSystem" id="log_in"><%= t(:enter) %></span> | <span class="loginSystem" id="registration" reg='true'><%= link_to t(:registration) , :controller => :resumes, :action => :new %></span>
 	</div>	 
 	<div id="comein" class="close">	
 		<%= form_tag ("/session/create") do %> 
@@ -10,13 +9,13 @@
 				<h4 class="login_error"><%=  flash[:error] %></h4>
 			<% end %>
 		<p>
-			<%= text_field_tag :login, params[:login], :placeholder =>"Enter login" %>
+			<%= text_field_tag :login, params[:login], :placeholder => t(:enter_login) %>
 		</p>	    
 		<p>
-			<%= password_field_tag :password, params[:password], :placeholder =>"Enter password" %>
+			<%= password_field_tag :password, params[:password], :placeholder => t(:enter_pass) %>
 		</p>	
 		<p>
-			<%= submit_tag "Login", :class => :login_button %>	
+			<%= submit_tag t(:login_button), :class => :login_button %>	
 		</p>
 		<% end %>  
 		<% else %>		
@@ -33,20 +32,20 @@
 		<br />
 	</div>  
 	<div id="advertise">
-    <img src="/app/assets/images/course.jpg" />
+   
 	</div>
 </div>    
 
 <div class="top_panel">    
-   	<%= link_to "Add vacancy", { :controller => :vacancies, :action => :new } %>   
-    <%= link_to "Post resume", { :controller => :resumes, :action => :new } %>  
+   	<%= link_to t(:add_vacancy), { :controller => :vacancies, :action => :new } %>   
+    <%= link_to t(:add_resume), { :controller => :resumes, :action => :new } %>  
 </div> 
 
 <div id="left"> 
 	<div id="tabs">
     	<ul>
-    		<li><a href="#vacancy">Vacancy</a></li>
-    		<li><a href="#resume_index">Resume</a></li>
+    		<li><a href="#vacancy"><%= t(:tab_vacancy_search) %></a></li>
+    		<li><a href="#resume_index"><%= t(:tab_resume_search) %></a></li>
     	</ul>
         <div id="vacancy">
         	<%= form_tag ("/vacancies/search" ),:method => "get" do %>   
@@ -72,7 +71,7 @@
 	</div>	
 	<div class='vacancies_module' >                   
         <div class="popVac">               
-            <a href="vacancy.php" class="vacancy_module_header">Popular vacancies</a>
+            <a href="vacancy.php" class="vacancy_module_header"><%= t(:popular_vacancies) %></a>
         </div>
         <div class="pop_vacancy">
             <ul>                                
@@ -86,7 +85,7 @@
 	</div>
 	 <div class='vacancies_module'>                    
         <div class="popVac">               
-            <a href="?resume" class="vacancy_module_header">Last Resume</a>
+            <a href="?resume" class="vacancy_module_header"><%= t(:last_resume) %></a>
         </div>
         <div class="pop_vacancy">
             <ul>
@@ -104,7 +103,7 @@
 	</div> 
      <div class='vacancies_module'>                  
         <div class="popVac">               
-            <a href="?vacancy" class="vacancy_module_header">New Vacancies</a>
+            <a href="?vacancy" class="vacancy_module_header"><%= t(:new_vacancies) %></a>
         </div>
         <div class="pop_vacancy">
             <ul id="newVacUL">
@@ -123,7 +122,7 @@
 	
 	<div class="city_company">
         <div class="vacancy_module_header">
-            <a href="?entertainment" class="vacancy_module_header">Вакансии компаний города</a>
+            <a href="?entertainment" class="vacancy_module_header"><%= t(:vacancies_of_city_companies) %></a>
         </div>
         <div class="vacancy_module_header">
         	<%= link_to image_tag("dancer_logo.jpg", :border => 0),   "http://www.danpro.ru/node/115", :target => "_blank", :alt => "Данцер" %> 
@@ -134,11 +133,11 @@
     <div id="dialog-modal"></div>
     <div id="news">
         <div id="news_header">
-            Новости
+            <%= t(:news) %>
         </div>    
         <div class="pop_vacancy">
         
-        <script src="//www.gmodules.com/ig/ifr?url=http://info-gadget.appspot.com/gadget-spec/news.xml&amp;synd=open&amp;w=600&amp;h=210&amp;output=js"></script>  
+        <!--<script src="//www.gmodules.com/ig/ifr?url=http://info-gadget.appspot.com/gadget-spec/news.xml&amp;synd=open&amp;w=600&amp;h=210&amp;output=js"></script>  -->
         
              
         </div>

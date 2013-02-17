@@ -18,50 +18,50 @@
 	    <div id="left_reg">
 	            <table>
 	                <tr>
-	                	<td>Ваш логин:</td>
-	                	<td><%= f.text_field :login, :size => "15", :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
+	                	<td><%= t(:login) %></td>
+	                	<td><%= f.text_field :login, :size => "15", :maxlength => "15", :placeholder => t(:login), :id => "loginField" %></td>
 	                </tr>
 	                <% if (f.object.new_record?) %>
 	                <tr>
-	                	<td>Ваш пароль:</td>
-	                	<td> <%= f.password_field :password, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
+	                	<td><%= t(:password) %></td>
+	                	<td> <%= f.password_field :password, :maxlength => "15", :placeholder => t(:password), :id => "loginField" %></td>
 	                </tr>
 	                <% end %>
 	                <tr>
-	                	<td>Ваш E-mail:</td>
-	                	<td><%= f.text_field :email, :maxlength => "15", :placeholder => "Ваш E-mail", :id => "emailField" %></td>
+	                	<td><%= t(:email) %></td>
+	                	<td><%= f.text_field :email, :maxlength => "15", :placeholder => t(:email), :id => "emailField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>Должность:</td>
-	                	<td><%= f.text_field :position, :size => "15", :maxlength => "25", :placeholder => "Желаемая должность", :id => "doljnostField" %></td>
+	                	<td><%= t(:position) %></td>
+	                	<td><%= f.text_field :position, :size => "15", :maxlength => "25", :placeholder => t(:position), :id => "doljnostField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>Ваше имя:</td>
-	                	<td> <%= f.text_field :name, :maxlength => "15", :placeholder => "Ваше имя", :id => "imyaField" %></td>
+	                	<td><%= t(:name) %></td>
+	                	<td> <%= f.text_field :name, :maxlength => "15", :placeholder => t(:name), :id => "imyaField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>Ваш пол:</td>
-	                	<td><%= f.select :sex, [["Выберите пол","0"],["Мужской","1"],["Женский","2"]]%></td>
+	                	<td><%= t(:sex) %></td>
+	                	<td><%= f.select :sex, [[t(:sex),"0"],[t(:male),"1"],[t(:female),"2"]]%></td>
 	                </tr>
 	                
 	                <tr>
-	                	<td>Возраст:</td>
-	                	<td><%= f.text_field :age, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
+	                	<td><%= t(:age) %></td>
+	                	<td><%= f.text_field :age, :maxlength => "15", :placeholder => t(:age), :id => "loginField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>Cтаж:</td>
-	                	<td><%= f.text_field :experience, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
+	                	<td><%= t(:experience) %></td>
+	                	<td><%= f.text_field :experience, :maxlength => "15", :placeholder => t(:experience), :id => "loginField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>Минимальная<br /> зарплата:</td>
-	                	<td><%= f.text_field :min_wage, :maxlength => "15", :placeholder => "Ваш логин", :id => "loginField" %></td>
+	                	<td><%= t(:min_salary) %></td>
+	                	<td><%= f.text_field :min_wage, :maxlength => "15", :placeholder => t(:min_salary), :id => "loginField" %></td>
 	                </tr>
 	                <tr>
-	                	<td>График работы:</td>
-	                	<td><%= f.select :schedule, [["Выберите график","0"],["Полный","1"],["Сменный","2"]]  %></td>
+	                	<td><%= t(:schedule) %></td>
+	                	<td><%= f.select :schedule, [[t(:schedule),"0"],[t(:full_time),"1"],[t(:flexible),"2"]]  %></td>
 	                </tr>
 	                <tr>
-	                	<td>Аватар:</td>
+	                	<td><%= t(:avatar) %></td>
 	                	<td><%= f.file_field :avatar %></td>
 	                </tr>
 	               
@@ -72,35 +72,35 @@
 	            </div>
 	    </div> 
 	    <div id="reg_right">
-	        Введите Ваше образование:<br/>
+	        <%= t(:education) %><br/>
 	        <script src="js/checklength.js"></script>
 	                      
-	         <span class='symbols_left'>Осталось символов: <span id="counter">200</span></span><br />
+	         <!-- <span class='symbols_left'>Осталось символов: <span id="counter">200</span></span><br /> -->
 	         <%= f.text_area :education, :rows => "3",  :class => "reg_textarea", :onkeyup => "check ()", :id => "obrazovanieField" %><br />
 	         <div class="reg_pad">
-	             Введите Ваши профессиональные навыки и опыт работы:<br/>        
+	             <%= t(:skills) %><br/>        
 	            
-	            <span class='symbols_left'>Осталось символов: <span id="counter_opit">500</span></span><br />
+	            <!-- <span class='symbols_left'>Осталось символов: <span id="counter_opit">500</span></span><br /> -->
 	             <%= f.text_area :skills, :rows => "7",  :class => "reg_textarea", :onkeyup => "checkk ()", :id => "navikiField" %>
 	        </div>
 	        <div class="reg_pad">            
-	            Добавьте информацию о себе, которая будет интересна работодателю:<br />           
-	            <span class='symbols_left'>Осталось символов: <span id="counter_self">200</span></span><br />
+	            <%= t(:about) %><br />           
+	            <!-- <span class='symbols_left'>Осталось символов: <span id="counter_self">200</span></span><br /> -->
 	             <%= f.text_area :about, :name => "osebe",  :rows => "2",    :class => "reg_textarea", :onkeyup => "checkkk ()", :id => "my_selfField" %>  
 	        </div>
 	        
 	        <div id="footerOfreg">
-	            <div id="telefonNumber">Введите телефон:<br />
+	            <div id="telefonNumber"><%= t(:phone) %><br />
 	               <%= f.text_field :phone %>
 	            </div>
-	            <div  id="gorodName">Город:<br />
+	            <div  id="gorodName"><%= t(:city) %><br />
 	                <%= f.text_field :city %>
 	            </div>
 	        </div> 
 	    </div>
 	</div>		 	
     <div class='border_updown_div'>  </div>  	
-    <%= f.submit :submit, :value => "Create Resume", :class => "resumeSubmitButton" %>
+    <%= f.submit :submit, :value => t(:create_resume_button), :class => "resumeSubmitButton" %>
     
     <% end %>
 </div>

@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  enter: Вход
+  registration: Регистрация
+  add_vacancy: Добавить вакансию
+  add_resume: Добавить резюме
+  tab_vacancy_search: Вакансии
+  tab_resume_search: Резюме
+  popular_vacancies: Популярные вакансии
+  last_resume: Последние резюме
+  new_vacancies: Новые вакансии
+  vacancies_of_city_companies: Вакансии компаний города 
+  news: Новости
+  enter_login: Введите логин
+  enter_pass: Введите пароль
+  login_button: Войти  

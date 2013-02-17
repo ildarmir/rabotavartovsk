@@ -13,12 +13,12 @@
       <% end %>
     </div>           
          
-    <div class='resume_podheaders'>Дата заполнения <%= @resume.date.strftime("%d.%m.%Y") %>,  Количество просмотров: <%= @resume.view %></div>
-    <p class='resume_headers'>Информация о соискателе</p>
+    <div class='resume_podheaders'><%= t(:date_add_show) %>: <%= @resume.date.strftime("%d.%m.%Y") %>,  <%= t(:views_count) %>: <%= @resume.view %></div>
+    <p class='resume_headers'><%= t(:info) %></p>
     <table id='resumeTable'>    
         <tr>
             <td class='resVac_add' id='leftBlockResumeTable'>
-            	Имя 
+            	<%= t(:name) %> 
             </td>
             <td class='resVac_data' id='centralBlockResumeTable'>
             	<div id='imya'> <%= @resume.name %></div>            
@@ -28,22 +28,22 @@
        		</td>
        </tr>
         <tr>
-            <td class='resVac_add'>Пол</td>
+            <td class='resVac_add'><%= t(:sex_show) %></td>
             <td class='resVac_data'>
             
             <div id='pol'>
             	<% if (@resume.sex == '1') %>
-            		мужской
+            		<%= t(:male) %>
             	<% end %>
             	<% if (@resume.sex == '2') %>            	
-            		женский            	
+            		<%= t(:female) %>            	
             	<% end %>
             </div>
             
            </td>
         </tr> 
         <tr>
-            <td class='resVac_add'>Возраст</td>
+            <td class='resVac_add'><%= t(:age) %></td>
             <td class='resVac_data'>
             
             <div id='vozrast'> <%= @resume.age %></div>
@@ -51,21 +51,21 @@
             </td>
         </tr>
         <tr>
-            <td class='resVac_add'>Стаж</td>
+            <td class='resVac_add'><%= t(:experience) %></td>
             <td class='resVac_data'>
             <div id='staj'> <%= @resume.experience %></div>
             
           </td>
         </tr>
         <tr>
-            <td class='resVac_add'>Город</td>
+            <td class='resVac_add'><%= t(:city) %></td>
             <td class='resVac_data'>
             <div id='gorod'> <%= @resume.city %></div>
             
             </td>
         </tr>
         <tr>
-            <td class='resVac_add'>Минимальная зарплата</td>
+            <td class='resVac_add'><%= t(:min_salary) %></td>
             <td class="resVac_data">
             
             <div id='min_zarplata'>  <%= @resume.min_wage %></div>
@@ -73,14 +73,14 @@
            </td>
         </tr>
         <tr>
-            <td class='resVac_add'>График</td>
+            <td class='resVac_add'><%= t(:schedule_show) %></td>
             <td class='resVac_data'>
             <div id='grafik'> 
             	<% if (@resume.schedule == '1') %>
-            		полный
+            		<%= t(:full_time) %>
             	<% end %>
             	<% if (@resume.schedule == '2') %>            	
-            		сменный            	
+            		<%= t(:flexible) %>           	
             	<% end %>
             	
             
@@ -109,31 +109,31 @@
     </table>       
 
     <p class='resume_headers'>
-    	Образование
+    	<%= t(:education_show) %>
     </p>
     <p class='resume_dannie'>
     	<div id='obrazovanie'><%= @resume.education %></div>            
     </p>
     <p class='resume_headers'>
-    	Профессиональные навыки и опыт работы
+    	<%= t(:skills_show) %>
     </p>
     <p class='resume_dannie'>
     	<div id='naviki'><%= @resume.skills %></div>           
     </p>
     <p class='resume_headers'>
-    	О себе
+    	<%= t(:about_show) %>
     </p>
     <p class='resume_dannie'>
     	<div id='osebe'><%= @resume.about %></div>            
     </p>
     <p class='resume_headers'>
-    	Контактная информация
+    	<%= t(:contact_info) %>
     </p>
     <div class='resume_data_contact'>
-    	Телефон: <span id='telefon'><%= @resume.phone %></span>            
+    	<%= t(:phone_show) %>: <span id='telefon'><%= @resume.phone %></span>            
     </div>
     <div class='resume_data_contact'>
-    	E-mail: <span id='email'><%= @resume.email %></span>            
+    	<%= t(:email_show) %>: <span id='email'><%= @resume.email %></span>            
     </div>
 </div>
 
