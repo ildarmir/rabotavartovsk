@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 
-gem "rmagick"
+gem "rmagick", '2.13.1'
 gem "carrierwave"
 
 # To use ActiveModel has_secure_password
