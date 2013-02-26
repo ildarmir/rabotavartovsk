@@ -1,5 +1,7 @@
 Rabotavartovsk::Application.routes.draw do
   
+  get "mainpage/index"
+
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
 
@@ -75,7 +77,7 @@ Rabotavartovsk::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'index#index'
+   root to: 'mainpage#index', as:'mainpage'
 
   # See how all your routes lay out with "rake routes"
 
