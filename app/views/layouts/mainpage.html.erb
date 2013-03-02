@@ -48,13 +48,13 @@
           <a class="brand" href="#"></a>
           <div class="container-fluid nav-collapse pull-left">
             <ul class="nav">
-              <li><%= link_to "Главная", "/"  %></li>
-              <li><%= link_to "Вакансии", "/vacancies/search"  %></li>
-              <li><%= link_to "Резюме", "/resumes/search"  %></li>
-              <li><%= link_to "Обучение", "/path3"  %></li>
-              <li><%= link_to "Статьи", "/path3"  %></li>
-              <li><%= link_to "ВХОД", "/path3"  %></li>
-              <li><%= link_to "Регистрация", "/path3"  %></li>
+              <li class="span1"><%= link_to "Главная", "/"  %></li>
+              <li class="span1"><%= link_to "Вакансии", "/vacancies/search"  %></li>
+              <li class="span1"><%= link_to "Резюме", "/resumes/search"  %></li>
+              <li class="span1"><%= link_to "Обучение", "/path3"  %></li>
+              <li class="span4"><%= link_to "Статьи", "/path3"  %></li>
+              <li class="span1"><%= link_to "ВХОД", "/path3"  %></li>
+              <li class="span1"><%= link_to "Регистрация", "/path3"  %></li>
               
             </ul>
           </div><!--/.nav-collapse -->
@@ -63,14 +63,15 @@
     </div>
     <div class="row">
       <div class="span9">
-        <div class="row">
-     	    <div class="span7">
-		    <input class="span7" type="text" placeholder="Введите искомую вакансию"/>
-	    </div>
-	    <div class="span1">
-		    <button class="btn">Поиск</button>
-                  </div>
-                </div>
+        <div class="row-fluid">
+          <div class="span9">
+            <input class="span10 offset2" type="text" placeholder="Введите название профессии"/> 
+          </div>
+          <div class="span3">
+            <button type="submit" class="btn btn-info btn-small">ВАКАНСИЮ</button>
+            <button type="submit" class="btn btn-info btn-small">РЕЗЮМЕ</button>
+          </div>
+          </div>
                 
       <div class="container-fluid">
       <div class="row">
