@@ -51,7 +51,7 @@
               <li class="span1"><%= link_to "Главная", "/"  %></li>
               <li class="span1"><%= link_to "Вакансии", "/vacancies/search"  %></li>
               <li class="span1"><%= link_to "Резюме", "/resumes/search"  %></li>
-              <li class="span1"><%= link_to "Обучение", "/path3"  %></li>
+              <li class="span1"><%= link_to "Курсы", "/path3"  %></li>
               <li class="span4"><%= link_to "Статьи", "/path3"  %></li>
               <li class="span1"><%= link_to "ВХОД", "/path3"  %></li>
               <li class="span1"><%= link_to "Регистрация", "/path3"  %></li>
@@ -63,14 +63,16 @@
     </div>
     <div class="row">
       <div class="span9">
-        <div class="row-fluid">
-          <div class="span9">
-            <input class="span10 offset2" type="text" placeholder="Введите название профессии"/> 
-          </div>
+        <div class="row">
+          <%= form_tag  ("/vacancies/search" ), method: :get do %>
+          <div class="span5 offset1">
+                	<%= text_field_tag :search, params[:search], :class => "span5", :placeholder =>"Введите ключевое слово в резюме" %>
+                      </div>
           <div class="span3">
-            <button type="submit" class="btn btn-info btn-small">ВАКАНСИЮ</button>
-            <button type="submit" class="btn btn-info btn-small">РЕЗЮМЕ</button>
+            <%=  button_tag "ВАКАНСИЮ", :class => "btn btn-small btn-info" %>
+            <%=  button_tag "РЕЗЮМЕ", :name => nil, :formaction => "/resumes/search", :class => "btn btn-small btn-info" %>
           </div>
+        <% end %> 
           </div>
                 
       <div class="container-fluid">
