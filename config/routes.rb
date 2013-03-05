@@ -1,5 +1,9 @@
 Rabotavartovsk::Application.routes.draw do
   
+  get "note/show"
+
+  get "note/index"
+
   get "mainpage/index" 
 
   get "resumes/search" => "resumes#search"

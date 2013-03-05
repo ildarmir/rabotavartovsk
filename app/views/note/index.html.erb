@@ -1,0 +1,11 @@
+<div style="text-align:center;"><h3>Статьи</h3></div>
+<div> 
+<% @articles.each do |a| %>
+	 <h4><%= link_to truncate(strip_tags(a.title),length: 80), :action => :show, :id => a.id %>
+	 </h4> 
+	<% end %>
+</div>
+
+
+
+
