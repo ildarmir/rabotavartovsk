@@ -1,4 +1,5 @@
 class KursController < ApplicationController
+  skip_before_filter :authorize
    # GET /courses
   # GET /courses.json
   def index
