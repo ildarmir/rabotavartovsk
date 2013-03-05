@@ -1,5 +1,9 @@
 Rabotavartovsk::Application.routes.draw do
   
+  get "kurs/index"
+
+  get "kurs/show"
+
   resources :courses
 
 
