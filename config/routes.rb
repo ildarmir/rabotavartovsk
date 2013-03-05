@@ -1,5 +1,8 @@
 Rabotavartovsk::Application.routes.draw do
   
+  resources :courses
+
+
   get "note/show"
 
   get "note/index"
