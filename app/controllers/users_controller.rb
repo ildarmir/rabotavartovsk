@@ -1,4 +1,18 @@
+#coding: utf-8
 class UsersController < ApplicationController
+  skip_before_filter :authorize, only: [:new, :create]
+  before_filter :noaccess 
+
+  private
+  def noaccess
+    account=User.find_by_id(session[:user_id])
+    unless account.id==7
+      redirect_to mainpage_url, notice: "Несуществующий адрес"
+  end
+  end
+  skip_before_filter :noaccess, except: [:index]
+  
+  
   # GET /users
   # GET /users.json
   def index
@@ -42,7 +56,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html { redirect_to  users_url, notice: ' #{@user.name} ' }
+        format.html { redirect_to  login_url, notice: 'Пользователь #{@user.name} был успешно создан ' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -71,8 +85,12 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+    begin
     @user.destroy
-
+    flash[:notice] = "Пользователь #{@user.name} удален"
+    rescue Exception => e
+    flash[:notice] = e.message
+ end
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }

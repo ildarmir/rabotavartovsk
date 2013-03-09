@@ -1,4 +1,5 @@
 class NoteController < ApplicationController
+  skip_before_filter :authorize, only: [:index, :show]
   def index
      @articles = Article.all
     respond_to do |format|

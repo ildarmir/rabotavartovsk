@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_filter :authorize, only: [:show, :index]
   # GET /articles
   # GET /articles.json
   def index
@@ -44,6 +45,11 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        sake=User.find_by_id(session[:user_id])
+         if sake.article_added==nil
+         sake.article_added="#{@article.id}"
+         end
+         sake.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else

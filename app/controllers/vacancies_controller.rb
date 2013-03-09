@@ -1,4 +1,5 @@
 class VacanciesController < ApplicationController
+  skip_before_filter :authorize, only: [:search, :show, :index]
   # GET /vacancies
   # GET /vacancies.json
   def index
@@ -55,8 +56,16 @@ class VacanciesController < ApplicationController
     
     @vacancy = Vacancy.new(params[:vacancy])
     @vacancy[:date] = Time.now
+      
     respond_to do |format|
       if @vacancy.save
+         sake=User.find_by_id(session[:user_id])
+         if sake.vacancies_added==nil
+         sake.vacancies_added="#{@vacancy.id},"
+         else
+         sake.vacancies_added+="#{@vacancy.id},"
+         end
+         sake.save
         format.html { redirect_to @vacancy, notice: 'Vacancy was successfully created.' }
         format.json { render json: @vacancy, status: :created, location: @vacancy }
       else
@@ -64,6 +73,7 @@ class VacanciesController < ApplicationController
         format.json { render json: @vacancy.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /vacancies/1

@@ -16,6 +16,6 @@ end
 
   def destroy
   session[:user_id] = nil
-  redirect_to store_url, notice: "Сеанс работы завершен"
+  redirect_to logout_url, notice: "Сеанс работы завершен"
   end
 end
