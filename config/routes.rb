@@ -1,16 +1,14 @@
 Rabotavartovsk::Application.routes.draw do
- get 'admin' => 'admin#index'
+  devise_for :devise_users
+
+ get 'adm' => 'adm#index'
  controller :sessions do
   get 'login' => :new
   post 'login' => :create
   delete 'logout' => :destroy
  end
 
-  get "sessions/new"
 
-  get "sessions/create"
-
-  get "sessions/destroy"
 
   resources :users
 
@@ -44,7 +42,7 @@ Rabotavartovsk::Application.routes.draw do
   end
 
 
-  match '/:locale' => 'index#index'
+ # match '/:locale' => 'mainpage#index'
  
 
 

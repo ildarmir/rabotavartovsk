@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306151841) do
+ActiveRecord::Schema.define(:version => 20130321122145) do
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "first_name",       :default => "",    :null => false
+    t.string   "last_name",        :default => "",    :null => false
+    t.string   "role",                                :null => false
+    t.string   "email",                               :null => false
+    t.boolean  "status",           :default => false
+    t.string   "token",                               :null => false
+    t.string   "salt",                                :null => false
+    t.string   "crypted_password",                    :null => false
+    t.string   "preferences"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -36,6 +52,24 @@ ActiveRecord::Schema.define(:version => 20130306151841) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
+
+  create_table "devise_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "devise_users", ["email"], :name => "index_devise_users_on_email", :unique => true
+  add_index "devise_users", ["reset_password_token"], :name => "index_devise_users_on_reset_password_token", :unique => true
 
   create_table "resumes", :force => true do |t|
     t.string   "login"

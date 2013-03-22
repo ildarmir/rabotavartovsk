@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rabotavartovsk_production
+  database: typus_rabotavs55
   pool: 5
-  username: root
-  password: "789456123"
+  username: "typus_rabotavs55"
+  password: "u5h84k4K"
   host: localhost

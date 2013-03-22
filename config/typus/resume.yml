@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Resume:
+  fields:
+    default: login, password, position, name, sex, mar_status, age, experience, city, min_wage, schedule, skills, education, about, phone, email, date, view, avatar, group_id
+    form: login, password, position, name, sex, mar_status, age, experience, city, min_wage, schedule, skills, education, about, phone, email, date, view, avatar, group_id
+  relationships: 
+  application: Application

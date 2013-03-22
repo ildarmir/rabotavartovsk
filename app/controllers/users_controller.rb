@@ -1,18 +1,7 @@
 #coding: utf-8
 class UsersController < ApplicationController
   skip_before_filter :authorize, only: [:new, :create]
-  before_filter :noaccess 
-
-  private
-  def noaccess
-    account=User.find_by_id(session[:user_id])
-    unless account.id==7
-      redirect_to mainpage_url, notice: "Несуществующий адрес"
-  end
-  end
-  skip_before_filter :noaccess, except: [:index]
-  
-  
+ 
   # GET /users
   # GET /users.json
   def index

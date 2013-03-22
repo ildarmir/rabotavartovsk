@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Course:
+  fields:
+    default: title, place, format, date, date_end, price, description
+    form: title, place, format, date, date_end, price, description
+  relationships: 
+  application: Application

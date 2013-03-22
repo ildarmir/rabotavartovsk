@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Vacancy:
+  fields:
+    default: position, note, experience, salary, organisation, phone, date, email
+    form: position, note, experience, salary, organisation, phone, date, email
+  relationships: 
+  application: Application

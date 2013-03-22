@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,18 +24,25 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem "rmagick", '2.13.1'
 gem "carrierwave"
+gem "typus"
+gem "devise"
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
+gem "rack", "1.4.5"
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :production do
+  gem 'thin'
+  
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  gem 'rvm-capistrano'
+  gem 'capistrano'
+end
 
 # To use debugger
 # gem 'debugger'
