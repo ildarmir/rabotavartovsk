@@ -39,4 +39,4 @@ production:
   pool: 5
   username: "typus_rabotavs55"
   password: "u5h84k4K"
-  host: localhost
+  host: mysql5.locum.ru
