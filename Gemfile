@@ -6,8 +6,7 @@ gem 'rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
- gem 'therubyracer', :platforms => :ruby
- gem 'execjs'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,7 +34,8 @@ gem "rack", "1.4.5"
 
 group :production do
   gem 'unicorn'
-  
+   gem 'therubyracer', :platforms => :ruby
+ gem 'execjs'
 end
 
 group :development do
