@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
 load 'deploy/assets'
 ssh_options[:forward_agent] = true
+default_run_options[:pty] = true
 set :application,     "rabotavsurgute"
 set :deploy_server,   "fluorine.locum.ru"
 set :bundle_without,  [:development, :test]
