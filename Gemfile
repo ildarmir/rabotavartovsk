@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
-gem "rmagick", '2.13.1'
+gem "rmagick", '2.13.2'
 gem "carrierwave"
 gem "typus"
 gem "devise"
@@ -35,7 +35,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "rack", "1.4.5"
 
 group :production do
-  gem 'thin'
+  gem 'unicorn'
   
 end
 

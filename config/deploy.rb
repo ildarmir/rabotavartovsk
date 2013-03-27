@@ -1,32 +1,42 @@
-require "bundler/capistrano"
-default_run_options[:pty] = true
+require 'bundler/capistrano'
+load 'deploy/assets'
+ssh_options[:forward_agent] = true
+set :application,     "rabotavsurgute"
+set :deploy_server,   "fluorine.locum.ru"
+set :bundle_without,  [:development, :test]
+set :user,            "hosting_typus"
+set :login,           "typus"
+set :use_sudo,        false
+set :deploy_to,       "/home/#{user}/projects/#{application}"
+set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
+set :unicorn_pid,     "/var/run/unicorn/#{application}.#{login}.pid"
+set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
+role :web,            deploy_server
+role :app,            deploy_server
+role :db,             deploy_server, :primary => true
+set :rvm_ruby_string, "1.9.3"
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
+set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
+set :scm,             :git
+set :repository,      "git@github.com:ildarmir/rabotavartovsk.git"
+# set :repository,    "git@github.com:username/project.git"
+before 'deploy:finalize_update', 'set_current_release'
+task :set_current_release, :roles => :app do
+set :current_release, latest_release
+end
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+namespace :deploy do
+  desc "Start application"
+  task :start, :roles => :app do
+    run unicorn_start_cmd
+  end
+  desc "Stop application"
+  task :stop, :roles => :app do
+    run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
+  end
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
+  end
+end
 
-set :application, "rabotavartovsk"
-set :repository,  "git@github.com:ildarmir/rabotavartovsk.git"
-set :deploy_via, :copy
-set :user, "hosting_typus"
-set :deploy_to, "set :deploy_via, :copy
-set :user, "hosting_typus"
-set :deploy_to, "/projects/rabotavsurgute/releases/"
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
-role :web, "fluorine.locum.ru"
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
-
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
