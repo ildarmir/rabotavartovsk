@@ -160,6 +160,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
+  execjs
   jquery-rails
   mysql2
   rack (= 1.4.5)
