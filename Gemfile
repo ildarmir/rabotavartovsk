@@ -18,30 +18,24 @@ group :assets do
  gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
-gem "rmagick", '2.13.2'
-gem "carrierwave"
-gem "typus"
-gem "devise"
+ gem 'jquery-rails'
+ gem 'twitter-bootstrap-rails'
+ gem "rmagick", '2.13.2'
+ gem "carrierwave"
+ gem "typus"
+ gem "devise"
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-gem "rack", "1.4.5"
-
-group :production do
-  gem 'unicorn'
-   gem 'therubyracer', :platforms => :ruby
+ gem "rack", "1.4.5"
+ gem 'unicorn'
+ gem 'therubyracer', :platforms => :ruby
  gem 'execjs'
-end
-
-group :development do
-  gem 'rvm-capistrano'
-  gem 'capistrano'
-end
+ gem 'rvm-capistrano'
+ gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'

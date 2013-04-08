@@ -4,9 +4,8 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 set :application,     "rabotavsurgute"
 set :deploy_server,   "fluorine.locum.ru"
-set :bundle_without,  [:development, :test]
-set :user,            "hosting_typus"
-set :login,           "typus"
+set :user,            "hosting_tapir"
+set :login,           "tapir"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/projects/#{application}"
 set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"

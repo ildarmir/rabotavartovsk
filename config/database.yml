@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: typus_rabotavs55
+  database: tapir_rabotavs25
   pool: 5
-  username: "typus_rabotavs55"
-  password: "u5h84k4K"
+  username: "tapir_rabotavs25"
+  password: "jMZHYqQk"
   host: mysql5.locum.ru
