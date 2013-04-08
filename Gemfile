@@ -31,10 +31,9 @@ end
 # gem 'jbuilder'
  gem "rack", "1.4.5"
  gem 'unicorn'
- gem 'therubyracer', :platforms => :ruby
+ gem 'therubyracer', :require => 'v8'
  gem 'execjs'
  gem 'rvm-capistrano'
  gem 'capistrano'
-
 # To use debugger
 # gem 'debugger'
