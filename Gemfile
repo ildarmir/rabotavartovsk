@@ -24,7 +24,7 @@ end
  gem "carrierwave"
  gem "typus"
  gem "devise"
-
+ gem "libv8", '3.11.8.17'
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'
 
