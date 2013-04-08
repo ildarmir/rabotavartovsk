@@ -162,7 +162,6 @@ DEPENDENCIES
   devise
   execjs
   jquery-rails
-  libv8 (= 3.11.8.17)
   mysql2
   rack (= 1.4.5)
   rails
