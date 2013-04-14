@@ -30,28 +30,7 @@
 <div>
   <%= f.label :mail, 'Электронная почта' %>
   <%= f.text_field :mail, size: 40 %>
-  <div>
-    <label class='radio'>
-      <%= f.radio_button :who, false, :type=> 'radio' %>ищу вакансию
-  </label>
-  <label class='radio'>
-    <%= f.radio_button :who, true, :type=> 'radio' %>ищу сотрудника
-  </label>
-  
-</div>
-<div>
-  <%= f.label :org, 'Организация' %>
-  <%= f.text_field :org, size: 40 %>
-</div>
-<div>
-  <%= f.label :phones, 'Телефон' %>
-  <%= f.text_field :phones, size: 40 %>
-</div>
-<div>
-  <%= f.label :image_url, 'Фото или логотип' %>
-  <%= f.file_field :image_url %>
   </div>
-  <br>
   <div>
   <%= f.button 'Готово!', :class=>'btn btn-large' %>
 </div>

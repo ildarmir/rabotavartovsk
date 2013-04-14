@@ -4,24 +4,24 @@ class UsersController < ApplicationController
  
   # GET /users
   # GET /users.json
-  def index
-    @users = User.order(:name)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
-  end
+#  def index
+#    @users = User.order(:name)
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @users }
+#    end
+#  end
 
   # GET /users/1
   # GET /users/1.json
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
-  end
+#  def show
+#    @user = User.find(params[:id])
+#
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.json { render json: @user }
+#    end
+#  end
 
   # GET /users/new
   # GET /users/new.json
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html { redirect_to  login_url, notice: 'Пользователь #{@user.name} был успешно создан ' }
+        format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан " }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

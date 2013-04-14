@@ -53,9 +53,10 @@
               <li class="span1"><%= link_to "Резюме", "/resumes/search"  %></li>
               <li class="span1"><%= link_to "Курсы", "/kurs/index"  %></li>
               <li class="span4"><%= link_to "Статьи", "/note/index"  %></li>
+	      <% if !User.find_by_id(session[:user_id]) %>
               <li class="span1"><%= link_to "ВХОД", login_url %></li>
               <li class="span1"><%= link_to "Регистрация", "/users/new"  %></li>
-              
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -94,7 +95,7 @@
     <div class="span3">
     <ul> 
       <% curr=User.find_by_id(session[:user_id]) %>
-      <%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %>
+      <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %></li>
       <li><%= curr.name %> </li>
       <li><h5>Вы добавили</h5></li>
         
@@ -121,33 +122,6 @@
           <% end %>
           <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>
         </ul>
-        <br>статьи:<br>
-        <ul>
-        <% links_art=curr.article_added
-          unless links_art==nil
-          data=eval("[" + links_res + "]") 
-          data.each do |x| %>
-            <li><%= link_to "#{Article.find_by_id(x).title}", "/note/#{x}" %></li>
-          <% end %>
-        <% else %>
-          <li><%= link_to "+Добавить статью", "/articles/new" %></li>
-        <% end %>
-      </ul>
-
-
-      <br>курсы:<br>
-      <ul>
-        <% links_kur=curr.courses_added
-          unless links_kur==nil
-          data=eval("[" + links_kur + "]") 
-          data.each do |x| %>
-            <li><%= link_to "#{Course.find_by_id(x).title}", "/courses/#{x}" %></li>
-          <% end %>
-          <% end %>
-          <li><%= link_to "+Добавить курсы", "/courses/new" %></li>
-        </ul>
-      <li>Вы пометили: </li>
-
     </ul>
     
   </div>
