@@ -49,7 +49,8 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
-    @resume = Resume.new(params[:resume])
+  @user=User.find_by_id(session[:user_id])
+    @resume = @user.resumes.new(params[:resume])
     @resume[:date] = Time.now
     @resume[:view] = 0
     #if !@resume[:avatar].nil?

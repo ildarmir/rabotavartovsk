@@ -53,10 +53,9 @@ class VacanciesController < ApplicationController
   # POST /vacancies
   # POST /vacancies.json
   def create
-    
-    @vacancy = Vacancy.new(params[:vacancy])
+    @user=User.find_by_id(session[:user_id])
+    @vacancy = @user.vacancies.new(params[:vacancy])
     @vacancy[:date] = Time.now
-      
     respond_to do |format|
       if @vacancy.save
          sake=User.find_by_id(session[:user_id])

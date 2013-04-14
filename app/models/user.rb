@@ -1,5 +1,7 @@
 # coding: utf-8
 class User < ActiveRecord::Base
+has_many :resumes
+has_many :vacancies
   attr_accessible :name, :password, :password_confirmation, :mail, :vacancies_added, :resumes_added, :article_added, :courses_added 
   validates :name, presence: true, uniqueness: true
   validates :mail, presence: true, uniqueness: true

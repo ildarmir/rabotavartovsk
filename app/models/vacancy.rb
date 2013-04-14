@@ -1,5 +1,5 @@
 class Vacancy < ActiveRecord::Base
-belongs_to :user
+belongs_to :users
   attr_accessible :date, :email, :experience, :note, :organisation, :phone, :position, :salary
   
   validates :position, :presence => true
