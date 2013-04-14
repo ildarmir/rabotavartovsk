@@ -1,7 +1,8 @@
 #coding: utf-8
 class UsersController < ApplicationController
   skip_before_filter :authorize, only: [:new, :create]
- 
+  before_filter :atom
+skip_before_filter :authorized, only: [:new, :create]
   # GET /users
   # GET /users.json
 #  def index
@@ -26,7 +27,12 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    if !@user
     @user = User.new
+    else
+	    redirect_to logout_url, notice: "Вы авторизованы"
+	    end
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +42,16 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
+    if !@user
     @user = User.new(params[:user])
+    else
+	    redirect_to mainpage_url, notice: "Вы авторизованы"
+	    end
     respond_to do |format|
       if @user.save
         format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан " }
@@ -57,8 +66,6 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to users_url, notice: 'User was successfully updated.' }
@@ -73,7 +80,6 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user = User.find(params[:id])
     begin
     @user.destroy
     flash[:notice] = "Пользователь #{@user.name} удален"
@@ -85,4 +91,8 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  protected
+  def atom
+@user=User.find_by_id(session[:user_id])
+end
 end

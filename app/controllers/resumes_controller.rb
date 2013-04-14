@@ -43,7 +43,7 @@ class ResumesController < ApplicationController
 
   # GET /resumes/1/edit
   def edit
-    @resume = Resume.find(params[:id])
+    @resume =@user.resumes.find(params[:id])
   end
 
   # POST /resumes
@@ -80,7 +80,7 @@ class ResumesController < ApplicationController
   # PUT /resumes/1
   # PUT /resumes/1.json
   def update
-    @resume = Resume.find(params[:id])
+    @resume = @user.resumes.find(params[:id])
     respond_to do |format|
       if @resume.update_attributes(params[:resume])
         format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
@@ -95,7 +95,7 @@ class ResumesController < ApplicationController
   # DELETE /resumes/1
   # DELETE /resumes/1.json
   def destroy
-    @resume = Resume.find(params[:id])
+    @resume = @user.resumes.find(params[:id])
     @resume.destroy
 
     respond_to do |format|

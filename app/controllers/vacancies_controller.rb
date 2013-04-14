@@ -47,7 +47,7 @@ class VacanciesController < ApplicationController
 
   # GET /vacancies/1/edit
   def edit
-    @vacancy = Vacancy.find(params[:id])
+    @vacancy = @user.vacancies.find(params[:id])
   end
 
   # POST /vacancies
@@ -78,8 +78,7 @@ class VacanciesController < ApplicationController
   # PUT /vacancies/1
   # PUT /vacancies/1.json
   def update
-    @vacancy = Vacancy.find(params[:id])
-
+    @vacancy = @user.vacancies.find(params[:id])
     respond_to do |format|
       if @vacancy.update_attributes(params[:vacancy])
         format.html { redirect_to @vacancy, notice: 'Vacancy was successfully updated.' }
@@ -94,7 +93,7 @@ class VacanciesController < ApplicationController
   # DELETE /vacancies/1
   # DELETE /vacancies/1.json
   def destroy
-    @vacancy = Vacancy.find(params[:id])
+    @vacancy = @user.vacancies.find(params[:id])
     @vacancy.destroy
 
     respond_to do |format|
