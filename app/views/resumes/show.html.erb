@@ -4,10 +4,10 @@
 
 <div id='showResume'>
     <div id='doljnost' ><%= @resume.position %>
-      <% if (session[:group_id] == 2 || session[:user_id] == @resume.id) %>
-      <div style="float:right; padding-right: 20px;">
-           <%= link_to "Edit", {:controller => :resumes, :action => :edit, :id => @resume.id} ,:id => "button2" , :class => "buttonText" %>
-           <%= link_to "Delete", {:controller => :resumes, :action => :destroy, :id => @resume.id}, :method=> :delete, :id => "button2", :class => "buttonText" %>
+    <% if (session[:user_id] == @resume[:user_id]) %>
+    <div style="float:right; padding-right: 20px;">
+           <%= link_to "Изменить", {:controller => :resumes, :action => :edit, :id => @resume.id} , :class => "btn btn-warning" %>
+           <%= link_to "Удалить", {:controller => :resumes, :action => :destroy, :id => @resume.id}, :method=> :delete, :class => "btn btn-warning" %>
        
       </div>
       <% end %>

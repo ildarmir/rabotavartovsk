@@ -51,6 +51,9 @@ class UsersController < ApplicationController
     else
 	    redirect_to mainpage_url, notice: "Вы авторизованы"
 	    end
+    if !@user[:password].nil?
+      @user[:password] = Digest::MD5.hexdigest(params[:name][:password])
+    end
     respond_to do |format|
       if @user.save
         format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан " }
