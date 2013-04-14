@@ -2,7 +2,6 @@
 class UsersController < ApplicationController
   skip_before_filter :authorize, only: [:new, :create]
   before_filter :atom
-skip_before_filter :authorized, only: [:new, :create]
   # GET /users
   # GET /users.json
 #  def index
@@ -91,8 +90,11 @@ skip_before_filter :authorized, only: [:new, :create]
       format.json { head :no_content }
     end
   end
-  protected
+  private
   def atom
-@user=User.find_by_id(session[:user_id])
-end
+unless @user==User.find_by_id(session[:user_id])
+	redirect_to logout_url, notice: "Ошибка"
+	end
+	end
+
 end
