@@ -1,4 +1,5 @@
 class Resume < ActiveRecord::Base
+belongs_to :user
   
   attr_accessible :about, :age, :avatar, :city, :date, :education, :email, :experience, :group_id,  :mar_status, :min_wage, :name, :phone, :position, :schedule, :sex, :skills, :view
   
