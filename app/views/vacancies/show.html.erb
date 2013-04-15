@@ -1,11 +1,10 @@
 <div id='showNewVac'>
 	<div id='newVac'>
 		<%= @vacancy.position %>
-    <% if (session[:user_id] == @vacancy[:user_id]) %>
+    <% if @user==@vacancy.user %> 
     <div style="float:right; padding-right: 20px;">
            <%= link_to "Изменить", {:controller => :vacancies, :action => :edit, :id => @vacancy.id} , :class => "btn btn-warning" %>
            <%= link_to "Удалить", {:controller => :vacancies, :action => :destroy, :id => @vacancy.id}, :method=> :delete, :class => "btn btn-warning" %>
-       
       </div>
       <% end %>
 	</div>

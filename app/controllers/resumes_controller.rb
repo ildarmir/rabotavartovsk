@@ -18,6 +18,7 @@ class ResumesController < ApplicationController
     @resume = Resume.find(params[:id])
     @resume[:view] = @resume[:view] + 1
     @resume.update_attributes(params[:view])
+    @user=User.find_by_id(session[:user_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @resume }

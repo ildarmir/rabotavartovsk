@@ -2,17 +2,17 @@
 <div id="resume_search">    
         <table id='resume_table_result'>
             <tr>
-                <td class='resume_table_header' id='resume_profession'>Position</td>
-                <td class='resume_table_header' id='resume_notation'>Salary</td>
-                <td class='resume_table_header' id='resume_lengthOfService'>Experience</td>
-                <td class='resume_table_header' id='resume_earns'>Name</td>        
-                <td class='resume_table_header' id='resume_organisation'>City</td>
-                <td class='resume_table_header' id='resume_phone'>Date</td>
-                <td class='resume_table_header' id='resume_dateOf'>Age</td>
+                <td class='resume_table_header' id='resume_profession'>Позиция</td>
+                <td class='resume_table_header' id='resume_notation'>Зарплата</td>
+                <td class='resume_table_header' id='resume_lengthOfService'>Опыт</td>
+                <td class='resume_table_header' id='resume_earns'>Имя</td>        
+                <td class='resume_table_header' id='resume_organisation'>Город</td>
+                <td class='resume_table_header' id='resume_phone'>Дата</td>
+                <td class='resume_table_header' id='resume_dateOf'>Возраст</td>
             </tr>
 <% @resumes.each do |t| %>
            <tr>
-                <td class='resume_table_result_left'> <%= t.position %></td>
+                <td class='resume_table_result_left'> <%= link_to t.position, "/resumes/#{t.id}" %></td>
                 <td> <%= t.min_wage %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.name %></td>

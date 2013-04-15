@@ -12,7 +12,7 @@
             </tr>
 <% @vacancies.each do |t| %>
            <tr>
-                <td class='vacancy_table_result_left'> <%= t.position %></td>
+                <td class='vacancy_table_result_left'> <%= link_to t.position, "/vacancies/#{t.id}" %></td>
                 <td> <%= t.note %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.salary %></td>

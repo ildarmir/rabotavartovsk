@@ -2,17 +2,17 @@
 <div id="vacancy_search">    
         <table id='vacancy_table_result'>
             <tr>
-                <td class='vacancy_table_header' id='vacancy_profession'>Profession</td>
-                <td class='vacancy_table_header' id='vacancy_notation'>Note</td>
-                <td class='vacancy_table_header' id='vacancy_lengthOfService'>Experience</td>
-                <td class='vacancy_table_header' id='vacancy_earns'>Salary</td>        
-                <td class='vacancy_table_header' id='vacancy_organisation'>Organisation</td>
-                <td class='vacancy_table_header' id='vacancy_phone'>Phone</td>
-                <td class='vacancy_table_header' id='vacancy_dateOf'>Adding date</td>
+                <td class='vacancy_table_header' id='vacancy_profession'>Профессия</td>
+                <td class='vacancy_table_header' id='vacancy_notation'>Комментарий</td>
+                <td class='vacancy_table_header' id='vacancy_lengthOfService'>Опыт</td>
+                <td class='vacancy_table_header' id='vacancy_earns'>Зарплата</td>        
+                <td class='vacancy_table_header' id='vacancy_organisation'>Организация</td>
+                <td class='vacancy_table_header' id='vacancy_phone'>Телефон</td>
+                <td class='vacancy_table_header' id='vacancy_dateOf'>Дата добавления</td>
             </tr>
 <% @vacancies.each do |t| %>
            <tr>
-                <td class='vacancy_table_result_left'> <%= t.position %></td>
+                <td class='vacancy_table_result_left'> <%= link_to t.position, "/vacancies/#{t.id}" %></td>
                 <td> <%= t.note %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.salary %></td>

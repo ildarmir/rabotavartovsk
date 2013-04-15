@@ -27,6 +27,7 @@ class VacanciesController < ApplicationController
   # GET /vacancies/1.json
   def show
     @vacancy = Vacancy.find(params[:id])
+    @user=User.find_by_id(session[:user_id])
 
     respond_to do |format|
       format.html # show.html.erb
