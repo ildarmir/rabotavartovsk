@@ -4,7 +4,8 @@ class VacanciesController < ApplicationController
   # GET /vacancies
   # GET /vacancies.json
   def index
-    @vacancies = Vacancy.all
+    @vacancies = Vacancy.paginate page: params[:page], order: 'created_at desc', per_page: 20
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,8 +16,10 @@ class VacanciesController < ApplicationController
   def search 
     
     @vacancies = Vacancy.search(params[:search])
-    
+
     respond_to do |format|
+    require 'will_paginate/array'
+    @vacancies = @vacancies.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
       format.html # index.html.erb
       format.json { render json: @vacancies }
     end

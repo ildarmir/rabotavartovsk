@@ -5,6 +5,7 @@ class ResumesController < ApplicationController
   # GET /resumes.json
   def index
     @resumes = Resume.order("id")
+    @resumes = @resumes.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,6 +29,8 @@ class ResumesController < ApplicationController
   def search
     @resumes = Resume.search(params[:search])    
     respond_to do |format|
+   require 'will_paginate/array'
+    @resumes = @resumes.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
       format.html # index.html.erb
       format.json { render json: @resume }
     end    
