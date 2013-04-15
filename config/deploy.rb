@@ -1,4 +1,9 @@
 require 'bundler/capistrano'
+after "deploy:update_code", :copy_database_config
+task :copy_database_config, roles => :app do
+  db_config = "#{shared_path}/database.yml"
+  run "cp #{db_config} #{release_path}/config/database.yml"
+end
 load 'deploy/assets'
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
