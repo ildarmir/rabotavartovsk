@@ -1,3 +1,4 @@
+# coding: utf-8
 class VacanciesController < ApplicationController
   skip_before_filter :authorize, only: [:search, :show, :index]
   # GET /vacancies
@@ -53,19 +54,11 @@ class VacanciesController < ApplicationController
   # POST /vacancies
   # POST /vacancies.json
   def create
-    @user=User.find_by_id(session[:user_id])
     @vacancy = @user.vacancies.new(params[:vacancy])
     @vacancy[:date] = Time.now
     respond_to do |format|
       if @vacancy.save
-         sake=User.find_by_id(session[:user_id])
-         if sake.vacancies_added==nil
-         sake.vacancies_added="#{@vacancy.id},"
-         else
-         sake.vacancies_added+="#{@vacancy.id},"
-         end
-         sake.save
-        format.html { redirect_to @vacancy, notice: 'Vacancy was successfully created.' }
+        format.html { redirect_to @vacancy, notice: 'Вы успешно создали вакансию.' }
         format.json { render json: @vacancy, status: :created, location: @vacancy }
       else
         format.html { render action: "new" }

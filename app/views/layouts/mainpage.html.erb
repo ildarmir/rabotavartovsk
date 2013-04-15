@@ -101,25 +101,18 @@
         
       <br>вакансии:<br>
       <ul>
-          <% links=curr.vacancies_added
-          unless links==nil
-          data=eval("[" + links + "]") 
-          data.each do |x| %>
-            <li><%= link_to "#{Vacancy.find_by_id(x).position}", "/vacancies/#{x}" %></li>
-          <% end %>
-          <% end %>
+      <% curr.vacancies.each do |vak| %>
+            <li><%= link_to vak.position, "/vacancies/#{vak.id}" %></li>
+	    <% end %>
           <li><%= link_to "+Добавить вакансию", "/vacancies/new" %></li>
         </ul> 
 
         <br>резюме:<br>
         <ul>
-        <% links_res=curr.resumes_added
-          unless links_res==nil
-          data=eval("[" + links_res + "]") 
-          data.each do |x| %>
-            <li><%= link_to "#{Resume.find_by_id(x).position}", "/resumes/#{x}" %></li>
-          <% end %>
-          <% end %>
+      <% curr.resumes.each do |res| %>
+            <li><%= link_to res.position, "/resumes/#{res.id}" %></li>
+	    <% end %>
+
           <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>
         </ul>
     </ul>

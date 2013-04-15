@@ -1,7 +1,4 @@
 <div id='showNewVac'>
-	<% if notice %>
-		<h3 id="notice"><%= notice %></h3>
-	<% end %>
 	<div id='newVac'>
 		<%= @vacancy.position %>
     <% if (session[:user_id] == @vacancy[:user_id]) %>

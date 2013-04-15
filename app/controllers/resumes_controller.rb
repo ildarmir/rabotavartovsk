@@ -1,3 +1,4 @@
+# coding: utf-8
 class ResumesController < ApplicationController
   skip_before_filter :authorize, only: [:index, :show, :search]
   # GET /resumes
@@ -61,14 +62,7 @@ class ResumesController < ApplicationController
     end
     respond_to do |format|
       if @resume.save
-         sake=User.find_by_id(session[:user_id])
-         if sake.resumes_added==nil
-         sake.resumes_added="#{@resume.id},"
-         else
-         sake.resumes_added+="#{@resume.id},"
-         end
-         sake.save
-        format.html { redirect_to @resume, notice: 'Resume was successfully created.' }
+        format.html { redirect_to @resume, notice: 'Вы успешно создали резюме.' }
         format.json { render json: @resume, status: :created, location: @resume }
       else
         format.html { render action: "new" }
