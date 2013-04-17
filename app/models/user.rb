@@ -2,10 +2,20 @@
 class User < ActiveRecord::Base
 has_many :resumes
 has_many :vacancies
-  attr_accessible :name, :password, :password_confirmation, :mail, :vacancies_added, :resumes_added, :article_added, :courses_added 
+  attr_accessible :name, :password_digest, :password_confirmation, :mail
   validates :name, presence: true, uniqueness: true
-  validates :mail, presence: true, uniqueness: true
-  has_secure_password
+  validates :mail, presence: true, uniqueness: true, format: /@/
+  validates :password_digest, presence: true
+  validates :password_confirmation, presence: true
+#next strings for md5 encryption of password
+  attr_accessor :password_digest, :password_confirmation
+#  before_create :hash_password
+#    def hash_password
+#    require "digest"
+#        self[:password] = Digest::MD5.hexdigest(self[:password])
+#	  end
+
+# has_secure_password
   after_destroy :ensure_an_admin_remains
   private
   def ensure_an_admin_remains

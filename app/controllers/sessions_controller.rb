@@ -5,8 +5,11 @@ class SessionsController < ApplicationController
   end
 
 def create
+ require 'digest'
  user = User.find_by_name(params[:name])
- if user and user.authenticate(params[:password])
+ params_pass = Digest::MD5.hexdigest(params[:password])    
+ if user and user[:password] == params_pass
+ #if user and user.authenticate(params[:password])
  session[:user_id] = user.id
  redirect_to mainpage_url
  else

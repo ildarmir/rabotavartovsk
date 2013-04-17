@@ -51,8 +51,8 @@
               <li class="span1"><%= link_to "Главная", "/"  %></li>
               <li class="span1"><%= link_to "Вакансии", "/vacancies/search"  %></li>
               <li class="span1"><%= link_to "Резюме", "/resumes/search"  %></li>
-              <li class="span1"><%= link_to "Курсы", "/kurs/index"  %></li>
-              <li class="span4"><%= link_to "Статьи", "/note/index"  %></li>
+              <li class="span1"><%= link_to "Курсы", "#"  %></li>
+              <li class="span4"><%= link_to "Статьи", "#"  %></li>
 	      <% if !User.find_by_id(session[:user_id]) %>
               <li class="span1"><%= link_to "ВХОД", login_url %></li>
               <li class="span1"><%= link_to "Регистрация", "/users/new"  %></li>
