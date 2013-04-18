@@ -8,24 +8,14 @@ Rabotavartovsk::Application.routes.draw do
   delete 'logout' => :destroy
  end
 
-
-
   resources :users
-
-
-  get "kurs/index"
-
-  get "kurs/show"
-
-  resources :courses
-
-
-  get "note/show"
-
-  get "note/index"
+  #get "kurs/index"
+  #get "kurs/show"
+  #resources :courses
+  #get "note/show"
+  #get "note/index"
 
   get "mainpage/index" 
-
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
 
@@ -37,21 +27,14 @@ Rabotavartovsk::Application.routes.draw do
      resources :resumes
   end
 
-   scope "(:locale)", :locale => /en|ru/ do
-     resources :articles
-  end
-
+  # scope "(:locale)", :locale => /en|ru/ do
+  #   resources :articles
+  #end
 
  # match '/:locale' => 'mainpage#index'
- 
-
 
   post "session/create" => "session#create"
-  
   get "session/destroy" => "session#destroy"
-  
-  
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

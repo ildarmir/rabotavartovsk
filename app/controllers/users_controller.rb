@@ -46,20 +46,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-#    require 'digest'
     if !@user
-#   params[:user][:password]=Digest::MD5.hexdigest(params[:user][:password])
-	    #if params[:user][:password_digest]===params[:user][:password_confirmation]
     @user = User.new(params[:user])
     else
 	    redirect_to mainpage_url, notice: "Вы авторизованы"
 	    end
-    #if !@user.password.nil?
-     # @user.password = Digest::MD5.hexdigest(@user.password)
-    #end
-    #if !@user[:password].nil?
-    #  @user[:password] = Digest::MD5.hexdigest(params[:password])
-    #end
     respond_to do |format|
       if @user.save
         format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан #{params[:user]},#{@user.password_digest}" }
