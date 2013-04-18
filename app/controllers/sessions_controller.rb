@@ -30,4 +30,26 @@ end
   session[:user_id] = nil
   redirect_to mainpage_url, notice: "Сеанс работы завершен"
   end
+  def newpass
+  end
+# assign them a random one and mail it to them, asking them to change it
+    def forgot_password
+        @user = User.find_by_mail(params[:mail])
+	    if @user
+	    random_password = Array.new(10).map { (65 + rand(58)).chr }.join
+	        @user.password = random_password
+		    @user.save!
+		        #Mailer.create_and_deliver_password_change(@user, random_password)
+	Forgot.pass(@user.mail,random_password).deliver
+	end
+  respond_to do |format|
+  if @user 
+        format.html { redirect_to  login_url, notice: "Проверьте почтовый ящик" }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: "new", notice: "Почтовый ящик не зарегистрирован" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+  end
+  end
+  end
 end

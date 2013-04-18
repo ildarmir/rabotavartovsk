@@ -5,6 +5,8 @@ Rabotavartovsk::Application.routes.draw do
  controller :sessions do
   get 'login' => :new
   post 'login' => :create
+  post 'forgot_password' => :forgot_password
+  get 'newpass' => :newpass
   delete 'logout' => :destroy
  end
 

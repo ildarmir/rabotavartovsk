@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 	    end
     respond_to do |format|
       if @user.save
-        format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан #{params[:user]},#{@user.password_digest}" }
+        format.html { redirect_to  login_url, notice: "Пользователь #{@user.name} был успешно создан"}
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
