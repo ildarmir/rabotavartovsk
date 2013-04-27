@@ -2,7 +2,7 @@
 
 User:
   fields:
-    default: name, password_digest, who, org, phones, mail, image_url, vacancies_added, resumes_added, courses_added, article_added
-    form: name, password_digest, who, org, phones, mail, image_url, vacancies_added, resumes_added, courses_added, article_added
+    default: name, password_digest, mail, old_pass, created_at, updated_at
+    form: name, password_digest, mail,old_pass
   relationships: 
   application: Application
