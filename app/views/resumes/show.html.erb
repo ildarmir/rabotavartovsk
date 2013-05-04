@@ -109,19 +109,19 @@
     	<%= t(:education_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='obrazovanie'><%= @resume.education %></div>            
+    	<div id='obrazovanie'><%= simple_format(@resume.education) %></div>
     </p>
     <p class='resume_headers'>
     	<%= t(:skills_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='naviki'><%= @resume.skills %></div>           
+    	<div id='naviki'><%= simple_format(@resume.skills) %></div>
     </p>
     <p class='resume_headers'>
     	<%= t(:about_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='osebe'><%= @resume.about %></div>            
+    	<div id='osebe'><%= simple_format(@resume.about) %></div>
     </p>
     <p class='resume_headers'>
     	<%= t(:contact_info) %>
