@@ -17,7 +17,7 @@
                 <td> <%= t.experience %></td>
                 <td> <%= t.name %></td>
                 <td> <%= t.city %></td>
-                <td> <%= t.date %></td>
+                <td> <%= t.date.strftime("%d.%m.%Y") %></td>
                 <td> <%= t.age %></td>
             </tr>
 <% end %>
