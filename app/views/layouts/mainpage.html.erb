@@ -93,7 +93,7 @@
 
   <% if User.find_by_id(session[:user_id]) %>
     <div class="span3">
-    <ul> 
+    <ul class="user_block">
       <% curr=User.find_by_id(session[:user_id]) %>
       <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %></li>
       <li><%= link_to curr.name, "/users/edit" %> </li>
