@@ -17,3 +17,6 @@
 *.*~
 # Ignore upload images.
 /public/uploads/*
+
+#Ignore idea files
+/.idea/*
