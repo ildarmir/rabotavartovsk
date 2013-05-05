@@ -13,19 +13,21 @@
             </tr>
 <% @resumes.each do |t| %>
            <tr>
-                <td class='resume_table_result_left'> <%= t.position  %></td>
+                <td class='resume_table_result_left'> <%= link_to t.position, "/resumes/#{t.id}" %></td>
                 <td> <%= t.min_wage %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.name %></td>
                 <td> <%= t.city %></td>               
                 <td> <%= t.age %></td>
                 <td> <%= t.date.strftime("%d.%m.%Y") %></td>
+		<% if 1==0 %>
                 <td class="show" id='<%= t.id %>' style="cursor:pointer">
                 <% if !t.skills.empty? %>
                    Быстрый<br />
                    просмотр
                 <% end %>
                 </td>
+		
             </tr>
             <% if !t.skills.empty? %>
             <tr id="show_<%= t.id %>" class="close">
@@ -35,10 +37,11 @@
              
                 
             </tr>
+	    <% end %>
             <% end %>
 <% end %>
         </table>
-	<p><%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
+	<p><%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
 </div>
 
 <script>

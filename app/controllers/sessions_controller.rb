@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 def create
  user = User.find_by_name(params[:name])
  if user[:old_pass] and !user[:password]
- params_pass = Digest::MD5.hexdigest(params[:password].reverse + "b3p6f")    
+ params_pass = Digest::MD5.hexdigest(params[:password]).reverse + "b3p6f"
 	 if user and user[:old_pass] == params_pass
 	 user[:password_digest] = BCrypt::Password.create(params[:password])
 	 user[:old_pass] = nil

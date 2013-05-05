@@ -4,8 +4,8 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.order("id")
-    @resumes = @resumes.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
+    @resumes = Resume.order("date desc")
+    @resumes = @resumes.paginate(:page => params[:page], :per_page => 20, :order => "date desc") 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -58,12 +58,12 @@ class ResumesController < ApplicationController
     @resume = @user.resumes.new(params[:resume])
     @resume[:date] = Time.now
     @resume[:view] = 0
-    #if !@resume[:avatar].nil?
-      #@resume[:avatar] = "avatars/noava.jpg";
-    # end
-    if !@resume[:password].nil?
-      @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
-    end
+    if !@resume[:avatar].nil?
+      @resume[:avatar] = "avatars/noava.jpg";
+     end
+    #if !@resume[:password].nil?
+    #  @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
+    #end
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Вы успешно создали резюме.' }
