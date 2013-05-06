@@ -58,7 +58,7 @@ class ResumesController < ApplicationController
     @resume = @user.resumes.new(params[:resume])
     @resume[:date] = Time.now
     @resume[:view] = 0
-    if !@resume[:avatar].nil?
+    if @resume[:avatar].nil?
       @resume[:avatar] = "avatars/noava.jpg";
      end
     #if !@resume[:password].nil?
