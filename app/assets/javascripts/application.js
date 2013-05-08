@@ -13,13 +13,31 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(document).ready(function(){
-	$( "#articles" ).accordion({
-		event: "mouseover"
-	});
-	
-	$( "#tabs" ).tabs();	
-});
+
+
+
+
+    $('#myTab li').click(function (e) {
+       // alert("da");
+        e.preventDefault();
+
+         $("#myTab li[class='active']").removeClass("active");
+         $(this).addClass("active");
+         divTabOld = $(this).children("a").eq(0).attr("href");
+            $(".tab-content .active").removeClass("active");
+        $(".tab-content " + divTabOld).addClass("active");
+//        var oldA = "#myTab li[class='active']";
+//        $(oldA).removeClass("active");
+//
+//        $(this).parent("li").addClass("active");
+//        var divTabActive = $(this).attr("href");
+//        var divTabOld = $(oldA).children("a").eq(0).attr("href");
+//        console.log(divTabOld + " " + divTabActive);
+//        $(divTabActive).show();
+//        $(divTabOld).hide();
+    })
+
+
 //Open close element
 function Expand (options) {
 	this._elem = options.elem;	
