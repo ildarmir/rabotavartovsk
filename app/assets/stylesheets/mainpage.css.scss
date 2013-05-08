@@ -26,6 +26,27 @@
 }
 
 .search_block {
-  margin: 40px 20px 100px 20px;
+  margin: 20px 20px 30px 20px;
 }
 
+div.tab-pane.active {
+  border: 1px solid #ddd;
+  padding: 50px 0px;
+
+}
+
+.nav {
+  margin-bottom: 0;
+}
+
+.nav-tabs {
+  border: 0;
+}
+
+#resume_search_block {
+  border-radius: 10px;
+}
+
+#vacancy_search_block {
+  border-radius: 0px 10px 10px 10px;
+}

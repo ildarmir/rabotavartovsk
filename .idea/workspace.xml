@@ -4,17 +4,16 @@
     <list default="true" id="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/jquery-1.9.0.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/jquery-ui-1.10.0.custom.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mainpage/index.html.erb" afterPath="$PROJECT_DIR$/app/views/mainpage/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mainpage.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mainpage.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/mainpage.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/mainpage.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rabotavartovsk.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368032016797" ignored="false" />
-    <file path="/index.html.erb" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1367688286327" ignored="false" />
-    <file path="/mainpage.css.scss" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368033687437" ignored="false" />
-    <file path="/mainpage.html.erb" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368033258138" ignored="false" />
+    <file path="/index.html.erb" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368040298005" ignored="false" />
+    <file path="/mainpage.css.scss" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368039645174" ignored="false" />
+    <file path="/mainpage.html.erb" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368039517492" ignored="false" />
     <file path="/.gitignore" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1367689167272" ignored="false" />
     <file path="/application.js" changelist="cd776bb0-bbb8-4f03-a62d-6efacc4516e5" time="1368032329379" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +47,16 @@
       <file leaf-file-name="mainpage.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/mainpage.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="34" selection-start="3379" selection-end="3389" vertical-scroll-proportion="-5.875">
+            <state line="66" column="8" selection-start="3098" selection-end="3098" vertical-scroll-proportion="-20.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/mainpage/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="8" selection-start="1272" selection-end="1272" vertical-scroll-proportion="-19.375">
               <folding />
             </state>
           </provider>
@@ -84,7 +92,7 @@
       <file leaf-file-name="mainpage.css.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mainpage.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.6888889">
+            <state line="27" column="0" selection-start="500" selection-end="792" vertical-scroll-proportion="0.46666667">
               <folding />
             </state>
           </provider>
@@ -117,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/mainpage/index.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/resumes/search.html.erb" />
         <option value="$PROJECT_DIR$/app/views/vacancies/search.html.erb" />
@@ -125,6 +132,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/mainpage.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/mainpage/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/mainpage.css.scss" />
       </list>
     </option>
@@ -225,56 +233,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="typus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locales" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -301,7 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="mainpage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -338,28 +296,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rabotavartovsk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,9 +530,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20761494" sideWeight="0.6712707" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -667,11 +603,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/mainpage/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="41" selection-start="3293" selection-end="3293" vertical-scroll-proportion="-3.25" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="31" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0" />
@@ -749,16 +680,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/mainpage/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="8" selection-start="1272" selection-end="1272" vertical-scroll-proportion="-19.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/mainpage.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="34" selection-start="3379" selection-end="3389" vertical-scroll-proportion="-5.875">
+        <state line="66" column="8" selection-start="3098" selection-end="3098" vertical-scroll-proportion="-20.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mainpage.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.6888889">
+        <state line="27" column="0" selection-start="500" selection-end="792" vertical-scroll-proportion="0.46666667">
           <folding />
         </state>
       </provider>

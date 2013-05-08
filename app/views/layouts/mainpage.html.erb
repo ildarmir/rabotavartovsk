@@ -64,41 +64,7 @@
     </div>
     <div class="row">
       <div class="span9">
-        <div class="row search_block">
-          <div class="span8">
-            <ul class="nav nav-tabs" id="myTab">
-              <li class="active"><a href="#home">Вакансии</a></li>
-              <li><a href="#profile">Резюме</a></li>
-            </ul>
 
-            <div class="tab-content">
-              <div class="tab-pane active" id="home">
-                <%= form_tag  ("/vacancies/search" ), method: :get do %>
-                  <div class="span5 offset1">
-                    <%= text_field_tag :search, params[:search], :class => "span5", :placeholder =>"Введите вакансию" %>
-                  </div>
-                  <div class="span1">
-                    <%=  button_tag "Поиск", :class => "btn btn-small btn-info" %>
-                  </div>
-                <% end %>
-              </div>
-              <div class="tab-pane" id="profile">
-                <%= form_tag  ("/resumes/search" ), method: :get do %>
-                  <div class="span5 offset1">
-                    <%= text_field_tag :search, params[:search], :class => "span5", :placeholder =>"Введите ключевое слово в резюме" %>
-                  </div>
-                  <div class="span1">
-                    <%=  button_tag "Поиск", :class => "btn btn-small btn-info" %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-
-
-
-
-         </div>
                 <% if notice %>
           <p id="notice"><%= notice %></p>
         <% end %>
