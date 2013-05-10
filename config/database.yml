@@ -15,7 +15,7 @@ development:
   database: rabotavartovsk_development
   pool: 5
   username: root
-  password: toor
+  password: '789456123'
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: tapir_rabotavs25
   pool: 5
-  username: root
-  password: toor
+  username: 'tapir_rabotavs25'
+  password: 'jMZHYqQk'
   host: mysql5.locum.ru

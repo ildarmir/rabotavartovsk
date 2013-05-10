@@ -8,6 +8,7 @@
   text-align: justify;
   color: #777;
   text-indent: 20px;
+  
 }
 
 .footer_container {
@@ -26,13 +27,13 @@
 }
 
 .search_block {
-  margin: 20px 20px 30px 20px;
+  margin: 20px 20px 20px 20px;
 }
 
 div.tab-pane.active {
   border: 1px solid #ddd;
-  padding: 50px 0px;
-
+  padding: 30px 0px;
+  background: #0085ea
 }
 
 .nav {
@@ -45,8 +46,10 @@ div.tab-pane.active {
 
 #resume_search_block {
   border-radius: 10px;
+  background: #0085ea
 }
 
 #vacancy_search_block {
   border-radius: 0px 10px 10px 10px;
+  background: #0085ea
 }
