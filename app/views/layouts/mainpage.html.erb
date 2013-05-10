@@ -47,17 +47,7 @@
     </div>
     <div class="row">
       <div class="span9">
-        <div class="row">
-          <%= form_tag  ("/vacancies/search" ), method: :get do %>
-          <div class="span5 offset1">
-                	<%= text_field_tag :search, params[:search], :class => "span5", :placeholder =>"Введите ключевое слово в резюме" %>
-                      </div>
-          <div class="span3">
-            <%=  button_tag "ВАКАНСИЮ", :class => "btn btn-small btn-info" %>
-            <%=  button_tag "РЕЗЮМЕ", :name => nil, :formaction => "/resumes/search", :class => "btn btn-small btn-info" %>
-          </div>
-        <% end %>
-         </div>
+
                 <% if notice %>
           <p id="notice"><%= notice %></p>
         <% end %>

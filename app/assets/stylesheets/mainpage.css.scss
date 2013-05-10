@@ -8,6 +8,7 @@
   text-align: justify;
   color: #777;
   text-indent: 20px;
+  
 }
 
 .footer_container {
@@ -23,4 +24,32 @@
 
 .user_block {
   list-style-type: none;
+}
+
+.search_block {
+  margin: 20px 20px 20px 20px;
+}
+
+div.tab-pane.active {
+  border: 1px solid #ddd;
+  padding: 30px 0px;
+  background: #0085ea
+}
+
+.nav {
+  margin-bottom: 0;
+}
+
+.nav-tabs {
+  border: 0;
+}
+
+#resume_search_block {
+  border-radius: 10px;
+  background: #0085ea
+}
+
+#vacancy_search_block {
+  border-radius: 0px 10px 10px 10px;
+  background: #0085ea
 }
