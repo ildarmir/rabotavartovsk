@@ -7,9 +7,11 @@ class Forgot < ActionMailer::Base
   #
   #   en.forgot.pass.subject
   #
-  def pass(maile,random_password)
-  @random_password=random_password 
+  def pass(var1,var2)
+  @random_password=var2 
 
-    mail to: maile, subject: "Вам письмо"
+    mail to: var1, subject: "Восстановление учетной записи" do |format|
+    format.text {render :text=> "Вы запросили восстановление учетной записи. Ваш новый пароль #{@random_password}"}
+    end
   end
 end
