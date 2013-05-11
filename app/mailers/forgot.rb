@@ -11,7 +11,7 @@ class Forgot < ActionMailer::Base
   @random_password=var2 
 
     mail to: var1, subject: "Восстановление учетной записи" do |format|
-    format.text {render :text=> "Вы запросили восстановление учетной записи. Ваш новый пароль #{@random_password}"}
+    format.text {render :text=> "Вы запросили восстановление учетной записи. Ваш новый пароль #{@random_password}. Вы можете сменить его в своем профиле."}
     end
   end
 end

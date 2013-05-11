@@ -1,8 +1,12 @@
 require 'bundler/capistrano'
-after "deploy:update_code", :copy_database_config
+after "deploy:update_code", :copy_database_config, :copy_production_config
 task :copy_database_config, roles => :app do
   db_config = "#{shared_path}/database.yml"
   run "cp #{db_config} #{release_path}/config/database.yml"
+end
+task :copy_production_config, roles => :app do
+  pr_config = "#{shared_path}/production.rb"
+  run "cp #{pr_config} #{release_path}/config/production.rb"
 end
 load 'deploy/assets'
 ssh_options[:forward_agent] = true

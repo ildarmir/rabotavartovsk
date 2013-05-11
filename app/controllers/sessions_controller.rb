@@ -36,14 +36,14 @@ end
     def forgot_password
         @user = User.find_by_mail(params[:mail])
 	    if @user
-	    random_password = Array.new(10).map { (65 + rand(58)).chr }.join
+	    chars = ('a'..'z').to_a + ('1'..'9').to_a - ['o', 'O', 'i', 'I']  	    
+	    random_password = Array.new(7) { chars[rand(chars.size)] }.join
 	        @user.password = random_password
 		    @user.save!
-		        #Mailer.create_and_deliver_password_change(@user, random_password)
 	Forgot.pass(@user.mail,random_password).deliver
 	end
   respond_to do |format|
-  if @user 
+  if @user
         format.html { redirect_to  login_url, notice: "Проверьте почтовый ящик" }
         format.json { render json: @user, status: :created, location: @user }
       else
