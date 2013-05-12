@@ -22,27 +22,25 @@
     <%= image_tag("logo.jpg") %>
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#"></a>
-          <div class="container-fluid nav-collapse pull-left">
             <ul class="nav">
-              <li class="span1"><%= link_to "Главная", "/"  %></li>
-              <li class="span1"><%= link_to "Вакансии", "/vacancies/search"  %></li>
-              <li class="span1"><%= link_to "Резюме", "/resumes/search"  %></li>
-              <li class="span1"><%= link_to "Курсы", "#"  %></li>
-              <li class="span4"><%= link_to "Статьи", "#"  %></li>
+              <li><%= link_to "Главная", "/"  %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "Вакансии", "/vacancies/search"  %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "Резюме", "/resumes/search"  %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "Курсы", "#"  %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "Статьи", "#"  %></li>
+	      <li class="divider-vertical"></li>
+	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
-              <li class="span1"><%= link_to "ВХОД", login_url %></li>
-              <li class="span1"><%= link_to "Регистрация", "/users/new"  %></li>
+            <ul class="nav pull-right">
+              <li><%= link_to "ВХОД", login_url %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "Регистрация", "/users/new"  %></li>
               <% end %>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div>
       </div>
     </div>
     <div class="row">
