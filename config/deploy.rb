@@ -6,7 +6,7 @@ task :copy_database_config, roles => :app do
 end
 task :copy_production_config, roles => :app do
   pr_config = "#{shared_path}/production.rb"
-  run "cp #{pr_config} #{release_path}/config/production.rb"
+  run "cp #{pr_config} #{release_path}/config/environments/production.rb"
 end
 load 'deploy/assets'
 ssh_options[:forward_agent] = true
