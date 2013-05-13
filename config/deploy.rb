@@ -1,5 +1,9 @@
 require 'bundler/capistrano'
-after "deploy:update_code"
+task :link_db do
+  run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+  end
+
+  before "deploy:assets:precompile", "deploy:copy_database_config"
 namespace :deploy do
 desc "Copy database.yml and production.rb"
 task :copy_database_config, roles => :app do
