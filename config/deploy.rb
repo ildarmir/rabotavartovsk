@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
-after "deploy:update_code", :copy_database_config
+after "deploy:update_code"
 namespace :deploy do
+desc "Copy database.yml and production.rb"
 task :copy_database_config, roles => :app do
   db_config = "#{shared_path}/database.yml"
   pr_config = "#{shared_path}/production.rb"
