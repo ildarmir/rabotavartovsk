@@ -1,9 +1,6 @@
 require 'bundler/capistrano'
-task :link_db do
-  run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
-  end
 
-  before "deploy:assets:precompile", "deploy:copy_database_config"
+  before "deploy:assets:precompile", "deploy:copy_database_config", "deploy:link_resume"
 namespace :deploy do
 desc "Copy database.yml and production.rb"
 task :copy_database_config, roles => :app do
@@ -11,6 +8,10 @@ task :copy_database_config, roles => :app do
   pr_config = "#{shared_path}/production.rb"
   run "cp #{db_config} #{release_path}/config/database.yml && cp #{pr_config} #{release_path}/config/environments/production.rb"
 end
+desc "link uploads"
+task :link_resume do
+  run "ln -s #{shared_path}/uploads/resume #{latest_release}/public/uploads/resume"
+  end
 end
 load 'deploy/assets'
 ssh_options[:forward_agent] = true
