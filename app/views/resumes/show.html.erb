@@ -21,10 +21,12 @@
             	<div id='imya'> <%= @resume.name %></div>            
             </td>
             <td rowspan='8' id='rightBlockResumeTable'>
+	    	<% if @resume.avatar? %>
 		<% if @resume.avatar.to_s.include? "avatars/" %>
 		<%= image_tag(@resume.avatar, :border => 0) %>
 		<% elsif !@resume.avatar.to_s.include? "avatars/" %>
             	<%= image_tag(@resume.avatar_url(:big), :border => 0) %>                 
+		<% end %>
 		<% else %>
 		<%= image_tag("noava.jpg", :border =>0) %>
 		<% end %>
@@ -137,8 +139,10 @@
     </div>
     <div class='resume_data_contact'>
     	<%= t(:email_show) %>: <span id='email'>
+	<% if @resume.email? %>
 	<% io=@resume.email.split('@') %>
 	<%= io[0] %><%= image_tag('atmini.jpg') %><%= io[1] %></span>
+	<% end %>
     </div>
 </div>
 
