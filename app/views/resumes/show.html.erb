@@ -21,7 +21,9 @@
             	<div id='imya'> <%= @resume.name %></div>            
             </td>
             <td rowspan='8' id='rightBlockResumeTable'>
-		<% if @resume.avatar_url(:big) %>
+		<% if @resume.avatar.to_s.include? "avatars/" %>
+		<%= image_tag(@resume.avatar, :border => 0) %>
+		<% elsif !@resume.avatar.to_s.include? "avatars/" %>
             	<%= image_tag(@resume.avatar_url(:big), :border => 0) %>                 
 		<% else %>
 		<%= image_tag("noava.jpg", :border =>0) %>
