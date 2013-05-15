@@ -32,7 +32,7 @@
 
 div.tab-pane.active {
   border: 1px solid #ddd;
-  padding: 30px 0px;
+  padding: 20px 0px 30px;
   background: #0088cc;
   border-color: #0088cc #ddd #ddd #ddd;
 }
@@ -65,4 +65,16 @@ div.tab-pane.active {
 }
 .navbar-inner{
 	padding-left: 105px
+}
+.btn{
+	padding:4px 35px
+}
+.nav-tabs > li > a {
+	border-radius: 8px, 8px, 0 0;
+	padding-bottom:3px;
+	padding-top:3px;
+}
+.nav-tabs >li >a, .nav-pills > li >a {
+	padding-left: 12px;
+	padding-right: 10px;
 }
