@@ -35,16 +35,4 @@ Rabotavartovsk::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
-  #config.action_mailer.delivery_method = :test
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-	  address: "smtp.gmail.com",
-	  port: 587,
-	  domain: "localhost:8080",
-	  authentication: "plain",
-	  user_name: "vartovskpeople@gmail.com",
-	  password: "iloosingmyfavoritegame",
-	  enable_starttls_auto: true
-  }
 end

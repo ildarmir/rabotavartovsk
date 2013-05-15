@@ -28,7 +28,7 @@ test:
   database: rabotavartovsk_test
   pool: 5
   username: root
-  password: toor
+  password: '789456123'
   host: localhost
 
 production:

@@ -58,9 +58,9 @@ class ResumesController < ApplicationController
     @resume = @user.resumes.new(params[:resume])
     @resume[:date] = Time.now
     @resume[:view] = 0
-    if @resume[:avatar].nil?
-      @resume[:avatar] = "avatars/noava.jpg";
-     end
+    #if @resume[:avatar].nil?
+     # !@resume[:avatar] = "noava.jpg";
+     #end
     #if !@resume[:password].nil?
     #  @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
     #end
@@ -81,7 +81,7 @@ class ResumesController < ApplicationController
     @resume = @user.resumes.find(params[:id])
     respond_to do |format|
       if @resume.update_attributes(params[:resume])
-        format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
+        format.html { redirect_to @resume, notice: 'Резюме успешно обновлено' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
