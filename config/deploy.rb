@@ -10,7 +10,7 @@ task :copy_database_config, roles => :app do
 end
 desc "link uploads"
 task :link_resume do
-  run "ln -s #{shared_path}/uploads/resume #{latest_release}/public/uploads/resume"
+  run "ln -s #{shared_path}/uploads/ #{latest_release}/public/uploads"
   end
 end
 load 'deploy/assets'
