@@ -1,9 +1,18 @@
 <fieldset>
-<legend> Введите указанный при регистрации адрес электронной почты</legend>
+<legend> Введите указанный при регистрации адрес электронной почты или логин</legend>
 <%= form_tag(:forgot_password) do %>
 <div>
 <%= label_tag :mail, 'Email:' %>
 <%= email_field_tag :mail, params[:mail] %>
+</div>
+<div>
+<%= button_tag "Отправить", :class => "btn" %>
+</div>
+<% end %>
+<%= form_tag(:forgot_password) do %>
+<div>
+<%= label_tag :name, 'Логин:' %>
+<%= text_field_tag :name, params[:name] %>
 </div>
 <div>
 <%= button_tag "Отправить", :class => "btn" %>
