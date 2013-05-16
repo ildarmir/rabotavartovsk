@@ -26,35 +26,40 @@
   list-style-type: none;
 }
 
-.search_block {
-  margin: 20px 20px 20px 20px;
+//top navigation bar
+.navbar-inner{
+	padding-left: 105px
 }
-
+//search block
+#vacancy_search_block {
+  border-radius: 0px 10px 10px 10px;
+}
 div.tab-pane.active {
   border: 1px solid #ddd;
   padding: 20px 0px 30px;
   background: #0088cc;
   border-color: #0088cc #ddd #ddd #ddd;
-}
-
-.nav {
-  margin-bottom: 0;
-}
-
-.nav-tabs {
-  border: 0;
-}
-
-#resume_search_block {
   border-radius: 10px;
-  background: #0088cc
+    form {
+      .span1 > .btn-info{
+      padding:4px 35px;
+      font-weight: bold;
+}
+}
 }
 
-#vacancy_search_block {
-  border-radius: 0px 10px 10px 10px;
-  background: #0088cc
-}
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+.nav.nav-tabs {
+  margin-bottom: 0;
+  border: 0;
+    li > a{ 
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+      padding-bottom:3px;
+      padding-top:3px;
+      padding-left: 12px;
+      padding-right: 10px;
+    }
+    .active > a,a:hover,a:focus{
 	background-color:#0088cc;
 	border-color:#DDDDDD #DDDDDD transparent;
 	border-style:solid;
@@ -63,20 +68,7 @@ div.tab-pane.active {
 	cursor:default;
 	font-weight: bold
 }
-.navbar-inner{
-	padding-left: 105px
 }
-.btn{
-	padding:4px 35px;
-	font-weight: bold;
-}
-.nav-tabs > li > a {
-	font-weight: bold;
-	border-radius: 8px 8px 0 0;
-	padding-bottom:3px;
-	padding-top:3px;
-}
-.nav-tabs >li >a, .nav-pills > li >a {
-	padding-left: 12px;
-	padding-right: 10px;
-}
+
+
+
