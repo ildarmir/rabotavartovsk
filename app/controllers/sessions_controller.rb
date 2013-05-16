@@ -5,7 +5,12 @@ class SessionsController < ApplicationController
   end
 
 def create
+ if params[:name] && params[:name].include?("@")
+	user=User.find_by_mail(params[:name])
+ elsif params[:name]
  user = User.find_by_name(params[:name])
+	end
+ 
  if user[:old_pass] and !user[:password]
  params_pass = Digest::MD5.hexdigest(params[:password]).reverse + "b3p6f"
 	 if user and user[:old_pass] == params_pass
