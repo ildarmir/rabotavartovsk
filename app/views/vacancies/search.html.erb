@@ -1,4 +1,6 @@
-
+<div id="filterContainer">
+  <input type="text" id="quickSearchQuery" placeholder="Введите вакансию">
+</div>
 <div id="vacancy_search">
         <table id='vacancy_table_result'>
             <tr>
@@ -22,5 +24,13 @@
             </tr>
 <% end %>
         </table>
-	<p><%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
-</div>
+  <!--<div style="text-align: center; border: 1px solid black">-->
+
+    <!--<div class="pagination">   <ul><li><a href="asd">asd</a></li></ul>-->
+       <%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше' %>
+      <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+

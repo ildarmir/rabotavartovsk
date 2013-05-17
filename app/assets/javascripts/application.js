@@ -98,3 +98,19 @@ function hasClass(el, cls) {
   }
   return false;
 }
+//Filter vacancy and resume - depend from input inputed chars
+function InputFilter (opts) {
+    this.filterElem = opts.elem;
+    this.filtered = document.querySelectorAll(opts.filtered);
+}
+
+InputFilter.prototype.filter = function () {
+    for (var i = 0; i < this.filtered.length; i++) {
+        if (this.filtered [i].innerHTML.toLowerCase().indexOf(this.filterElem.value.toLowerCase()) == -1) {
+            this.filtered [i].parentNode.style.display = 'none';
+        }
+        else {
+            this.filtered [i].parentNode.style.display = 'table-row';
+        }
+    }
+}
