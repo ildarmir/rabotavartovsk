@@ -3,7 +3,6 @@
         <table id='vacancy_table_result'>
             <tr>
                 <td class='vacancy_table_header' id='vacancy_profession'>Профессия</td>
-                <td class='vacancy_table_header' id='vacancy_notation'>Комментарий</td>
                 <td class='vacancy_table_header' id='vacancy_lengthOfService'>Опыт</td>
                 <td class='vacancy_table_header' id='vacancy_earns'>Зарплата</td>        
                 <td class='vacancy_table_header' id='vacancy_organisation'>Организация</td>
@@ -13,7 +12,6 @@
 <% @vacancies.each do |t| %>
            <tr>
                 <td class='vacancy_table_result_left'> <%= link_to t.position, "/vacancies/#{t.id}" %></td>
-                <td> <%= t.note %> </td>
                 <td> <%= t.experience %></td>
                 <td> <%= t.salary %></td>
                 <td> <%= t.organisation %></td>

@@ -1,48 +1,44 @@
-<div id='showNewVac'>
-	<div id='newVac'>
-		<%= @vacancy.position %>
-    <% if @user==@vacancy.user %> 
-    <div style="float:right; padding-right: 20px;">
-           <%= link_to "Изменить", {:controller => :vacancies, :action => :edit, :id => @vacancy.id} , :class => "btn btn-warning" %>
-           <%= link_to "Удалить", {:controller => :vacancies, :action => :destroy, :id => @vacancy.id}, :method=> :delete, :class => "btn btn-warning" %>
-      </div>
-      <% end %>
+<div>
+	<div class="row">
+		<div  class="span9" style="color:#0088cc" >
+		<h3><%= @vacancy.position.mb_chars.capitalize %></h3>
+		</div>
 	</div>
-	
-	<h5 id='demands'>Условия и требования: </h5>
-	
-	
-	<table id='newVac_table'>
-	  <tr>
-	    <td class='resVac_add' >Минимальная зарплата</td>
-	    <td class='resVac_data'><%= @vacancy.salary %></td>
-	  </tr>
-	  <tr>
-	    <td class='resVac_add'>Стаж</td>
-	    <td class='resVac_data'> <%= @vacancy.salary %> </td>
-	  </tr>
-	  <tr>
-	    <td class='resVac_add'>Организация</td>
-	    <td class='resVac_data'> <%= @vacancy.organisation %> </td>
-	  </tr>
-	  <tr>
-	    <td class='resVac_add'>Телефон</td>
-	    <td class='resVac_data'> <%= @vacancy.phone %></td>
-	  </tr>
-	  <tr>
-	    <td class='resVac_add'>Примечание</td>
-	    <td class='resVac_data'> <%= @vacancy.note %></td>
-	  </tr>
-	    <tr>
-	    <td class='resVac_add'>Дата внесения</td>
-	    <td class='resVac_data'><%= @vacancy.date.strftime("%d.%m.%Y") %></td>
-	  </tr>
-	</table>
-
-
+	<div class="row">
+		<div class="span4" style="word-wrap:break-word;">
+			<p><h4>Условия и требования: </h4></p>
+			<div class="row">	
+			<div class="span2"><p><b>Минимальная зарплата</b></p> </div>
+			<div class="span2"><p><%= @vacancy.salary %></p></div>
+			</div>
+			<div class="row">
+			<div class="span2"><p><b> Стаж</b></p></div>
+			<div class="span2"><p> <%= @vacancy.experience %></p> </div>
+			</div>
+			<div class="row">
+			<div class="span2"><p><b> Организация</b></p></div>
+			<div class="span2"><p><%= @vacancy.organisation %></p> </div>
+			</div>
+			<div class="row">
+			<div class="span2"><p><b> Телефон</b></p></div>
+			<div class="span2"><p><%= @vacancy.phone %></p></div>
+			</div>
+			<div class="row">
+			<div class="span2"><p><b>Дата внесения</b></p></div>
+			<div class="span2"><p><%= @vacancy.date.strftime("%d.%m.%Y") %></p></div>
+			</div>
+			<div class="row">
+			<div class="span3 offset1" style="padding-top:20px" >
+			    <% if @user==@vacancy.user %> 
+				   <%= link_to "изменить", {:controller => :vacancies, :action => :edit, :id => @vacancy.id}, :class =>"btn-small btn-warning" %>
+				   <%= link_to "удалить", {:controller => :vacancies, :action => :destroy, :id => @vacancy.id}, :method=> :delete, :class => "btn-small btn-warning" %>
+			      <% end %>
+			      </div>
+			</div>
+		</div>
+		<div class="span5">
+			<h4>Описание:</h4>
+			<div> <p><%= @vacancy.note %></p></div>
+		</div>
+	</div>
 </div>
-<% if session[:group_id] == 2 %>
-<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> 
-<% end %>
-<!--	|
-<%= link_to 'Back', vacancies_path %>-->
