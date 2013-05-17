@@ -8,7 +8,7 @@ class VacanciesController < ApplicationController
 
 
     respond_to do |format|
-      format.html # index.html.erb
+      #format.html # index.html.erb
       format.json { render json: @vacancies }
     end
   end
@@ -20,7 +20,7 @@ class VacanciesController < ApplicationController
     respond_to do |format|
     require 'will_paginate/array'
     @vacancies = @vacancies.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
-      format.html # index.html.erb
+      #format.html # index.html.erb
       format.json { render json: @vacancies }
     end
     

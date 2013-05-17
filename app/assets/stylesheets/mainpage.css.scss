@@ -59,6 +59,10 @@ div.tab-pane.active {
       padding-left: 12px;
       padding-right: 10px;
     }
+  li:not(.active) > a:hover{
+    background: white;
+    color: #000000;
+  }
     .active > a,a:hover,a:focus{
 	background-color:#0088cc;
 	border-color:#DDDDDD #DDDDDD transparent;

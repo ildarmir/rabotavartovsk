@@ -15,7 +15,7 @@ development:
   database: rabotavartovsk_development
   pool: 5
   username: root
-  password: '789456123'
+  password: toor
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
