@@ -30,6 +30,7 @@ class VacanciesController < ApplicationController
   # GET /vacancies/1.json
   def show
     @vacancy = Vacancy.find(params[:id])
+    Vacancy.update_counters [@vacancy.id], :view => 1
     @user=User.find_by_id(session[:user_id])
 
     respond_to do |format|
