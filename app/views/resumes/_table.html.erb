@@ -1,0 +1,28 @@
+<div id="filterContainer">
+  <input type="text" id="quickSearchQuery" placeholder="Введите название резюме">
+</div>
+<div id="resume_search">
+  <table id='resume_table_result'>
+    <tr>
+      <td class='resume_table_header' id='resume_profession'>Позиция</td>
+      <td class='resume_table_header' id='resume_notation'>Зарплата</td>
+      <td class='resume_table_header' id='resume_lengthOfService'>Опыт</td>
+      <td class='resume_table_header' id='resume_earns'>Имя</td>
+      <td class='resume_table_header' id='resume_organisation'>Город</td>
+      <td class='resume_table_header' id='resume_phone'>Дата</td>
+      <td class='resume_table_header' id='resume_dateOf'>Возраст</td>
+    </tr>
+    <% @resumes.each do |t| %>
+      <tr>
+        <td class='resume_table_result_left'> <%= link_to t.position, "/resumes/#{t.id}" %></td>
+        <td> <%= t.min_wage %> </td>
+        <td> <%= t.experience %></td>
+        <td> <%= t.name %></td>
+        <td> <%= t.city %></td>
+        <td> <%= t.date.strftime("%d.%m.%Y") %></td>
+        <td> <%= t.age %></td>
+      </tr>
+    <% end %>
+  </table>
+  <p><%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
+</div>
