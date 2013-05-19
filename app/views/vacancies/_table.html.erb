@@ -1,11 +1,10 @@
 <div id="filterContainer">
-  <input type="text" id="quickSearchQuery" placeholder="Введите вакансию">
+  Фильтр:<input type="text" class="span8" id="quickSearchQuery" placeholder="Введите вакансию">
 </div>
 <div id="vacancy_search">
   <table id='vacancy_table_result'>
     <tr>
       <td class='vacancy_table_header' id='vacancy_profession'>Профессия</td>
-      <td class='vacancy_table_header' id='vacancy_notation'>Комментарий</td>
       <td class='vacancy_table_header' id='vacancy_lengthOfService'>Опыт</td>
       <td class='vacancy_table_header' id='vacancy_earns'>Зарплата</td>
       <td class='vacancy_table_header' id='vacancy_organisation'>Организация</td>
@@ -15,7 +14,6 @@
     <% @vacancies.each do |t| %>
       <tr>
         <td class='vacancy_table_result_left'> <%= link_to t.position, "/vacancies/#{t.id}" %></td>
-        <td> <%= t.note %> </td>
         <td> <%= t.experience %></td>
         <td> <%= t.salary %></td>
         <td> <%= t.organisation %></td>
@@ -24,5 +22,5 @@
       </tr>
     <% end %>
   </table>
-  <p><%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
+	<%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше', :renderer => BootstrapPagination::Rails, :class => "pagination pagination-centered" %> 
 </div>

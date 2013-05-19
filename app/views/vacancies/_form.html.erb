@@ -1,6 +1,7 @@
 <%= form_for(@vacancy) do |f| %>
 
-<div id="newVacForm">	
+<div class="row">	
+	<div class="span4">
 	<table id="newVac_table">
 		
 		<tr>
@@ -37,13 +38,15 @@
 		</tr>
 
 
-
-		<tr>
-			<td id="comment-label"><span class="resVac_data optional"><%=  t(:comment) %></span></td>
-			<td class="element"><%= f.text_field :note, :size => "60", :maxlength => "255" %></td>
-		</tr>
 	</table>
+	</div>
+	<div class="span5">
+
+			<div id="comment-label"><span class="resVac_data optional">Описание</span></div>
+			<div ><%= f.text_area :note, :class => "span5", :rows => "15" %></div>
+	</div>
 </div>
-<hr class="hr">
+<div align="right">
 <%= f.submit :submit,  :value => t(:add_vacancy_button), :class => "NewVacButton" %> 
+</div>
 <% end %>

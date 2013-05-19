@@ -1,5 +1,5 @@
 <div id="filterContainer">
-  <input type="text" id="quickSearchQuery" placeholder="Введите название резюме">
+  Фильтр:<input type="text" id="quickSearchQuery" class="span8" placeholder="Введите название резюме">
 </div>
 <div id="resume_search">
   <table id='resume_table_result'>
@@ -24,5 +24,5 @@
       </tr>
     <% end %>
   </table>
-  <p><%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
+<%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' , :renderer => BootstrapPagination::Rails, :class => "pagination pagination-centered ", :container => true %>
 </div>
