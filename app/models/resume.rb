@@ -8,9 +8,9 @@ validates :phone, :presence => true
 validates :position, :presence => true
   def self.search(search)
     if search
-      find(:all, :conditions => ['position LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['position LIKE ?', "%#{search}%"], :order =>"created_at desc")
     else
-      find(:all)
+      find(:all, :order => "created_at desc")
     end
   end
 

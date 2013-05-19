@@ -1,5 +1,4 @@
 Rabotavartovsk::Application.routes.draw do
-  devise_for :devise_users
 
  get 'adm' => 'adm#index'
  controller :sessions do
@@ -20,6 +19,7 @@ Rabotavartovsk::Application.routes.draw do
   get "mainpage/index" 
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
+  devise_for :devise_users
 
   scope "(:locale)", :locale => /en|ru/ do
     resources :vacancies

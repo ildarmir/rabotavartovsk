@@ -8,9 +8,9 @@ belongs_to :user
   
   def self.search(search)
     if search
-    find(:all, :conditions => ['position like ?', "%#{search}%"], :order => 'created_at')
+    find(:all, :conditions => ['position like ?', "%#{search}%"], :order => 'created_at desc')
     else
-    find(:all)
+    find(:all, :order =>'date desc')
     end
   end
 

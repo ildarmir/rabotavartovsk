@@ -41,7 +41,7 @@
             <% end %>
 <% end %>
         </table>
-	<p><%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' %></p>
+<%= will_paginate @resumes, :previous_label => 'Назад', :next_label => 'Дальше' , :renderer => BootstrapPagination::Rails, :class => "pagination pagination-centered ", :container => true %>
 </div>
 
 <script>
