@@ -19,20 +19,25 @@
   </head>
   <body>
   <div class="container">          
-    <%= image_tag("logo.jpg") %>
+    <div class="row">
+      <div style="float: left; margin: 5px 20px;">
+        <%= image_tag("logo-mini.jpg") %>
+      </div>
+      <div >
+      <h1 id="page-logo">РАБОТА В НИЖНЕВАРТОВСКЕ</h1> 
+    </div>
+
+    </div>
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
             <ul class="nav">
               <li><%= link_to "Главная", "/"  %></li>
 	      <li class="divider-vertical"></li>
-              <li><%= link_to "Вакансии", "/vacancies/search"  %></li>
+              <li><%= link_to "Вакансии", "/vacancies"  %></li>
 	      <li class="divider-vertical"></li>
               <li><%= link_to "Резюме", "/resumes/search"  %></li>
 	      <li class="divider-vertical"></li>
-              <li><%= link_to "Курсы", "#"  %></li>
-	      <li class="divider-vertical"></li>
-              <li><%= link_to "Статьи", "#"  %></li>
-	      <li class="divider-vertical"></li>
+        <li><%= link_to "Ссылки", "#", title: "Ссылки на другие сайты, посвященные поиску работы в Нижневартовске" %></li>
 	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
             <ul class="nav pull-right">
