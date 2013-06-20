@@ -5,24 +5,29 @@
         <ul class="thumbnails">
           <li class="span3">
           <div class='thumbnail text-center'>
+          <div class="caption">
         <h4><a href="/vacancies/new" title="Добавить новую вакансию в базу">Добавить вакансию</h4>
           <%= image_tag("addvacansy.png", :alt=>"Картинка для Добавить вакансию") %></a>
         <br><br>
-        <br><br>
+        <br>
       </div>
+    </div>
         </li>
 
         <li class="span3">
           <div class='thumbnail text-center'>
+            <div class="caption">
         <h4><a href="#" title="Добавить новые курсы в базу">Добавить курсы</h4>
           <%= image_tag("addcourse.png", :alt=>"Картинка для Добавить курсы") %></a>
         <br><br>
-        <br><br>
+        <br>
       </div>
+    </div>
         </li>
 
         <li class="span3">
           <div class='thumbnail text-center'>
+            <div class="caption">
         <h4><%= link_to "Последние резюме","resumes", title: "Недавно добавленные резюме" %></h4>
         <ul class="unstyled">
           <% @res.each do |r| %>
@@ -34,6 +39,7 @@
           <br>
         </ul>
       </div>
+    </div>
         </li>
       </ul>
 

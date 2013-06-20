@@ -31,19 +31,19 @@
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
             <ul class="nav">
-              <li><%= link_to "Главная", "/"  %></li>
+              <li><%= link_to "ГЛАВНАЯ", "/"  %></li>
 	      <li class="divider-vertical"></li>
-              <li><%= link_to "Вакансии", "/vacancies"  %></li>
+              <li><%= link_to "ВАКАНСИИ", "/vacancies"  %></li>
 	      <li class="divider-vertical"></li>
-              <li><%= link_to "Резюме", "/resumes/search"  %></li>
+              <li><%= link_to "РЕЗЮМЕ", "/resumes/search"  %></li>
 	      <li class="divider-vertical"></li>
-        <li><%= link_to "Ссылки", "#", title: "Ссылки на другие сайты, посвященные поиску работы в Нижневартовске" %></li>
+        <li><%= link_to "ССЫЛКИ", "#", title: "Ссылки на другие сайты, посвященные поиску работы в Нижневартовске" %></li>
 	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
             <ul class="nav pull-right">
               <li><%= link_to "ВХОД", login_url %></li>
 	      <li class="divider-vertical"></li>
-              <li><%= link_to "Регистрация", "/users/new"  %></li>
+              <li><%= link_to "РЕГИСТРАЦИЯ", "/users/new"  %></li>
               <% end %>
             </ul>
       </div>

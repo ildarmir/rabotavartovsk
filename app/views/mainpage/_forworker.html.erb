@@ -4,14 +4,17 @@
     <ul class="thumbnails">
       <li class="span3">
       <div class="thumbnail text-center">
+        <div class="caption">
         <h4><a href="/resumes/new" title="Добавить резюме в базу">Добавить резюме</h4>
           <%= image_tag("addresume.png")%></a>
+      </div>
         <br><br>
-        <br><br>
+        <br>
       </div>
       </li>
       <li class="span3">
       <div class="thumbnail text-center">
+        <div class="caption">
         <h4><%= link_to "Новые вакансии","/vacancies",title: "Вакансии добавленные недавно" %></h4>
         <ul class="unstyled">
           <% @vac.each do |f| %>
@@ -22,10 +25,12 @@
           <% end %>
         </ul>
       </div>
+      </div>
       </li>
       <li class="span3">
       <div class="thumbnail text-center">
-        <h4><%= link_to "Популярные вакансии","vacancies",title: "Вакансии ппо популярности" %></h4>
+        <div class="caption">
+        <h4><%= link_to "Популярные вакансии","vacancies",title: "Вакансии по популярности" %></h4>
         <ul class="unstyled">
           <% @pop.each do |f| %>
             <li>               
@@ -34,6 +39,7 @@
           <% end %>
 
         </ul>
+      </div>
       </div>
       </li>
     </ul>
