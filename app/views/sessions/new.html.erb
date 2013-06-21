@@ -1,4 +1,4 @@
-<div>
+<div class="row">
   <% if flash[:alert] %>
     <p id="notice"><%= flash[:alert] %></p>
   <% end %>
@@ -23,11 +23,9 @@
         <div class="span4 text-center" >
           <h3>Нет аккаунта?</h3>
           <strong><%= link_to "СОЗДАТЬ", "/users/new", class: "btn btn-large btn-primary" %></strong>
+        </div>
       </div>
-    </div>
 
     </fieldset>
-    <hr>
   <% end %>
-</div>
 </div>

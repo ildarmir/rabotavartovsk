@@ -20,15 +20,17 @@
   <body>
   <div class="container">          
     <div class="row">
-      <div style="float: left; margin: 5px 20px;">
+    <div class="span12">
+    <div class="row">
+      <div style="float: left; margin: 5px 20px 5px 0;">
         <%= image_tag("logo-mini.jpg") %>
       </div>
       <div >
       <h1 id="page-logo">РАБОТА В НИЖНЕВАРТОВСКЕ</h1> 
     </div>
-
     </div>
-    <div class="navbar navbar-fluid-top">
+    <div class="row">
+    <div class="navbar">
       <div class="navbar-inner">
             <ul class="nav">
               <li><%= link_to "ГЛАВНАЯ", "/", title: "Перейти на главную страницу"  %></li>
@@ -45,157 +47,154 @@
         <li><%= link_to "РЕГИСТРАЦИЯ", "/users/new", title: "Создать аккаунт на сайте и стать зарегистрированным пользователем"  %></li>
               <% end %>
             </ul>
+          </div>
       </div>
     </div>
-    <div class="row">
-      <div class="span9">
+  </div>
+</div>
 
                 <% if notice %>
+    <div class="row">
+      <div class="span9">
           <p id="notice"><%= notice %></p>
-        <% end %>
-      <div class="container-fluid">
-      <div class="row">
-        <div class="span9">
-          <%= yield %>
-        </div>
-      </div><!--/row-->
-      <footer>
-      <hr>
-        <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
-      </footer>
-
     </div> <!-- /container -->
   </div>
+        <% end %>
+        <div class="row">
+        <div class="span9">
+          <%= yield %>
+          <footer>
+          <hr>
+          <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
+          </footer>
+        </div>
+          <% if User.find_by_id(session[:user_id]) %>
+            <div class="span3">
+              <ul class="user_block">
+                <% curr=User.find_by_id(session[:user_id]) %>
+                <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %></li>
+                <li><%= link_to curr.name, "/users/edit" %> </li>
+                <li><h5>Вы добавили</h5></li>
 
-  <% if User.find_by_id(session[:user_id]) %>
-    <div class="span3">
-    <ul class="user_block">
-      <% curr=User.find_by_id(session[:user_id]) %>
-      <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %></li>
-      <li><%= link_to curr.name, "/users/edit" %> </li>
-      <li><h5>Вы добавили</h5></li>
-        
-      <br>вакансии:<br>
-      <ul>
-      <% curr.vacancies.each do |vak| %>
-            <li><%= link_to vak.position, "/vacancies/#{vak.id}" %></li>
-	    <% end %>
-          <li><%= link_to "+Добавить вакансию", "/vacancies/new" %></li>
-        </ul> 
+                <br>вакансии:<br>
+                <ul>
+                  <% curr.vacancies.each do |vak| %>
+                    <li><%= link_to vak.position, "/vacancies/#{vak.id}" %></li>
+                  <% end %>
+                  <li><%= link_to "+Добавить вакансию", "/vacancies/new" %></li>
+                </ul> 
 
-        <br>резюме:<br>
-        <ul>
-      <% curr.resumes.each do |res| %>
-            <li><%= link_to res.position, "/resumes/#{res.id}" %></li>
-	    <% end %>
+                <br>резюме:<br>
+                <ul>
+                  <% curr.resumes.each do |res| %>
+                    <li><%= link_to res.position, "/resumes/#{res.id}" %></li>
+                  <% end %>
 
-          <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>
-        </ul>
-    </ul>
-    
-  </div>
-  <% else %>
-  <div class="span3">
-    <div class="advertise-block">
-      <!--Advertise--!>
-    </div>
+                  <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>
+                </ul>
+              </ul>
 
-  </div>
-  <% end %>
+            </div>
+          <% else %>
+            <div class="span3">
+              <div class="advertise-block">
+                <!--Advertise--!>
+              </div>
 
+            </div>
+          <% end %>
+        </div>
+        <!-- Javascripts
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <%= javascript_include_tag "application" %>
+        <noindex>
 
-  </div>
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
-  <noindex>
+        <div id="counters">
 
-          <div id="counters">
-
-	             <div id="feedbackwindow"></div>
-
-		                   
-
-				   <script type="text/javascript">
-
-
-
-				     var _gaq = _gaq || [];
-
-				       _gaq.push(['_setAccount', 'UA-30037810-1']);
-
-				         _gaq.push(['_trackPageview']);
+          <div id="feedbackwindow"></div>
 
 
 
-					   (function() {
-
-						       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-						           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-
-							       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
-							         })();
+          <script type="text/javascript">
 
 
 
-								 </script>
+            var _gaq = _gaq || [];
+
+            _gaq.push(['_setAccount', 'UA-30037810-1']);
+
+            _gaq.push(['_trackPageview']);
 
 
 
-								             <!-- Yandex.Metrika counter -->
+            (function() {
 
-									     <script type="text/javascript">
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 
-									     (function (d, w, c) {
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 
-										         (w[c] = w[c] || []).push(function() {
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-												         try {
-
-														             w.yaCounter12356101 = new Ya.Metrika({id:12356101, enableAll: true});
-
-															             } catch(e) {}
-
-																         });
-
-											     
-
-											         var n = d.getElementsByTagName("script")[0],
-
-												         s = d.createElement("script"),
-
-													         f = function () { n.parentNode.insertBefore(s, n); };
-
-														     s.type = "text/javascript";
-
-														         s.async = true;
-
-															     s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+             })();
 
 
 
-															         if (w.opera == "[object Opera]") {
+</script>
 
-																	         d.addEventListener("DOMContentLoaded", f);
 
-																		     } else { f(); }
 
-									     })(document, window, "yandex_metrika_callbacks");
+<!-- Yandex.Metrika counter -->
 
-									     </script>
+<script type="text/javascript">
 
-									     <noscript><div><img src="//mc.yandex.ru/watch/12356101" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  (function (d, w, c) {
 
-									     <!-- /Yandex.Metrika counter -->
+   (w[c] = w[c] || []).push(function() {
 
-									                 
+     try {
 
-											         </div>
+     w.yaCounter12356101 = new Ya.Metrika({id:12356101, enableAll: true});
 
-												         </noindex>
-  </div> 
-  </body>
-</html>
+     } catch(e) {}
+
+     });
+
+
+
+   var n = d.getElementsByTagName("script")[0],
+
+   s = d.createElement("script"),
+
+   f = function () { n.parentNode.insertBefore(s, n); };
+
+   s.type = "text/javascript";
+
+   s.async = true;
+
+   s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+
+
+   if (w.opera == "[object Opera]") {
+
+     d.addEventListener("DOMContentLoaded", f);
+
+   } else { f(); }
+
+  })(document, window, "yandex_metrika_callbacks");
+
+</script>
+
+<noscript><div><img src="//mc.yandex.ru/watch/12356101" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- /Yandex.Metrika counter -->
+
+
+
+                               </div>
+
+                               </noindex>
+                             </div> 
+                           </body>
+                         </html>
