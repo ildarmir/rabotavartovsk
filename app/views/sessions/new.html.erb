@@ -1,24 +1,33 @@
 <div>
-<% if flash[:alert] %>
-<p id="notice"><%= flash[:alert] %></p>
-<% end %>
-<%= form_tag do %>
-<fieldset>
-<legend>Введите имя пользователя или email и пароль</legend>
-<div>
-<%= label_tag :name, 'Имя пользователя или email:' %>
-<%= text_field_tag :name, params[:name] %>
-</div>
-<div>
-  <%= label_tag :password, 'Пароль:' %>
-  <%= password_field_tag :password, params[:password] %>
-  <%= link_to "Забыли пароль?", "/newpass" %>
-</div>
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Введите имя пользователя или email и пароль</legend>
+      <div class="row">
+        <div class="span5">
+          <div>
+            <%= label_tag :name, 'Имя пользователя или email:' %>
+            <%= text_field_tag :name, params[:name] %>
+          </div>
+          <div>
+            <%= label_tag :password, 'Пароль:' %>
+            <%= password_field_tag :password, params[:password] %>
+            <%= link_to "Забыли пароль?", "/newpass", class: "btn btn-link" %>
+          </div>
+          <div>
+            <%= button_tag "Войти", :class => "btn" %>
+          </div>
+        </div>
+        <div class="span4 text-center" >
+          <h3>Нет аккаунта?</h3>
+          <strong><%= link_to "СОЗДАТЬ", "/users/new", class: "btn btn-large btn-primary" %></strong>
+      </div>
+    </div>
 
-
-<div>
-  <%= button_tag "Войти", :class => "btn" %>
+    </fieldset>
+    <hr>
+  <% end %>
 </div>
-</fieldset>
-<% end %>
 </div>
