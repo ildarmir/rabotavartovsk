@@ -2,40 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#showArticle {
-    line-height: 180%;
-    font-size: 12px;
-    margin:20px;
-    
-    h2 {
-      padding: 15px;
-      font-size: 24px;
-    }
+.article {
+  font-size: 16px;
+  line-height: 20px;
 }
-#articles {
-  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-  h3.article_header a {
-    font-size:16px;
-      display: block;
-      font-size: 1em;
-      padding: .5em .5em .5em .7em;
-      color: #004276;
-      font-weight: bolder;
-      text-align:left;      
-  }  
-  .articleIndexDescription {
-      color: #222222;
-      font-size: 14px;
-  }
-  .articles_addit_info {
-    color: red;
-    font-size:10px;
-    padding-left:20px;
-  } 
-
- 
-  
-}
-
-
-

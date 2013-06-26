@@ -1,40 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<div class="row">
+  <div class="span7 offset1">
+<h1><%= @article.title %></h1>
 
-<p>
-  <b>Des:</b>
+<div class="lead muted">
   <%= @article.des %>
-</p>
-
-<p>
-  <b>Text:</b>
+  <hr>
+</div>
+<p class="article">
   <%= @article.text %>
 </p>
-
+<hr>
+</div>
+</div>
+<div class="row">
+  <div class="offset1 span2">
 <p>
-  <b>View:</b>
   <%= @article.view %>
 </p>
-
+</div>
+<div class="span2">
 <p>
-  <b>Author:</b>
   <%= @article.author %>
 </p>
+</div>
 
+<div class="span2">
 <p>
-  <b>Mini img:</b>
   <%= @article.mini_img %>
 </p>
+</div>
 
+<div class="span2">
 <p>
-  <b>Add time:</b>
   <%= @article.add_time %>
 </p>
+</div>
 
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</div><!--row--!>

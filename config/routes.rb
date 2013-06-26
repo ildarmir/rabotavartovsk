@@ -19,6 +19,8 @@ Rabotavartovsk::Application.routes.draw do
   get "mainpage/index" 
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
+  get "articles" =>"articles#index"
+  get "articles/show"
   devise_for :devise_users
 
   scope "(:locale)", :locale => /en|ru/ do
@@ -29,9 +31,9 @@ Rabotavartovsk::Application.routes.draw do
      resources :resumes
   end
 
-  # scope "(:locale)", :locale => /en|ru/ do
-  #   resources :articles
-  #end
+#   scope "(:locale)", :locale => /en|ru/ do
+#     resources :articles
+#  end
 
  # match '/:locale' => 'mainpage#index'
 
@@ -79,10 +81,13 @@ Rabotavartovsk::Application.routes.draw do
 
   # Sample resource route within a namespace:
   #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+  #      Directs /admin/products/* to Admin::ProductsController
+  #      (app/controllers/admin/products_controller.rb)
+  #     resources :articles
   #   end
+  #     resources :articles
+     
+    
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
