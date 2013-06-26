@@ -1,17 +1,11 @@
-<h3 id='articles_h3'>Статьи</h3>
+<h1>Статьи о поиске работы в Нижневартовске</h1>
 
-<div id='articles'> 
 <% @articles.each do |a| %>
-	 <h3 class='article_header'>
-	 	<%= link_to a.title, :action => :show, :id => a.id  %>
-	 </h3>
-	<div>
-		<%= link_to a.des, { :action => :show, :id => a.id }, :class => :articleIndexDescription %><br /><br />
-                
-		<span class='articles_addit_info'>Views count: <%= a.view %></span>
-	</div>        
+  <dl>
+    <dt><h3><%= link_to a.title, :action => :show, :id => a.id  %></h3></dt>
+    <dd><%= a.des %></dd>
+  </dl>
 	<% end %>
-</div>
 
 
 
