@@ -1,4 +1,6 @@
 <% provide(:title,"РАБОТА В НИЖНЕВАРТОВСКЕ ВАКАНСИИ") %>
+<% art=render 'article_default' %>
+<% provide(:article,art) %>
 <%= render 'search' %>
 <%= render 'forworker' %>
 <%= render 'foremployer' %>
