@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 has_many :resumes
 has_many :vacancies
   attr_accessible :name, :password, :password_confirmation, :mail
+  attr_accessible :name, :password, :password_confirmation, :mail, :as=>:admin
   validates :name, presence: true, uniqueness: true
   validates :mail, presence: true, uniqueness: true, format: /@/
   validates :password, presence: true, confirmation: true

@@ -14,12 +14,10 @@ class VacanciesController < ApplicationController
   end
   
   def search 
-    
     @vacancies = Vacancy.search(params[:search])
-
     respond_to do |format|
     require 'will_paginate/array'
-    @vacancies = @vacancies.paginate(:page => params[:page], :per_page => 20, :order => "created_at desc") 
+    @vacancies = @vacancies.paginate(:page => params[:page], :per_page => 20) 
       format.html # index.html.erb
       format.json { render json: @vacancies }
     end
