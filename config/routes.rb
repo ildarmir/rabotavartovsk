@@ -19,8 +19,7 @@ Rabotavartovsk::Application.routes.draw do
   get "mainpage/index" 
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
-  get "articles" =>"articles#index"
-  get "articles/show"
+  resources :articles, only: [:index,:show]
   devise_for :devise_users
 
   scope "(:locale)", :locale => /en|ru/ do
