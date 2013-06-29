@@ -54,15 +54,11 @@
   </div>
 </div>
 
-                <% if notice %>
-    <div class="row">
-      <div class="span9">
-          <p id="notice"><%= notice %></p>
-    </div> <!-- /container -->
-  </div>
-        <% end %>
         <div class="row">
-        <div class="span9">
+          <div class="span9">
+            <% if notice %>
+              <p id="notice"><%= notice %></p>
+            <% end %>
           <%= yield %>
           <footer>
           <hr>
@@ -98,20 +94,23 @@
             </div>
           <% else %>
             <div class="span3">
+              <% if false %>
               <div class="advertise-block">
                 <!--Advertise--!>
 <%= content_for?(:advertise) ? yield(:advertise) : "МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ" %>
 </div>
+<% end %>
 <div>
   <% if content_for?(:article) %>
-    <%= yield(:article) %>
+    <%= simple_format(yield(:article)) %>
   <% elsif @side_article %>
     <h4 class="text-center"><%= link_to @side_article.title,@side_article, title: "статья #{@side_article.title}" %></h4>
-    <% if @side_article.text.size > 1500 %>
-           <%= @side_article.text.slice(0..1500)<<" ..." %>
-           <%= link_to "читать далее>", @side_article, title: "статья #{@side_article.title}"  %>
+    <p><%= @side_article.des %></p>
+    <% if ((@side_article.text.size+@side_article.des.size) > 1500) %>
+      <%= simple_format(@side_article.text.slice(0..1500)<<" ...") %>
+    <%= link_to "читать далее>", @side_article, title: "статья #{@side_article.title}"  %>
   <% else %>
-    <%= @side_article.text %>
+    <%= simple_format(@side_article.text) %>
   <% end %>
   <% else %>
     <%= render 'mainpage/article_default' %>

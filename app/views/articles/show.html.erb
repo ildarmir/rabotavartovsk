@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<% art=render 'mainpage/article_default' %>
+<% provide(:article,art) %>
 
 <div class="row">
   <div class="span7 offset1">
@@ -9,7 +11,7 @@
   <hr>
 </div>
 <p class="article">
-  <%= @article.text %>
+  <%= simple_format(@article.text) %>
 </p>
 <hr>
 </div>
