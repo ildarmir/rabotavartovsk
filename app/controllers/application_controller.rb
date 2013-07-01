@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def get_article
     idarr=Article.select("id").map {|k| k.id}
     id=idarr[rand(idarr.size)]
-    @side_article=Article.find(id)
+    @side_article=Article.find(id) if id
   end
 
   def default_url_options(options={})

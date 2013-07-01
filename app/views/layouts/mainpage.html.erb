@@ -107,7 +107,7 @@
     <h4 class="text-center"><%= link_to @side_article.title,@side_article, title: "статья #{@side_article.title}" %></h4>
     <p><%= @side_article.des %></p>
     <% if ((@side_article.text.size+@side_article.des.size) > 1500) %>
-      <%= simple_format(@side_article.text.slice(0..1500)<<" ...") %>
+      <%= simple_format(@side_article.text.slice(0..1300)<<" ...") %>
     <%= link_to "читать далее>", @side_article, title: "статья #{@side_article.title}"  %>
   <% else %>
     <%= simple_format(@side_article.text) %>

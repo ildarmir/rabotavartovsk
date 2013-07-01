@@ -45,14 +45,14 @@
 </div>
 <hr>
 <ul class="pager">
-  <% if @vacancy.previous_post %>
+  <% if @vacancy.next_post %>
     <li class="previous">
-    <a href="<%= @vacancy.previous_post.id if @vacancy.previous_post %>" title="Предыдущая вакансия <%= @vacancy.previous_post.position %>"><i class="icon-arrow-left"></i><%= @vacancy.previous_post.position %> </a>
+    <a href="<%= @vacancy.next_post.id if @vacancy.next_post %>" title="Предыдущая вакансия <%= @vacancy.next_post.position %>"><i class="icon-arrow-left"></i><%= @vacancy.next_post.position %> </a>
     </li>
   <% end %>
-  <% if @vacancy.next_post %>
+  <% if @vacancy.previous_post %>
     <li class="next">
-    <a href="<%= @vacancy.next_post.id if @vacancy.next_post %>" title="Следующая вакансия <%= @vacancy.next_post.position %>" ><%= @vacancy.next_post.position %><i class="icon-arrow-right"></i></a>
+    <a href="<%= @vacancy.previous_post.id if @vacancy.previous_post %>" title="Следующая вакансия <%= @vacancy.previous_post.position %>" ><%= @vacancy.previous_post.position %><i class="icon-arrow-right"></i></a>
     </li>
   <% end %>
 </ul>
