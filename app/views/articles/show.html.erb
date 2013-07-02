@@ -10,9 +10,9 @@
   <%= @article.des %>
   <hr>
 </div>
-<p class="article">
-  <%= simple_format(@article.text) %>
-</p>
+<div class="article">
+  <%= @article.text && simple_format(@article.text) %>
+</div>
 <hr>
 </div>
 </div>
