@@ -38,7 +38,7 @@ Rabotavartovsk::Application.configure do
    config.action_mailer.smtp_settings = {
 	   	  address: "smtp.mail.yahoo.com",
 		  	  port: 587,
-			  	  domain: "localhost",
+			  	  domain: "localhost:8080",
 				  	  authentication: "plain",
 					  	  user_name: "testrabotamail@yahoo.com",
 						  	  password: "testmail2013",

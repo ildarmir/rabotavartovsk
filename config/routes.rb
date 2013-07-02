@@ -20,6 +20,8 @@ Rabotavartovsk::Application.routes.draw do
   get "resumes/search" => "resumes#search"
   get "vacancies/search" => "vacancies#search"
   resources :articles, only: [:index,:show]
+  get "call"=> "call#index"
+  post "call"=>"call#sendmail"
   devise_for :devise_users
 
   scope "(:locale)", :locale => /en|ru/ do

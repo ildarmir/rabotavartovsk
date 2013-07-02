@@ -40,6 +40,8 @@
               <li><%= link_to "РЕЗЮМЕ", "/resumes/search", title: "База резюме Нижневартовска"  %></li>
 	      <li class="divider-vertical"></li>
               <li><%= link_to "СТАТЬИ", "/articles", title: "Статьи, посвященные поиску работы в Нижневартовске"  %></li>
+	      <li class="divider-vertical"></li>
+              <li><%= link_to "ОБРАТНАЯ СВЯЗЬ", "/call", title: "Отправьте нам Ваши предложения, замечания"  %></li>
 	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
             <ul class="nav pull-right">

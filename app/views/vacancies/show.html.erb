@@ -40,7 +40,7 @@
   </div>
   <div class="span5">
     <h4>Описание вакансии:</h4>
-    <div> <p><%= @vacancy.note %></p></div>
+    <div> <p><%= simple_format(@vacancy.note) if @vacancy.note %></p></div>
   </div>
 </div>
 <hr>
