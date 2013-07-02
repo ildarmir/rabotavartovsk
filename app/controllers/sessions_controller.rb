@@ -6,30 +6,33 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
-    if params[:name] && params[:name].include?("@")
-      user=User.find_by_mail(params[:name])
-    elsif params[:name]
-      user = User.find_by_name(params[:name])
-    end
 
-    if user[:old_pass] and !user[:password]
-      params_pass = Digest::MD5.hexdigest(params[:password]).reverse + "b3p6f"
-      if user and user[:old_pass] == params_pass
-        user[:password_digest] = BCrypt::Password.create(params[:password])
-        user[:old_pass] = nil
-        user.update_attribute(:password_digest, user[:password_digest])
-        user.update_attribute(:old_pass, user[:old_pass])
+    if params[:password]!='' && params[:name]!=''
+      if params[:name].include?("@") 
+        user=User.find_by_mail(params[:name])
+      elsif params[:name]
+        user = User.find_by_name(params[:name])
+      end
+      if user  && user[:old_pass] && !user[:password]
+        params_pass = Digest::MD5.hexdigest(params[:password]).reverse + "b3p6f"
+        if user and user[:old_pass] == params_pass
+          user[:password_digest] = BCrypt::Password.create(params[:password])
+          user[:old_pass] = nil
+          user.update_attribute(:password_digest, user[:password_digest])
+          user.update_attribute(:old_pass, user[:old_pass])
+          session[:user_id] = user.id
+          redirect_to mainpage_url
+        else
+          redirect_to "/login", alert: "Неверная комбинация имени и пароля"
+        end
+      elsif user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to mainpage_url
       else
-        redirect_to login_url, alert: "Неверная комбинация имени и пароля"
+        redirect_to "/login", alert: "Неверная комбинация имени и пароля"
       end
-    elsif user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to mainpage_url
-    else
-      redirect_to login_url, alert: "Неверная комбинация имени и пароля"
+      else
+        redirect_to "/login", alert: "Неверная комбинация имени и пароля"
     end
   end
 
