@@ -1,102 +1,96 @@
-<% provide(:title,"РЕЗЮМЕ #{@resume.position}") %>
-
-
-<div id='showResume'>
-  <div ><h3><%= @resume.position %></h3>
+<% provide(:title,"Резюме #{@resume.position.mb_chars.capitalize}") %>
+<div id="showResume">
+<div><h3><%= @resume.position.mb_chars.capitalize %><br><p><small class="lead muted">резюме</small></p></h3> 
     <% if @user==@resume.user %>
-    <div style="float:right; padding-right: 20px;">
-           <%= link_to "Изменить", {:controller => :resumes, :action => :edit, :id => @resume.id} , :class => "btn btn-warning" %>
-           <%= link_to "Удалить", {:controller => :resumes, :action => :destroy, :id => @resume.id}, :method=> :delete, :class => "btn btn-warning" %>
-       
-      </div>
-    <div >
+<div >
            <p class="text-warning"> Размещайте Ваше резюме на других сайтах и досках объявлений с помощью ссылки </p>
            <%= text_field_tag "linkextra","http://rabota-vartovsk.ru/resumes/#{@resume.id}", class: "span4" %>
          </div>
-      <% end %>
-    </div>           
+<% end %>
+
+</div>
+
+<hr>
+  <div>
+    <% if @user==@resume.user %>
+    <div style="float:right; padding-right: 20px;">
+       <%= link_to "Изменить", {:controller => :resumes, :action => :edit, :id => @resume.id} , :class => "btn btn-warning" %>
+       <%= link_to "Удалить", {:controller => :resumes, :action => :destroy, :id => @resume.id}, :method=> :delete, :class => "btn btn-warning" %>
+    </div>
+    <% end %>
+  </div>
          
-    <div class='resume_podheaders'><%= t(:date_add_show) %>: <%= @resume.date.strftime("%d.%m.%Y") %>,  <%= t(:views_count) %>: <%= @resume.view %></div>
+  <div class='resume_podheaders'><%= t(:date_add_show) %>: <%= @resume.date.strftime("%d.%m.%Y") %>, <%= t(:views_count) %>: <%= @resume.view %>
+  </div>
     <p class='resume_headers'><%= t(:info) %></p>
-    <table id='resumeTable'>    
+    <table id='resumeTable'>
         <tr>
             <td class='resVac_add' id='leftBlockResumeTable'>
-            	<%= t(:name) %> 
+             <%= t(:name) %>
             </td>
             <td class='resVac_data' id='centralBlockResumeTable'>
-            	<div id='imya'> <%= @resume.name %></div>            
+             <div id='imya'> <%= @resume.name %></div>
             </td>
             <td rowspan='8' id='rightBlockResumeTable'>
-	    	<% if @resume.avatar? %>
-		<% if @resume.avatar.to_s.include? "avatars/" %>
-		<%= image_tag(@resume.avatar, :border => 0) %>
-		<% elsif !@resume.avatar.to_s.include? "avatars/" %>
-            	<%= image_tag(@resume.avatar_url(:big), :border => 0) %>                 
-		<% end %>
-		<% else %>
-		<%= image_tag("noava.jpg", :border =>0) %>
-		<% end %>
-       		</td>
+<% if @resume.avatar? %>
+          <% if @resume.avatar.to_s.include? "avatars/" %>
+            <%= image_tag(@resume.avatar, :border => 0) %>
+          <% elsif !@resume.avatar.to_s.include? "avatars/" %>
+            <%= image_tag(@resume.avatar_url(:big), :border => 0) %>
+          <% end %>
+          <% else %>
+          <%= image_tag("noava.jpg", :border =>0) %>
+        <% end %>
+        </td>
        </tr>
         <tr>
             <td class='resVac_add'><%= t(:sex_show) %></td>
             <td class='resVac_data'>
-            
             <div id='pol'>
-            	<% if (@resume.sex == '1') %>
-            		<%= t(:male) %>
-            	<% end %>
-            	<% if (@resume.sex == '2') %>            	
-            		<%= t(:female) %>            	
-            	<% end %>
+             <% if (@resume.sex == '1') %>
+             <%= t(:male) %>
+             <% end %>
+             <% if (@resume.sex == '2') %>
+             <%= t(:female) %>
+             <% end %>
             </div>
-            
            </td>
-        </tr> 
+        </tr>
         <tr>
             <td class='resVac_add'><%= t(:age) %></td>
             <td class='resVac_data'>
-            
             <div id='vozrast'> <%= @resume.age %></div>
-            
             </td>
         </tr>
         <tr>
             <td class='resVac_add'><%= t(:experience) %></td>
             <td class='resVac_data'>
             <div id='staj'> <%= @resume.experience %></div>
-            
           </td>
         </tr>
         <tr>
             <td class='resVac_add'><%= t(:city) %></td>
             <td class='resVac_data'>
             <div id='gorod'> <%= @resume.city %></div>
-            
             </td>
         </tr>
         <tr>
             <td class='resVac_add'><%= t(:min_salary) %></td>
             <td class="resVac_data">
-            
-            <div id='min_zarplata'>  <%= @resume.min_wage %></div>
-            
+            <div id='min_zarplata'> <%= @resume.min_wage %></div>
            </td>
         </tr>
         <tr>
             <td class='resVac_add'><%= t(:schedule_show) %></td>
             <td class='resVac_data'>
-            <div id='grafik'> 
-            	<% if (@resume.schedule == '1') %>
-            		<%= t(:full_time) %>
-            	<% end %>
-            	<% if (@resume.schedule == '2') %>            	
-            		<%= t(:flexible) %>           	
-            	<% end %>
-            	
-            
+            <div id='grafik'>
+             <% if (@resume.schedule == '1') %>
+             <%= t(:full_time) %>
+             <% end %>
+             <% if (@resume.schedule == '2') %>
+             <%= t(:flexible) %>
+             <% end %>
             </div>
-            
           </td>
         </tr>
         <tr>
@@ -104,51 +98,58 @@
             <td class='resVac_data'>
             </td>
             <td>
-           
-           
-         
             </td>
         </tr>
         <tr>
             <td class='resVac_add'></td>
             <td class='resVac_data'>
             </td>
-            <td>      
+            <td>
             </td>
         </tr>
-        
-    </table>       
-
+    </table>
     <p class='resume_headers'>
-    	<%= t(:education_show) %>
+     <%= t(:education_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='obrazovanie'><%= simple_format(@resume.education) %></div>
+     <div id='obrazovanie'><%= simple_format(@resume.education) %></div>
     </p>
     <p class='resume_headers'>
-    	<%= t(:skills_show) %>
+     <%= t(:skills_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='naviki'><%= simple_format(@resume.skills) %></div>
+     <div id='naviki'><%= simple_format(@resume.skills) %></div>
     </p>
     <p class='resume_headers'>
-    	<%= t(:about_show) %>
+     <%= t(:about_show) %>
     </p>
     <p class='resume_dannie'>
-    	<div id='osebe'><%= simple_format(@resume.about) %></div>
+     <div id='osebe'><%= simple_format(@resume.about) %></div>
     </p>
     <p class='resume_headers'>
-    	<%= t(:contact_info) %>
+     <%= t(:contact_info) %>
     </p>
     <div class='resume_data_contact'>
-    	<%= t(:phone_show) %>: <span id='telefon'><%= @resume.phone %></span>            
+     <%= t(:phone_show) %>: <span id='telefon'><%= @resume.phone %></span>
     </div>
     <div class='resume_data_contact'>
-    	<%= t(:email_show) %>: <span id='email'>
-	<% if @resume.email? %>
-	<% io=@resume.email.split('@') %>
-	<%= io[0] %><%= image_tag('atmini.jpg') %><%= io[1] %></span>
-	<% end %>
+      <%= t(:email_show) %>: <span id='email'>
+      <% if @resume.email? %>
+      <% io=@resume.email.split('@') %>
+      <%= io[0] %><%= image_tag('atmini.jpg') %><%= io[1] %></span>
+      <% end %>
     </div>
 </div>
-
+  <hr>
+    <ul class="pager">
+    <% if @resume.previous_post %>
+      <li class="previous">
+          <a href="<%= @resume.previous_post.id if @resume.previous_post %>" title="Предыдущее резюме <%= @resume.previous_post.position %>"><i class="icon-arrow-left"></i><%= @resume.previous_post.position %> </a>
+      </li>
+      <% end %>
+  <% if @resume.next_post %>
+      <li class="next">
+  <a href="<%= @resume.next_post.id if @resume.next_post %>" title="Следующее резюме <%= @resume.next_post.position %>" ><%= @resume.next_post.position %><i class="icon-arrow-right"></i></a>
+      </li>
+      <% end %>
+      </ul>
