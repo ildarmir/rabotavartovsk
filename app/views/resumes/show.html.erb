@@ -1,12 +1,6 @@
 <% provide(:title,"Резюме #{@resume.position.mb_chars.capitalize}") %>
 <div id="showResume">
 <div><h3><%= @resume.position.mb_chars.capitalize %><br><p><small class="lead muted">резюме</small></p></h3> 
-    <% if @user==@resume.user %>
-<div >
-           <p class="text-warning"> Размещайте Ваше резюме на других сайтах и досках объявлений с помощью ссылки </p>
-           <%= text_field_tag "linkextra","http://rabota-vartovsk.ru/resumes/#{@resume.id}", class: "span4" %>
-         </div>
-<% end %>
 
 </div>
 
@@ -34,9 +28,9 @@
             <td rowspan='8' id='rightBlockResumeTable'>
 <% if @resume.avatar? %>
           <% if @resume.avatar.to_s.include? "avatars/" %>
-            <%= image_tag(@resume.avatar, :border => 0) %>
+            <%= image_tag(@resume.avatar, border: 0, class: "img-circle") %>
           <% elsif !@resume.avatar.to_s.include? "avatars/" %>
-            <%= image_tag(@resume.avatar_url(:big), :border => 0) %>
+            <%= image_tag(@resume.avatar_url(:big), border: 0,class: "img-circle") %>
           <% end %>
           <% else %>
           <%= image_tag("noava.jpg", :border =>0) %>
@@ -139,6 +133,12 @@
       <%= io[0] %><%= image_tag('atmini.jpg') %><%= io[1] %></span>
       <% end %>
     </div>
+    <% if @user==@resume.user %>
+<div class="well well-small">
+           <h4> Размещайте Ваше резюме на других сайтах и досках объявлений с помощью ссылки </h4>
+           <%= text_field_tag "linkextra","http://rabota-vartovsk.ru/resumes/#{@resume.id}", class: "span4" %>
+         </div>
+<% end %>
 </div>
   <hr>
     <ul class="pager">

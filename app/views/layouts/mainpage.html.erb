@@ -64,6 +64,16 @@
           <%= yield %>
           <footer>
           <hr>
+    <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item"><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a></div>
+      <div class="item"><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a></div>
+      <div class="item"><a href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
+    </div>
+    <!-- Carousel nav -->
+    </div>
+
           <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
           </footer>
         </div>
@@ -118,9 +128,6 @@
     <%= render 'mainpage/article_default' %>
   <% end %>
 </div>
-
-
-
               </div>
           <% end %>
         </div>
@@ -128,93 +135,45 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <%= javascript_include_tag "application" %>
+    <script>
+      $('.carousel').carousel({interval: 8000});
+</script>
         <noindex>
-
         <div id="counters">
-
           <div id="feedbackwindow"></div>
-
-
-
           <script type="text/javascript">
-
-
-
             var _gaq = _gaq || [];
-
             _gaq.push(['_setAccount', 'UA-30037810-1']);
-
             _gaq.push(['_trackPageview']);
-
-
-
             (function() {
-
              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-
              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
              })();
-
-
-
-</script>
-
-
-
-<!-- Yandex.Metrika counter -->
-
-<script type="text/javascript">
-
-  (function (d, w, c) {
-
-   (w[c] = w[c] || []).push(function() {
-
-     try {
-
-     w.yaCounter12356101 = new Ya.Metrika({id:12356101, enableAll: true});
-
-     } catch(e) {}
-
-     });
-
-
-
-   var n = d.getElementsByTagName("script")[0],
-
-   s = d.createElement("script"),
-
-   f = function () { n.parentNode.insertBefore(s, n); };
-
-   s.type = "text/javascript";
-
-   s.async = true;
-
-   s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-
-
-   if (w.opera == "[object Opera]") {
-
-     d.addEventListener("DOMContentLoaded", f);
-
-   } else { f(); }
-
-  })(document, window, "yandex_metrika_callbacks");
-
-</script>
-
-<noscript><div><img src="//mc.yandex.ru/watch/12356101" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-<!-- /Yandex.Metrika counter -->
-
-
-
-                               </div>
-
-                               </noindex>
+           </script>
+           <!-- Yandex.Metrika counter -->
+           <script type="text/javascript">
+             (function (d, w, c) {
+              (w[c] = w[c] || []).push(function() {
+                try {
+                w.yaCounter12356101 = new Ya.Metrika({id:12356101, enableAll: true});
+                } catch(e) {}
+                });
+              var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () { n.parentNode.insertBefore(s, n); };
+              s.type = "text/javascript";
+              s.async = true;
+              s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+              if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f);
+              } else { f(); }
+             })(document, window, "yandex_metrika_callbacks");
+           </script>
+           <noscript><div><img src="//mc.yandex.ru/watch/12356101" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+           <!-- /Yandex.Metrika counter -->
+         </div>
+         </noindex>
                              </div> 
                            </body>
                          </html>

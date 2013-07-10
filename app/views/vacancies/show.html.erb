@@ -25,6 +25,10 @@
       <div class="span2"><p><%= @vacancy.phone %></p></div>
     </div>
     <div class="row">
+      <div class="span2"><p><b> Просмотров</b></p></div>
+      <div class="span2"><p><%= @vacancy.view %></p></div>
+    </div>
+    <div class="row">
       <div class="span2"><p><b>Дата внесения</b></p></div>
       <div class="span2"><p><%= @vacancy.updated_at && @vacancy.updated_at.strftime("%d.%m.%Y") %></p></div>
     </div>
