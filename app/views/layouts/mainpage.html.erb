@@ -16,6 +16,28 @@
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
+<style>
+
+/* Swipe 2 required styles */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/* END required styles */
+
+</style>
   </head>
   <body>
   <div class="container">          
@@ -64,12 +86,11 @@
           <%= yield %>
           <footer>
           <hr>
-    <div id="myCarousel" class="carousel slide">
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="active item"><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a></div>
-      <div class="item"><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a></div>
-      <div class="item"><a href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
+    <div id="mySwipe" class="swipe">
+      <div class="swipe-wrap">
+      <div><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a></div>
+      <div><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a></div>
+      <div><a href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
     </div>
     <!-- Carousel nav -->
     </div>
@@ -136,7 +157,18 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <%= javascript_include_tag "application" %>
     <script>
-      $('.carousel').carousel({interval: 8000});
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+   auto: 8000,
+   speed: 1000,
+   continuous: true,
+   disableScroll: true,
+   stopPropagation: false,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+
 </script>
         <noindex>
         <div id="counters">
