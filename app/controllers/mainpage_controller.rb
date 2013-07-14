@@ -7,6 +7,7 @@ class MainpageController < ApplicationController
     pop.sort_by! {|k| k.view}
     @pop=pop.reverse.slice(0..4)
     @res = Resume.limit(5).order("id DESC")    
+    @best = Resume.where("avatar is not null").limit(6).order("id DESC")
  end
   
 end

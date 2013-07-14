@@ -9,7 +9,7 @@
         <h4><a href="/vacancies/new" title="Добавить новую вакансию в базу">Добавить вакансию</h4>
           <%= image_tag("addvacansy.png", :alt=>"Картинка для Добавить вакансию") %></a>
         <br><br>
-        <br>
+        <br><br><br>
       </div>
     </div>
         </li>
@@ -25,6 +25,25 @@
             <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
             </li>
             <br>
+          <% end %>
+          <br>
+        </ul>
+      </div>
+    </div>
+        </li>
+        <li class="span9">
+          <div class='thumbnail text-center'>
+            <div class="caption">
+        <h4><%= link_to "Лучшие резюме","resumes", title: "Лучшие резюме" %></h4>
+        <ul class="thumbnails">
+          <% @best.each do |r| %>
+            <li>
+            <div class="thumbnail text-center">
+              <%= r.name.slice(0..32) %><br>
+              <a href="/resumes/<%= r.id %>"><%= image_tag(r.avatar_url(:thumb), border: 0,class: "img-circle") %></a><br>
+            <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
+          </div>
+            </li>
           <% end %>
           <br>
         </ul>
