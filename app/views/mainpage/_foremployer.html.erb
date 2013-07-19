@@ -8,8 +8,7 @@
           <div class="caption">
         <h4><a href="/vacancies/new" title="Добавить новую вакансию в базу">Добавить вакансию</h4>
           <%= image_tag("addvacansy.png", :alt=>"Добавить вакансию на сайт Работа в Нижневартовске") %></a>
-        <br><br>
-        <br><br><br>
+        <%= simple_format %Q`Хороший способ быстро найти сотрудников — разместить на сайте вакансии в Нижневартовске, открытые в вашей компании. На сайте можно не только добавлять новые вакансии, но и обновлять уже имеющиеся — это очень удобно, если в компании идет массовый набор сотрудников.` %>
       </div>
     </div>
         </li>
@@ -31,14 +30,14 @@
       </div>
     </div>
         </li>
-        <li class="span9">
+        <li class="span3">
           <div class='thumbnail text-center'>
             <div class="caption">
         <h4><%= link_to "Лучшие резюме","resumes", title: "Лучшие резюме" %></h4>
         <ul class="thumbnails">
           <% @best.each do |r| %>
             <li>
-            <div class="thumbnail text-center">
+            <div class="thumbnail text-center span2">
               <%= r.name.slice(0..32) %><br>
               <a href="/resumes/<%= r.id %>"><%= image_tag(r.avatar_url(:thumb), border: 0,class: "img-circle") %></a><br>
             <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
