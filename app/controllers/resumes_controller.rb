@@ -1,6 +1,6 @@
 # coding: utf-8
 class ResumesController < ApplicationController
-  skip_before_filter :authorize, only: [:index, :show, :search]
+  skip_before_filter :authorize, only: [:index, :show, :search, :pic]
   # GET /resumes
   # GET /resumes.json
   def index
@@ -100,5 +100,21 @@ class ResumesController < ApplicationController
       format.html { redirect_to resumes_url }
       format.json { head :no_content }
     end
+  end
+
+  def pic
+    require 'RMagick'
+    phone=Magick::Draw.new
+    img=Magick::Image.new(200,15)
+    res=Resume.find_by_id(params[:id])
+    img.annotate(phone, 0,0,0,0, "#{res.phone}"){
+      self.font_family = 'Helvetica'
+      self.fill = 'black'
+      self.stroke = 'transparent'
+      self.pointsize = 14
+      self.gravity= Magick::SouthWestGravity
+    }
+    img.format='jpeg'
+    send_data img.to_blob, :stream =>'false',:filename => 'phone.jpg',:type => 'image/jpeg', :disposition => 'inline'
   end
 end

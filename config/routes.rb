@@ -31,6 +31,7 @@ Rabotavartovsk::Application.routes.draw do
   scope "(:locale)", :locale => /en|ru/ do
      resources :resumes
   end
+  get "resumes/:id/pic" => "resumes#pic"
 
 #   scope "(:locale)", :locale => /en|ru/ do
 #     resources :articles

@@ -124,7 +124,7 @@
      <%= t(:contact_info) %>
     </p>
     <div class='resume_data_contact'>
-     <%= t(:phone_show) %>: <span id='telefon'><%= @resume.phone %></span>
+     <%= t(:phone_show) %>: <%= image_tag(url_for(:controller => "resumes", :action =>"pic"))%>
     </div>
     <div class='resume_data_contact'>
       <%= t(:email_show) %>: <span id='email'>
