@@ -69,14 +69,20 @@
           <%= yield %>
           <footer>
           <hr>
-    <div id="mySwipe" class="swipe">
+          <div class="row">
+<noindex>
+            <div class="span9">
+</div> 
+    <div id="mySwipe" class="span9 swipe">
       <div class="swipe-wrap">
       <div><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a></div>
       <div><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a></div>
-      <div><a href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
+      <div><a rel="nofollow" href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
     </div>
     <!-- Carousel nav -->
     </div>
+    </noindex>
+  </div>
 
           <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
           </footer>
@@ -105,6 +111,8 @@
 
                   <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>
                 </ul>
+                <br>
+                <%= link_to(image_tag( 'vkontakte.png', :alt =>"НАША ГРУППА ВКОНТАКТЕ", :rel=>"nofollow") , 'http://vk.com/rabotavartovsk', :target=>"_blank", :title=>"НАША ГРУППА ВКОНТАКТЕ") %>
               </ul>
 
             </div>
@@ -154,6 +162,8 @@ window.mySwipe = Swipe(elem, {
 
 </script>
         <noindex>
+             <script type="text/javascript" src="//yandex.st/share/share.js"
+charset="utf-8"></script>
         <div id="counters">
           <div id="feedbackwindow"></div>
           <script type="text/javascript">
