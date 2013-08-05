@@ -31,7 +31,7 @@
         <%= image_tag("logo-mini.jpg") %>
       </div>
       <div >
-      <h1 id="page-logo">РАБОТА В НИЖНЕВАРТОВСКЕ</h1> 
+        <h1 id="page-logo"> <%= content_for?(:logo) ? yield(:logo) : "РАБОТА В НИЖНЕВАРТОВСКЕ" %></h1>
     </div>
     </div>
     <div class="row">
@@ -47,6 +47,12 @@
               <li><%= link_to "СТАТЬИ", "/articles", title: "Статьи, посвященные поиску работы в Нижневартовске"  %></li>
 	      <li class="divider-vertical"></li>
               <li><%= link_to "ОБРАТНАЯ СВЯЗЬ", "/call", title: "Отправьте нам Ваши предложения, замечания"  %></li>
+	      <li class="divider-vertical"></li>
+        <%= form_tag('/city_change', method: :post) do %>
+          <%= select_tag "city", '<option><em>Выберите город ...</em></option><option value="vartovsk">Нижневартовск</option><option value="langepas"> Лангепас</option><option value="megion">Мегион</option><option value="raduzhnyi">Радужный</option><option value="pokachi">Покачи</option>'.html_safe, onchange: "this.form.submit();" %>
+    <% end %>
+	      <li class="divider-vertical"></li>
+        <li><%= link_to "langepas",url_for(host: request.host, subdomain: "langepas"),  title: "Отправьте нам Ваши предложения, замечания"  %><%= request.subdomain %></li>
 	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
             <ul class="nav pull-right">

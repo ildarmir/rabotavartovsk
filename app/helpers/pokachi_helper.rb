@@ -1,0 +1,2 @@
+module PokachiHelper
+end

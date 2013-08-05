@@ -1,5 +1,17 @@
 Rabotavartovsk::Application.routes.draw do
-
+  constraints(subdomain: 'pokachi') do
+    match '/'=>'pokachi#index'
+  end
+  constraints(subdomain: 'megion') do
+    match '/'=>'megion#index'
+  end
+  constraints(subdomain: 'raduzhnyi') do
+    match '/'=>'raduzhnyi#index', as: 'raduzhnyi'
+  end
+  constraints(subdomain: 'langepas') do
+    match '/'=>'langepas#index', as: "langepas"
+  end
+post 'city_change'=>'mainpage#city_change',as: 'city_change'
  get 'adm' => 'adm#index'
  controller :sessions do
   get 'login' => :new
@@ -93,7 +105,9 @@ Rabotavartovsk::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root to: 'mainpage#index', as:'mainpage'
+  constraints(subdomain: false) do
+    match "/" => 'mainpage#index', as:'mainpage'
+end
 
   # See how all your routes lay out with "rake routes"
 

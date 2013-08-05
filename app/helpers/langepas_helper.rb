@@ -1,0 +1,2 @@
+module LangepasHelper
+end

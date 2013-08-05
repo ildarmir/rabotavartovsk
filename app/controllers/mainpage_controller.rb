@@ -9,5 +9,24 @@ class MainpageController < ApplicationController
     @res = Resume.limit(7).order("id DESC")    
     @best = Resume.where("avatar is not null and education!='' and skills!=''  and about!='' and email!='' and phone!=''").limit(2).order("id DESC")
  end
+
+ def city_change
+   if params[:city]=="vartovsk"
+     redirect_to  controller: :mainpage, action: :index, subdomain: false
+   end
+   if params[:city]=="langepas"
+     redirect_to  controller: :langepas, action: :index, subdomain: :langepas
+   end
+   if params[:city]=="megion"
+     redirect_to  controller: :megion, action: :index, subdomain: :megion
+   end
+   if params[:city]=="raduzhnyi"
+     redirect_to  controller: :raduzhnyi, action: :index, subdomain: :raduzhnyi
+   end
+   if params[:city]=="pokachi"
+     redirect_to  controller: :pokachi, action: :index, subdomain: :pokachi
+   end
+
+ end
   
 end
