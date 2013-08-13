@@ -1,3 +1,5 @@
 class City < ActiveRecord::Base
-  attr_accessible :city
+  has_many :resume
+  has_many :vacancy
+  attr_accessible :subdomain, :name
 end

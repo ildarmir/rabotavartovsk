@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518103938) do
+ActiveRecord::Schema.define(:version => 20130807083704) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",       :default => "",    :null => false
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20130518103938) do
     t.string   "author"
     t.string   "mini_img"
     t.integer  "add_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "city_id"
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string   "subdomain"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -95,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20130518103938) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "user_id"
+    t.string   "city_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -114,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20130518103938) do
     t.datetime "updated_at",      :null => false
     t.string   "mail"
     t.string   "old_pass"
+    t.string   "city_id"
   end
 
   create_table "vacancies", :force => true do |t|
@@ -129,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20130518103938) do
     t.integer  "user_id"
     t.datetime "date"
     t.integer  "view"
+    t.string   "city_id"
   end
 
 end

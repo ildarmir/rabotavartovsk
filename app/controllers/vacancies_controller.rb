@@ -4,7 +4,8 @@ class VacanciesController < ApplicationController
   # GET /vacancies
   # GET /vacancies.json
   def index
-    @vacancies = Vacancy.paginate page: params[:page], order: 'created_at desc', per_page: 20
+    @city=City.find_by_subdomain(request.subdomain)
+    @vacancies = @city.vacancies.paginate page: params[:page], order: 'created_at desc', per_page: 20
 
 
     respond_to do |format|
@@ -58,6 +59,7 @@ class VacanciesController < ApplicationController
   # POST /vacancies.json
   def create
     @vacancy = @user.vacancies.new(params[:vacancy])
+    @vacancy.city_id=City.find_by_subdomain(request.subdomain)
     @vacancy[:date] = Time.now
     respond_to do |format|
       if @vacancy.save

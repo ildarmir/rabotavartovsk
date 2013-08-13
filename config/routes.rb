@@ -4,12 +4,14 @@ Rabotavartovsk::Application.routes.draw do
   end
   constraints(subdomain: 'megion') do
     match '/'=>'megion#index'
+    resources 'vacancies'
   end
   constraints(subdomain: 'raduzhnyi') do
     match '/'=>'raduzhnyi#index', as: 'raduzhnyi'
   end
   constraints(subdomain: 'langepas') do
     match '/'=>'langepas#index', as: "langepas"
+    resources 'vacancies'
   end
 post 'city_change'=>'mainpage#city_change',as: 'city_change'
  get 'adm' => 'adm#index'

@@ -51,8 +51,6 @@
         <%= form_tag('/city_change', method: :post) do %>
           <%= select_tag "city", '<option><em>Выберите город ...</em></option><option value="vartovsk">Нижневартовск</option><option value="langepas"> Лангепас</option><option value="megion">Мегион</option><option value="raduzhnyi">Радужный</option><option value="pokachi">Покачи</option>'.html_safe, onchange: "this.form.submit();" %>
     <% end %>
-	      <li class="divider-vertical"></li>
-        <li><%= link_to "langepas",url_for(host: request.host, subdomain: "langepas"),  title: "Отправьте нам Ваши предложения, замечания"  %><%= request.subdomain %></li>
 	      </ul>
 	      <% if !User.find_by_id(session[:user_id]) %>
             <ul class="nav pull-right">
@@ -104,7 +102,7 @@
                 <br>вакансии:<br>
                 <ul>
                   <% curr.vacancies.each do |vak| %>
-                    <li><%= link_to vak.position, "/vacancies/#{vak.id}" %></li>
+                    <li><%= link_to vak.position, controller: "vacancies", action: "show", id: vak.id, host: vak.city.subdomain + '.' + request.domain %></li>
                   <% end %>
                   <li><%= link_to "+Добавить вакансию", "/vacancies/new" %></li>
                 </ul> 
@@ -112,7 +110,7 @@
                 <br>резюме:<br>
                 <ul>
                   <% curr.resumes.each do |res| %>
-                    <li><%= link_to res.position, "/resumes/#{res.id}" %></li>
+                    <li><%= link_to res.position, controller: "resumes", action: "show", id: res.id,host: res.city.subdomain + '.' + request.domain  %></li>
                   <% end %>
 
                   <li><%= link_to "+Добавить резюме", "/resumes/new" %></li>

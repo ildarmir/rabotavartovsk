@@ -4,9 +4,8 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @resumes = Resume.order("date desc")
-    @resumes = @resumes.paginate(:page => params[:page], :per_page => 20, :order => "date desc") 
-
+    @city=City.find_by_subdomain(request.subdomain)
+    @resumes = @city.resumes.order("date desc").paginate(:page => params[:page], :per_page => 20, :order => "date desc") 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resumes }
@@ -21,8 +20,8 @@ class ResumesController < ApplicationController
     @resume.update_attributes(params[:view])
     @user=User.find_by_id(session[:user_id])
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @resume }
+        format.html {render "show" }
+        format.json { render json: @resume }
     end
   end
   
@@ -56,14 +55,9 @@ class ResumesController < ApplicationController
   def create
   @user=User.find_by_id(session[:user_id])
     @resume = @user.resumes.new(params[:resume])
-    @resume[:date] = Time.now
-    @resume[:view] = 0
-    #if @resume[:avatar].nil?
-     # !@resume[:avatar] = "noava.jpg";
-     #end
-    #if !@resume[:password].nil?
-    #  @resume[:password] = Digest::MD5.hexdigest(params[:resume][:password])
-    #end
+    @resume.city_id=City.find_by_id(params[:city_id])
+    @resume.date = Time.now
+    @resume.view = 0
     respond_to do |format|
       if @resume.save
         format.html { redirect_to @resume, notice: 'Вы успешно создали резюме.' }

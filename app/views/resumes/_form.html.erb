@@ -84,8 +84,8 @@
 	            <div id="telefonNumber"><%= t(:phone) %><br />
 	               <%= f.text_field :phone %>
 	            </div>
-	            <div  id="gorodName"><%= t(:city) %><br />
-	                <%= f.text_field :city %>
+	            <div  id="gorodName">
+          <%= select_tag "city_id", '<option>Выберите город ...</option><option value="1">Нижневартовск</option><option value="2"> Лангепас</option><option value="3">Мегион</option><option value="4">Радужный</option><option value="5">Покачи</option>'.html_safe %>
 	            </div>
 	        </div> 
 	    </div>
