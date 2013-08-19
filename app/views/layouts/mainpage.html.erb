@@ -38,27 +38,21 @@
     <div class="navbar">
       <div class="navbar-inner">
             <ul class="nav">
-              <li><%= link_to "ГЛАВНАЯ", "/", title: "Перейти на главную страницу"  %></li>
-	      <li class="divider-vertical"></li>
+              <li ><%= link_to 'ГЛАВНАЯ',"/" %></li>
               <li><%= link_to "ВАКАНСИИ", "/vacancies", title: "База вакансий Нижневартовска"  %></li>
-	      <li class="divider-vertical"></li>
               <li><%= link_to "РЕЗЮМЕ", "/resumes/search", title: "База резюме Нижневартовска"  %></li>
-	      <li class="divider-vertical"></li>
               <li><%= link_to "СТАТЬИ", "/articles", title: "Статьи, посвященные поиску работы в Нижневартовске"  %></li>
-	      <li class="divider-vertical"></li>
               <li><%= link_to "ОБРАТНАЯ СВЯЗЬ", "/call", title: "Отправьте нам Ваши предложения, замечания"  %></li>
-	      <li class="divider-vertical"></li>
-        <%= form_tag('/city_change', method: :post) do %>
-          <%= select_tag "city", '<option><em>Выберите город ...</em></option><option value="vartovsk">Нижневартовск</option><option value="langepas"> Лангепас</option><option value="megion">Мегион</option><option value="raduzhnyi">Радужный</option><option value="pokachi">Покачи</option>'.html_safe, onchange: "this.form.submit();" %>
-    <% end %>
-	      </ul>
+        <li>
+          <form accept-charset="UTF-8" class="navbar-form" action="/city_change" method="post">
+          <%= select_tag "city", '<option>Выберите город ...</option><option value="vartovsk">Нижневартовск</option><option value="langepas"> Лангепас</option><option value="megion">Мегион</option><option value="raduzhnyi">Радужный</option><option value="pokachi">Покачи</option>'.html_safe, onchange: "this.form.submit();", class: "selectpicker" %>
+        </form>
+    </li>
 	      <% if !User.find_by_id(session[:user_id]) %>
-            <ul class="nav pull-right">
               <li><%= link_to "ВХОД", login_url, title: "Войти в созданный аккаунт" %></li>
-	      <li class="divider-vertical"></li>
         <li><%= link_to "РЕГИСТРАЦИЯ", "/users/new", title: "Создать аккаунт на сайте и стать зарегистрированным пользователем"  %></li>
               <% end %>
-            </ul>
+	      </ul>
           </div>
       </div>
     </div>
@@ -72,20 +66,31 @@
             <% end %>
           <%= yield %>
           <footer>
+          
           <hr>
+          <div>
+          <%= link_to 'Работа в Нижневартовске ', 'http://rabota-vartovsk.ru' %> |
+          <%= link_to 'Работа в Лангепасе ', 'http://langepas.rabota-vartovsk.ru' %> |
+          <%= link_to 'Работа в Мегионе ', 'http://megion.rabota-vartovsk.ru' %> |
+          <%= link_to 'Работа в Радужном ', 'http://raduzhnyi.rabota-vartovsk.ru' %> |
+          <%= link_to 'Работа в Покачах ', 'http://pokachi.rabota-vartovsk.ru' %> 
+        </div>
           <div class="row">
-<noindex>
+            <noindex>
             <div class="span9">
-</div> 
-    <div id="mySwipe" class="span9 swipe">
-      <div class="swipe-wrap">
-      <div><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a></div>
-      <div><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a></div>
-      <div><a rel="nofollow" href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3></div>
-    </div>
-    <!-- Carousel nav -->
-    </div>
-    </noindex>
+              <div id="mySwipe" class="swipe">
+                <div class="swipe-wrap">
+                  <div><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a>
+                  </div>
+                  <div><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a>
+                  </div>
+                  <div><a rel="nofollow" href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3>
+                    </div>
+                  </div>
+                  <!-- Carousel nav -->
+                </div>
+              </div>
+              </noindex>
   </div>
 
           <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>

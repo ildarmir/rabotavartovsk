@@ -1,0 +1,46 @@
+<div class="row">
+  <fieldset>
+    <legend>Работнику</legend>
+    <ul class="thumbnails">
+      <li class="span3">
+      <div class="thumbnail text-center">
+        <div class="caption">
+        <h4><a href="/resumes/new" title="Добавить резюме в базу">Добавить резюме</h4>
+          <%= image_tag("addresume.png", alt: "Добавить резюме на сайт Работа в Нижневартовске")%></a>
+        <%= simple_format %Q`Найти работу в Нижневартовске будет проще, если вы разместите свое резюме на нашем сайте. Кому действительно нужна работа в Нижневартовске: регулярно обновляйте дату размещения резюме на сайте. Если вас интересуют совершенно разные должности — сделайте несколько резюме.` %>
+      </div>
+      </div>
+      </li>
+      <li class="span3">
+      <div class="thumbnail text-center">
+        <div class="caption">
+        <h4><%= link_to "Новые вакансии","/vacancies",title: "Вакансии добавленные недавно" %></h4>
+        <ul class="unstyled">
+          <% @vac && @vac.each do |f| %>
+
+            <li>               
+            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %> 
+            </li><br> 
+          <% end %>
+        </ul>
+      </div>
+      </div>
+      </li>
+      <li class="span3">
+      <div class="thumbnail text-center">
+        <div class="caption">
+        <h4><%= link_to "Популярные вакансии","vacancies",title: "Вакансии по популярности" %></h4>
+        <ul class="unstyled">
+          <% @pop && @pop.each do |f| %>
+            <li>               
+            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id }, title: "Подробнее о вакансии #{f.position}" %> 
+            </li><br>
+          <% end %>
+
+        </ul>
+      </div>
+      </div>
+      </li>
+    </ul>
+  </fieldset>
+</div>
