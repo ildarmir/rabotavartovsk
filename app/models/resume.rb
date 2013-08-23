@@ -16,11 +16,11 @@ validates :position, :presence => true
     end
   end
  def previous_post
-    self.class.first(:conditions => ["id < ?",id], :order => "id desc,position")
+    self.class.first(:conditions => ["id < ? and city_id=?",id,city_id], :order => "id desc,position")
   end
 
   def next_post
-    self.class.first(:conditions => ["id > ?", id], :order => "id asc,position")
+    self.class.first(:conditions => ["id > ? and city_id=?", id, city_id], :order => "id asc,position")
   end
 
 

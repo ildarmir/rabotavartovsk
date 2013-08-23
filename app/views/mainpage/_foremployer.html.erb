@@ -19,7 +19,7 @@
             <div class="caption">
         <h4><%= link_to "Последние резюме","resumes", title: "Недавно добавленные резюме" %></h4>
         <ul class="unstyled">
-          <% @res.each do |r| %>
+          <% @res && @res.each do |r| %>
             <li>
             <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
             </li>
@@ -35,7 +35,7 @@
             <div class="caption">
         <h4><%= link_to "Лучшие резюме","resumes", title: "Лучшие резюме" %></h4>
         <ul class="thumbnails">
-          <% @best.each do |r| %>
+          <% @best && @best.each do |r| %>
             <li>
             <div class="thumbnail text-center span2">
               <%= r.name.slice(0..32) %><br>

@@ -36,6 +36,13 @@
 			<td id="phone-label"><span class="resVac_data optional"><%=  t(:phone) %></span></td>
 			<td class="element"><%= f.text_field :phone, :size => "60", :maxlength => "100", :required => true %></td>
 		</tr>
+    <tr>
+			<td id="city-label"><span class="resVac_data optional">Город</span></td>
+      <td class="element">
+          <%= select_tag "city_id", '<option>Выберите город ...</option><option value="1">Нижневартовск</option><option value="2"> Лангепас</option><option value="3">Мегион</option><option value="4">Радужный</option><option value="5">Покачи</option>'.html_safe %>
+        </td>
+
+    </tr>
 
 
 	</table>

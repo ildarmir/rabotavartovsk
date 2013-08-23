@@ -15,12 +15,12 @@
     <% @resumes.each do |t| %>
       <tr>
         <td class='resume_table_result_left'> <%= link_to t.position.slice(0..32), "/resumes/#{t.id}", title: "Подробнее о резюме #{t.position}" %></td>
-        <td> <%= t.min_wage.slice(0..32) %> </td>
-        <td> <%= t.experience.slice(0..32) %></td>
-        <td> <%= t.name.slice(0..32) %></td>
-        <td> <%= t.city.slice(0..32) %></td>
-        <td> <%= t.date.strftime("%d.%m.%Y") %></td>
-        <td> <%= t.age.slice(0..32) %></td>
+        <td> <%= t.min_wage.slice(0..32) if t.min_wage %> </td>
+        <td> <%= t.experience.slice(0..32) if t.experience%></td>
+        <td> <%= t.name.slice(0..32) if t.name %></td>
+        <td> <%= t.city.name.slice(0..32) if t.city.name %></td>
+        <td> <%= t.date.strftime("%d.%m.%Y") if t.date %></td>
+        <td> <%= t.age.slice(0..32) if t.age %></td>
       </tr>
     <% end %>
   </table>

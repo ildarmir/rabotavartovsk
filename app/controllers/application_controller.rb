@@ -3,9 +3,12 @@ class ApplicationController < ActionController::Base
   #include UrlHelper
   layout "mainpage"
   protect_from_forgery
-  before_filter :set_locale, :get_article
+  before_filter :set_locale, :get_article, :get_city
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+  def get_city
+    @city=City.find_by_subdomain(request.subdomain) || City.find_by_subdomain("vartovsk")
   end
 
   def get_article

@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+City:
+  fields:
+    default: subdomain, name, title, sidebar, footer, addresume, addvacancy
+    form: subdomain, name, title, sidebar, footer, addresume, addvacancy
+  relationships:
+  application: Application

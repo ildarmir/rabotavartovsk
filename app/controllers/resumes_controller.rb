@@ -4,7 +4,6 @@ class ResumesController < ApplicationController
   # GET /resumes
   # GET /resumes.json
   def index
-    @city=City.find_by_subdomain(request.subdomain)
     @resumes = @city.resumes.order("date desc").paginate(:page => params[:page], :per_page => 20, :order => "date desc") 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +25,7 @@ class ResumesController < ApplicationController
   end
   
   def search
-    @resumes = Resume.order('date desc').search(params[:search])    
+    @resumes = @city.resumes.order('date desc').search(params[:search])    
     respond_to do |format|
    require 'will_paginate/array'
     @resumes = @resumes.paginate(:page => params[:page], :per_page => 20) 
@@ -55,7 +54,13 @@ class ResumesController < ApplicationController
   def create
   @user=User.find_by_id(session[:user_id])
     @resume = @user.resumes.new(params[:resume])
-    @resume.city_id=City.find_by_id(params[:city_id])
+    if !params[:city_id].nil? && !params[:city_id].empty? && params[:city_id].size==1
+      @resume.city=City.find_by_id(params[:city_id])
+    elsif request.subdomain!='' 
+      @resume.city_id=City.find_by_subdomain(request.subdomain) 
+    else
+      @resume.city_id=City.find_by_subdomain("vartovsk")
+    end
     @resume.date = Time.now
     @resume.view = 0
     respond_to do |format|

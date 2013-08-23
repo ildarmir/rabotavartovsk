@@ -3,11 +3,9 @@ class VacanciesController < ApplicationController
   skip_before_filter :authorize, only: [:search, :show, :index]
   # GET /vacancies
   # GET /vacancies.json
+  
   def index
-    @city=City.find_by_subdomain(request.subdomain)
     @vacancies = @city.vacancies.paginate page: params[:page], order: 'created_at desc', per_page: 20
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @vacancies }
@@ -15,7 +13,7 @@ class VacanciesController < ApplicationController
   end
   
   def search 
-    @vacancies = Vacancy.search(params[:search])
+    @vacancies = @city.vacancies.search(params[:search])
     respond_to do |format|
     require 'will_paginate/array'
     @vacancies = @vacancies.paginate(:page => params[:page], :per_page => 20) 
@@ -59,7 +57,13 @@ class VacanciesController < ApplicationController
   # POST /vacancies.json
   def create
     @vacancy = @user.vacancies.new(params[:vacancy])
-    @vacancy.city_id=City.find_by_subdomain(request.subdomain)
+    if !params[:city_id].nil? && !params[:city_id].empty? && params[:city_id].size==1
+      @vacancy.city=City.find_by_id(params[:city_id])
+    elsif request.subdomain!='' 
+      @vacancy.city_id=City.find_by_subdomain(request.subdomain) 
+    else
+      @vacancy.city_id=City.find_by_subdomain("vartovsk")
+    end
     @vacancy[:date] = Time.now
     respond_to do |format|
       if @vacancy.save

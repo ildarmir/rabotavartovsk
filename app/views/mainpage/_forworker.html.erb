@@ -16,7 +16,7 @@
         <div class="caption">
         <h4><%= link_to "Новые вакансии","/vacancies",title: "Вакансии добавленные недавно" %></h4>
         <ul class="unstyled">
-          <% @vac.each do |f| %>
+          <% @vac && @vac.each do |f| %>
 
             <li>               
             <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %> 
@@ -31,7 +31,7 @@
         <div class="caption">
         <h4><%= link_to "Популярные вакансии","vacancies",title: "Вакансии по популярности" %></h4>
         <ul class="unstyled">
-          <% @pop.each do |f| %>
+          <% @pop && @pop.each do |f| %>
             <li>               
             <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id }, title: "Подробнее о вакансии #{f.position}" %> 
             </li><br>

@@ -31,7 +31,7 @@
         <%= image_tag("logo-mini.jpg") %>
       </div>
       <div >
-        <h1 id="page-logo"> <%= content_for?(:logo) ? yield(:logo) : "РАБОТА В НИЖНЕВАРТОВСКЕ" %></h1>
+        <h1 id="page-logo"> <%= content_for?(:logo) ? yield(:logo) : @city.title || "Работа в Нижневартовске" %></h1>
     </div>
     </div>
     <div class="row">
@@ -43,18 +43,13 @@
               <li><%= link_to "РЕЗЮМЕ", "/resumes/search", title: "База резюме Нижневартовска"  %></li>
               <li><%= link_to "СТАТЬИ", "/articles", title: "Статьи, посвященные поиску работы в Нижневартовске"  %></li>
               <li><%= link_to "ОБРАТНАЯ СВЯЗЬ", "/call", title: "Отправьте нам Ваши предложения, замечания"  %></li>
-        <li>
-          <form accept-charset="UTF-8" class="navbar-form" action="/city_change" method="post">
-          <%= select_tag "city", '<option>Выберите город ...</option><option value="vartovsk">Нижневартовск</option><option value="langepas"> Лангепас</option><option value="megion">Мегион</option><option value="raduzhnyi">Радужный</option><option value="pokachi">Покачи</option>'.html_safe, onchange: "this.form.submit();", class: "selectpicker" %>
-        </form>
-    </li>
 	      <% if !User.find_by_id(session[:user_id]) %>
               <li><%= link_to "ВХОД", login_url, title: "Войти в созданный аккаунт" %></li>
         <li><%= link_to "РЕГИСТРАЦИЯ", "/users/new", title: "Создать аккаунт на сайте и стать зарегистрированным пользователем"  %></li>
               <% end %>
-	      </ul>
+            </ul>
           </div>
-      </div>
+          </div>
     </div>
   </div>
 </div>
@@ -80,11 +75,11 @@
             <div class="span9">
               <div id="mySwipe" class="swipe">
                 <div class="swipe-wrap">
-                  <div><a href="/call"><h3 class="well well-small text-center text-info">RABOTA-VARTOVSK.RU</h3></a>
+                  <div><a href="/call"><h3 class="well well-small text-center text-info"><em>Rabota-Vartovsk.Ru</em></h3></a>
                   </div>
-                  <div><a href="/call"><h3 class="well well-small text-center text-info">Место для Вашего объявления</h3></a>
+                  <div><a href="/call"><h3 class="well well-small text-center text-info"><em>Место для Вашего объявления</em></h3></a>
                   </div>
-                  <div><a rel="nofollow" href="mailto:webanimate@yahoo.com"><h3 class="well well-small text-center text-info">webanimate@yahoo.com</h3>
+                  <div><a href="/call"><h3 class="well well-small text-center text-info"><em>Более 10000 просмотров ежемесячно</em></h3>
                     </div>
                   </div>
                   <!-- Carousel nav -->
@@ -96,11 +91,19 @@
           <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
           </footer>
         </div>
+        <div class="span3">
+                <%= link_to 'Работа в Нижневартовске ', {controller: "mainpage", action: "index", host: request.host, subdomain: false}, class: "btn btn-mini btn-primary" %>
+                <%= link_to 'Работа в Лангепасе ', {controller: "langepas", action: "index", host: request.host, subdomain: "langepas"}, class: "btn btn-mini btn-success" %>
+                <%= link_to 'Работа в Мегионе ',{controller: "megion", action: "index", host: request.host, subdomain: "megion"}, class: "btn btn-mini btn-danger" %>
+                <%= link_to 'Работа в Радужном ',{controller: "raduzhnyi", action: "index", host: request.host, subdomain: "raduzhnyi"}, class: "btn btn-mini btn-warning" %>
+                <%= link_to 'Работа в Покачах ',{controller: "pokachi", action: "index", host: request.host, subdomain: "pokachi"}, class: "btn btn-mini btn-info" %>
+            </div>
           <% if User.find_by_id(session[:user_id]) %>
             <div class="span3">
+            <br>
               <ul class="user_block">
                 <% curr=User.find_by_id(session[:user_id]) %>
-                <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-small' %></li>
+                <li><%= button_to 'Выход', logout_path, method: :delete, :class=>'btn btn-inverse btn-small btn-block' %></li>
                 <li><%= link_to curr.name, "/users/edit" %> </li>
                 <li><h5>Вы добавили</h5></li>
 

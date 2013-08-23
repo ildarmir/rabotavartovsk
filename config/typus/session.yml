@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Session:
+  fields:
+    default: session_id, data
+    form: session_id, data
+  relationships: 
+  application: Application
