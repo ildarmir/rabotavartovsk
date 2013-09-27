@@ -1,7 +1,6 @@
 class MegionController < ApplicationController
   skip_before_filter :authorize
   def index
-   @city=City.find_by_subdomain(request.subdomain)
     @vac = @city.vacancies.limit(8).order("created_at DESC") 
     pop = @city.vacancies.select("id,position,view").order("created_at desc").limit(30)
     pop=pop.each {|k| k.view=0 if k.view.nil? }
