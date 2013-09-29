@@ -2,7 +2,7 @@ class Vacancy < ActiveRecord::Base
 belongs_to :user
 belongs_to :city
 
-  attr_accessible :date, :email, :experience, :note, :organisation, :phone, :position, :salary, :view, :city_id, :as=>:admin
+  attr_accessible :date, :email, :experience, :note, :organisation, :phone, :position, :salary, :view, :city, :as=>:admin
   attr_accessible :date, :email, :experience, :note, :organisation, :phone, :position, :salary, :view, :city_id
   
   validates :position, :presence => true

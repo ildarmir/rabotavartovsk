@@ -3,6 +3,6 @@
 Vacancy:
   fields:
     default: position, note, experience, salary, organisation, phone, date, email
-    form: position, note, experience, salary, organisation, phone, date, email
+    form: position, note, experience, salary, organisation, phone, date, email, city
   relationships: 
   application: Application
