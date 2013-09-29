@@ -27,9 +27,12 @@ class VacanciesController < ApplicationController
   # GET /vacancies/1.json
   def show
     @vacancy = Vacancy.find(params[:id])
-    Vacancy.update_counters [@vacancy.id], :view => 1
+    if !cookies[:_time] then cookies[:_time]="" end
+    if !(cookies[:_time].include? request.url.crypt('.1'))
+      Vacancy.update_counters [@vacancy.id], :view => 1
+    end
+    cookies[:_time]=request.url.crypt('.1')+ cookies[:_time].slice!(0..150)
     @user=User.find_by_id(session[:user_id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @vacancy }

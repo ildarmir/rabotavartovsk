@@ -15,11 +15,14 @@ class ResumesController < ApplicationController
   # GET /resumes/1.json
   def show
     @resume = Resume.find(params[:id])
-    @resume[:view] = @resume[:view] + 1
-    @resume.update_attributes(params[:view])
+    if !cookies[:time] then cookies[:time]="" end
+    if !(cookies[:time].include? request.url.crypt("12"))
+      Resume.update_counters [@resume.id], :view => 1
+    end
+    cookies[:time]=request.url.crypt("12")+ cookies[:time].slice!(0..150)
     @user=User.find_by_id(session[:user_id])
     respond_to do |format|
-        format.html {render "show" }
+        format.html # show.html.erb 
         format.json { render json: @resume }
     end
   end
