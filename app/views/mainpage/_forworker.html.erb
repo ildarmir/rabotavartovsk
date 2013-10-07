@@ -15,12 +15,15 @@
       <div class="thumbnail text-center">
         <div class="caption">
         <h4><%= link_to "Новые вакансии","/vacancies",title: "Вакансии добавленные недавно" %></h4>
-        <ul class="unstyled">
+        <ul class="unstyled text-left">
           <% @vac && @vac.each do |f| %>
 
-            <li>               
-            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %> 
-            </li><br> 
+            <li style="border-bottom: 1px solid #cccccc; padding-top:8px;">               
+            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %>
+              <div style="clear:left"></div>
+              <p class="muted" style="float:left; width:75%;"><%= f.organisation if f.organisation %></p><p style="float:left;width:25%;text-align:right;"><%= f.salary %></p> 
+              <div style="clear:left"></div>
+          </li>
           <% end %>
         </ul>
       </div>
@@ -30,11 +33,14 @@
       <div class="thumbnail text-center">
         <div class="caption">
         <h4><%= link_to "Популярные вакансии","vacancies",title: "Вакансии по популярности" %></h4>
-        <ul class="unstyled">
+        <ul class="unstyled text-left">
           <% @pop && @pop.each do |f| %>
-            <li>               
-            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id }, title: "Подробнее о вакансии #{f.position}" %> 
-            </li><br>
+            <li style="border-bottom: 1px solid #cccccc; padding-top:8px;">               
+            <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %>
+              <div style="clear:left"></div>
+              <p class="muted" style="float:left; width:75%;"><%= f.organisation if f.organisation %></p><p style="float:left;width:25%;text-align:right;" class="text-success"><em>+<%= f.view if f.view %></em></p> 
+              <div style="clear:left"></div>
+          </li>
           <% end %>
 
         </ul>
