@@ -20,7 +20,7 @@
             <li style="border-bottom: 1px solid #eeeeee; padding-top:5px;padding-bottom:0px">               
             <%= link_to f.position.slice(0..32), { :controller => :vacancies,:action => :show, :id => f.id },title: "Подробнее о вакансии #{f.position}" %>
               <div style="clear:left"></div>
-              <p class="muted" style="float:left; width:75%;"><%= f.organisation if f.organisation %></p><p style="float:left;width:25%;text-align:right;"><%= f.salary %></p> 
+              <p class="muted" style="float:left; width:75%;"><%= f.organisation if f.organisation %></p><p style="float:left;width:25%;text-align:right;"><%= f.salary.slice(0..5) if f.salary %></p> 
               <div style="clear:left"></div>
           </li>
           <% end %>
