@@ -1,6 +1,7 @@
 # coding: utf-8
 class ApplicationController < ActionController::Base
-  #include UrlHelper
+  #include application_helper
+  helper :all
   layout "mainpage"
   protect_from_forgery
   before_filter :set_locale, :get_article, :get_city

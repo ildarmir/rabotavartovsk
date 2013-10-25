@@ -24,4 +24,5 @@ belongs_to :city
   def next_post
     self.class.first(:conditions => ["id > ? and city_id=?", id,city_id], :order => "id asc,position")
   end
+
 end

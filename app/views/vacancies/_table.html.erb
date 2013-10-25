@@ -1,23 +1,25 @@
 <div id="filterContainer">
   Фильтр:<input type="text" class="span8" id="quickSearchQuery" placeholder="Введите вакансию">
 </div>
-<div id="vacancy_search">
-  <table id='vacancy_table_result'>
+<div id="span9">
+  <table id='' class="table table-bordered table-hover table-condensed">
+    <thead>
     <tr>
-      <td class='vacancy_table_header' id='vacancy_profession'>Профессия</td>
-      <td class='vacancy_table_header' id='vacancy_lengthOfService'>Опыт</td>
-      <td class='vacancy_table_header' id='vacancy_earns'>Зарплата</td>
-      <td class='vacancy_table_header' id='vacancy_organisation'>Организация</td>
-      <td class='vacancy_table_header' id='vacancy_phone'>Телефон</td>
-      <td class='vacancy_table_header' id='vacancy_dateOf'>Дата добавления</td>
+      <th class='vacancy_table_header' id='vacancy_profession'>Профессия</th>
+      <th class='vacancy_table_header' id='vacancy_lengthOfService'>Опыт</th>
+      <th class='vacancy_table_header' id='vacancy_earns'>Зарплата</th>
+      <th class='vacancy_table_header' id='vacancy_organisation'>Организация</th>
+      <th class='vacancy_table_header' id='vacancy_phone'>Телефон</th>
+      <th class='vacancy_table_header' id='vacancy_dateOf'>Дата добавления</th>
     </tr>
+  </thead>
     <% @vacancies.each do |t| %>
       <tr>
-        <td class='vacancy_table_result_left'> <%= link_to t.position.slice(0..32), "/vacancies/#{t.id}", title: "Подробнее о вакансии #{t.position}" %></td>
-        <td> <%= t.experience && t.experience.slice(0..32) %></td>
-        <td> <%= t.salary && t.salary.slice(0..32) %></td>
-        <td> <%= t.organisation && t.organisation.slice(0..32) %></td>
-        <td> <%= t.phone && t.phone.slice(0..32) %></td>
+        <td class='vacancy_table_result_left'> <%= link_to short_str(t.position,30), "/vacancies/#{t.id}", title: "Подробнее о вакансии #{t.position}" %></td>
+        <td> <%= t.experience && short_str(t.experience,15) %></td>
+        <td> <%= t.salary && short_str(t.salary,15) %></td>
+        <td> <%= t.organisation && short_str(t.organisation,20) %></td>
+        <td> <%= t.phone && short_str(t.phone,15) %></td>
         <td> <%= t.updated_at && t.updated_at.strftime("%d.%m.%Y") %></td>
       </tr>
     <% end %>
