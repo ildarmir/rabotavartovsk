@@ -1,8 +1,7 @@
 <div id="filterContainer">
   Фильтр:<input type="text" class="span8" id="quickSearchQuery" placeholder="Введите вакансию">
 </div>
-<div id="span9">
-  <table id='' class="table table-bordered table-hover table-condensed">
+  <table id='' style="overflow:hidden;table-layout:fixed;text-overflow:ellipsis;" width="100%" class="table table-bordered table-hover table-condensed">
     <thead>
     <tr>
       <th class='vacancy_table_header' id='vacancy_profession'>Профессия</th>
@@ -25,4 +24,3 @@
     <% end %>
   </table>
 	<%= will_paginate @vacancies, :previous_label => 'Назад', :next_label => 'Дальше', :renderer => BootstrapPagination::Rails, :class => "pagination pagination-centered" %> 
-</div>

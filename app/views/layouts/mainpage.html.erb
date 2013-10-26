@@ -135,7 +135,6 @@
 <%= content_for?(:advertise) ? yield(:advertise) : "МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ" %>
 </div>
 <% end %>
-<div>
   <% if content_for?(:article) %>
     <%= simple_format(yield(:article)) %>
   <% elsif @side_article %>
@@ -150,7 +149,6 @@
   <% else %>
     <%= render 'mainpage/article_default' %>
   <% end %>
-</div>
               </div>
           <% end %>
         </div>
