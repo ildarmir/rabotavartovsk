@@ -1,11 +1,15 @@
 # coding: utf-8
 module ApplicationHelper
-  def short_str(phon,dlina)
+  def short_str(phon,dlina=32)
     if phon.size>dlina
     phon.slice(0..(dlina-1))<<"..." 
     else
       phon
     end
+  end
+  def short_link(str)
+    n=str.split(/,|\.|;|_|\/|\\/)[0].strip.mb_chars.downcase.capitalize
+    short_str(n)
   end
 
   

@@ -21,7 +21,7 @@
         <ul class="unstyled text-left">
           <% @res && @res.each do |r| %>
             <li>
-            <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
+            <%=  link_to short_link(r.position), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
             </li>
             <br>
           <% end %>
@@ -40,7 +40,7 @@
             <div class="thumbnail text-center span2">
               <%= r.name.slice(0..32) %><br>
               <a href="/resumes/<%= r.id %>"><%= image_tag(r.avatar_url(:thumb), border: 0,class: "img-circle") %></a><br>
-            <%=  link_to r.position.slice(0..32), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
+            <%=  link_to short_link(r.position), {:id => r.id, :controller => :resumes, :action => :show},title: "Подробнее о резюме #{r.position}" %>
           </div>
             </li>
           <% end %>
