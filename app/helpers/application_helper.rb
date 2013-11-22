@@ -8,8 +8,13 @@ module ApplicationHelper
     end
   end
   def short_link(str)
-    n=str.split(/,|\.|;|_|\/|\\/)[0].strip.mb_chars.downcase.capitalize
-    short_str(n)
+   n=str.split(/,|\.|;|_|\/|\\/)[0]
+    if n!='' && n!=nil
+    m=n.strip.mb_chars.downcase.capitalize
+    short_str(m)
+    else
+      str
+    end
   end
 
   
