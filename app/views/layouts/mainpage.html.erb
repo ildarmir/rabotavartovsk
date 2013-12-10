@@ -135,6 +135,16 @@
 <%= content_for?(:advertise) ? yield(:advertise) : "МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ" %>
 </div>
 <% end %>
+<noindex>
+<div>
+  <h3>Объявления</h3>
+  <a rel="nofollow" href="http://www.avito.ru/nizhnevartovsk/kvartiry/3-k_kvartira_70_m_89_et._250583542" title="квартира">
+  <h4>Продается 3-х комнатная квартира</h4>
+  <%= image_tag("kvartira/dom.jpg",alt: "объявление") %>
+</a>
+<hr>
+</div>
+</noindex>
   <% if content_for?(:article) %>
     <%= simple_format(yield(:article)) %>
   <% elsif @side_article %>
