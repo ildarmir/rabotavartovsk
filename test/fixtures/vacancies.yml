@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  position: MyString
+  position: сварщик
   note: MyText
   experience: MyString
   salary: MyString
@@ -11,7 +11,7 @@ one:
   email: MyString
 
 two:
-  position: MyString
+  position: помощник директора, зам. директора
   note: MyText
   experience: MyString
   salary: MyString
@@ -19,3 +19,7 @@ two:
   phone: MyString
   date: 1
   email: MyString
+
+no_name_vacancy:
+  position:
+  phone: 

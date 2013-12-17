@@ -6,7 +6,6 @@ belongs_to :city
   attr_accessible :date, :email, :experience, :note, :organisation, :phone, :position, :salary, :view, :city_id
   
   validates :position, :presence => true
-  
   validates :phone, :presence => true
   
   def self.search(search)
