@@ -4,14 +4,14 @@
 
 <div class="row">
   <div class="span7 offset1">
-<h1><%= @article.title %></h1>
+<h1><%= @article.title if @article.title.present? %></h1>
 
 <div class="lead muted">
-  <%= @article.des %>
+  <%= simple_format @article.des if @article.des.present? %>
   <hr>
 </div>
 <div class="article">
-  <%= @article.text && simple_format(@article.text) %>
+  <%= simple_format(@article.text) if @article.text.present? %>
 </div>
 <hr>
 </div>
@@ -19,18 +19,18 @@
 <div class="row">
   <div class="offset1 span2">
 <p>Просмотров:
-  <%= @article.view %>
+  <%= @article.view if @article.view.present? %>
 </p>
 </div>
 <div class="span2">
-<p>Источник:
-  <%= @article.author %>
+<p>
+  <%= simple_format @article.author if @article.author.present? %>
 </p>
 </div>
 
 <div class="span2">
 <p>Дата:
-  <%= @article.add_time %>
+  <%= simple_format @article.add_time if @article.add_time.present? %>
 </p>
 </div>
 

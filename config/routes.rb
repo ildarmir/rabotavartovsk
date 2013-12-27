@@ -23,7 +23,6 @@ post 'city_change'=>'mainpage#city_change',as: 'city_change'
   delete 'logout' => :destroy
  end
 
-  get "home" => "home#index"
   resources :users
   #get "kurs/index"
   #get "kurs/show"

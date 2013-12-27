@@ -135,16 +135,6 @@
 <%= content_for?(:advertise) ? yield(:advertise) : "МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ" %>
 </div>
 <% end %>
-<noindex>
-<div>
-  <h3>Объявления</h3>
-  <a rel="nofollow" href="/home" title="квартира">
-  <h4>Продается 3-х комнатная квартира</h4>
-  <%= image_tag("kvartira/1.jpg",alt: "объявление") %>
-</a>
-<hr>
-</div>
-</noindex>
   <% if content_for?(:article) %>
     <%= simple_format(yield(:article)) %>
   <% elsif @side_article %>

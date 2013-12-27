@@ -3,7 +3,7 @@
 <% @articles.each do |a| %>
   <dl>
     <dt><h3><%= link_to a.title, :action => :show, :id => a.id  %></h3></dt>
-    <dd><%= a.des %></dd>
+    <dd><%= simple_format a.des %></dd>
   </dl>
 	<% end %>
 
