@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="http://rabota-vartovsk.ru/favicon.ico" type="image/x-icon" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Работа в Нижневартовске Вакансии" %></title>
@@ -16,7 +17,7 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %> 
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -69,8 +70,11 @@
           <%= link_to 'Работа в Радужном ', 'http://raduzhnyi.rabota-vartovsk.ru' %> |
           <%= link_to 'Работа в Покачах ', 'http://pokachi.rabota-vartovsk.ru' %> 
         </div>
-          <div class="row">
+        <div class="row">
             <noindex>
+
+
+
             <div class="span9">
               <div id="mySwipe" class="swipe">
                 <div class="swipe-wrap">
@@ -87,7 +91,7 @@
               </noindex>
   </div>
 
-          <center><p>&copy; <%=link_to "WEB-service", "http://www.city-nv.ru" %> 2013</p></center>
+          <center><p>&copy; <%=link_to "Бесплатные интернет-магазины", "http://www.emstore.org" %> 2014</p></center>
           </footer>
         </div>
         <div class="span3">
@@ -130,25 +134,22 @@
           <% else %>
             <div class="span3">
               <% if false %>
-              <div class="advertise-block">
+              <div class="advertise-block" >
                 <!--Advertise--!>
 <%= content_for?(:advertise) ? yield(:advertise) : "МЕСТО ДЛЯ ВАШЕЙ РЕКЛАМЫ" %>
 </div>
 <% end %>
-  <% if content_for?(:article) %>
-    <%= simple_format(yield(:article)) %>
-  <% elsif @side_article %>
-    <h4 class="text-center"><%= link_to @side_article.title,@side_article, title: "статья #{@side_article.title}" %></h4>
-    <p><%= @side_article.des %></p>
-    <% if ((@side_article.text.size+@side_article.des.size) > 1500) %>
-      <%= simple_format(@side_article.text.slice(0..1300)<<" ...") %>
-    <%= link_to "читать далее>", @side_article, title: "статья #{@side_article.title}"  %>
-  <% else %>
-    <%= simple_format(@side_article.text) %>
-  <% end %>
-  <% else %>
-    <%= render 'mainpage/article_default' %>
-  <% end %>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- index_page -->
+              <div style="padding-top: 30px">
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:300px;height:600px"
+                   data-ad-client="ca-pub-4110565745306347"
+                   data-ad-slot="7601640948"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              </div>
               </div>
           <% end %>
         </div>
