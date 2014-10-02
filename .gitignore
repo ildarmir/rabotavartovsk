@@ -22,3 +22,4 @@
 #Ignore idea files
 /.idea/*
 .idea
+config/database.yml
