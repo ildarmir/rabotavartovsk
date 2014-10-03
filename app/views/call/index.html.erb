@@ -1,6 +1,6 @@
-<h3>Отправьте Ваши предложения, замечания модераторам</h3>
-<p>Поделитесь тем, что Вам нравится в нашем сайте и что бы Вы хотели поменять</p>
+<h3>Поле для ввода email</h3>
+<p>Введите ваш email</p>
 <%= form_tag "call" do %>
-<%= text_area_tag :message, nil,  class: "span9", style: "height: 300px"%>
+<%= text_area_tag :message, nil,  class: "span9" %>
 <%= button_tag "ОТПРАВИТЬ", class: "btn pull-right btn-block" %>
 <% end %>
