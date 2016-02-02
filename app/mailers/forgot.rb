@@ -14,7 +14,7 @@ class Forgot < ActionMailer::Base
   end
 
   def cllback(mess,man)
-    mail to: "nostsaber@yandex.ru", subject: "Новое сообщение от пользователей" do |format|
+    mail to: "", subject: "Новое сообщение от пользователей" do |format|
     format.text {render :text=> "Сообщение: #{mess},юзер: #{man}"}
     end
     
